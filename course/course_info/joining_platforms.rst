@@ -19,19 +19,26 @@ information, and office hours here.
 
 Please follow these steps, or follow the video below, to join 
 the Discord Channel:
-#. You will want to create your account, go to https://discord.com/ 
-Links to an external site..
+
+#. You will want to create your account, go to 
+
+.. _a link: https://discord.com/ 
+
 #. On the top right of the screen, click on the login button, and 
 at the new screen on the bottom, it will say "Need an account?" 
 press the register button highlighted in blue next to this text.
+
 #. Input all the information to the new screen, and press continue.
+
 #. Now you should have a new screen that says "Create your first 
 Discord server" at the top. At the bottom, in blue text, 
 it will ask you if you have an invite already. Click the 
 blue text, and give the prompt this 
 link: https://discord.gg/fAE2YhVM4H Links to an external site.
+
 #. Finally, you should verify your email with a link that Discord 
 has sent you to the email you provided them.
+
 #. And you are done! You can now ask any questions you have 
 about the course here or just chat with the other members 
 of the course. We hope you will find this course fun and 
@@ -46,8 +53,6 @@ If you have any problems following the above steps, here
 is a step-by-step video to join our Discord Channel.
 
 .. _a link: https://www.youtube.com/watch?v=0nXCPWrGXww 
-
-Links to an external site.
 
 
 Canvas Discussion
@@ -71,20 +76,31 @@ To search, post, or contribute to any questions, please
 first join the discussion that is relevant to your topic.
 
 #. Search for a question
+
 * Select discussion topic
+
 * Utilize the search bar and search for either title or name
+
 * Once you find the discussion you are interested in, 
 double-click into the discussion to access the full thread.
+
 #. Post a question
+
 * Select discussion topic
+
 * We suggest you search and make sure your question is not 
 there yet before deciding to post a new question to avoid 
 duplicates.
+
 #. Reply or contribute to a question
+
 * Select discussion topic
+
 * Search for the question thread
+
 * Now you can hit 'reply' to answer or contribute more to the 
 discussion
+
 * We encourage you to participate in any discussion with your 
 own findings or solution if possible
 
