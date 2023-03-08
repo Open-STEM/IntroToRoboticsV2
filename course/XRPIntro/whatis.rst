@@ -15,6 +15,10 @@ Examples
 Radio Controlled Airplane
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. image:: media/RCAirplane.png
+  :width: 200
+  :alt: Alternative text
+
 A radio-controlled airplane is operated by a person who holds a controller and uses the joysticks to control the airplane's flight path. It requires a remote pilot.
 
 Actuators:
@@ -30,6 +34,10 @@ Not a robot.
 
 Drone
 ~~~~~
+
+.. image:: media/drone.png
+  :width: 200
+  :alt: Alternative text
 
 A quadrotor drone is capable of being teleoperated or using autonomous flight. The drone can fly a programmed course, avoid obstacles, return to the landing point, and automatically land.
 
@@ -53,6 +61,10 @@ This is a robot.
 Vacuum cleaner
 ~~~~~~~~~~~~~~
 
+.. image:: media/vacuum.png
+  :width: 200
+  :alt: Alternative text
+
 A conventional vacuum cleaner is pushed by an operator around the area to clean the floor. 
 Actuators: Motor to turn the fan that sucks up dirt.
 
@@ -67,6 +79,10 @@ Not a robot.
  
 Autonomous vacuum cleaner
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: media/roomba.png
+  :width: 200
+  :alt: Alternative text
 
 An autonomous vacuum cleaner can — on its own — start up, vacuum one or more rooms, come back to clean its home base, then continue vacuuming until the whole job is done. It maps out each room in the house for more consistent operation.
 
@@ -83,12 +99,16 @@ Sensors:
 * Rangefinders on the side to measure distance from walls.
 * Sensor to detect carpet vs floor to change the motor speed.
 
-An autonomous vacuum is fairly smart. It can learn the map of a house after a few runs and efficiently clean rooms. It can avoid obstacles, clean rooms, stop to recharge, and continue where it left off. This is a robot.
+An autonomous vacuum is fairly smart. It can learn the map of a house after a few runs and efficiently clean rooms. It can avoid obstacles, clean rooms, stop to recharge, and continue where it left off. 
 
 This is a robot.
 
 Self-driving car
 ~~~~~~~~~~~~~~~~
+
+.. image:: media/tesla.png
+  :width: 200
+  :alt: Alternative text
 
 A self-driving car can be driven conventionally by a human or driven autonomously on city streets and highways on its own.
 
@@ -118,5 +138,9 @@ Robotics engineering is usually thought of as a combination of three disciplines
 * Computer science - the development of advanced software (computer programs) to interpret at all the sensor data, understand it, and drive the actuators.
 
 Robotics can be thought of as the synergy of these three fields. Designing robots requires a "systems" approach to design. Having knowledge of all three subjects allows one to develop more complex and capable systems than one with only a unitary background.
+
+.. image:: media/stool.png
+  :width: 200
+  :alt: Alternative text
 
 Robotics is a 3-legged stool. Without any one of these subjects, it falls down.
