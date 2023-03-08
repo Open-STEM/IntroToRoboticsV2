@@ -1,3 +1,7 @@
+Things to do: 
+Fix the 'Note' box
+
+
 Installing the programming tools
 ================================
 
