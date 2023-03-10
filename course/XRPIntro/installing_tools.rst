@@ -12,6 +12,29 @@ Blockly
 
 This is a drag-and-drop graphical programming system similar to Scratch. Blockly is a good choice for programming the robot, especially for learners with little to no programming experience.  Does not easily scale for larger programs and is only usable within the Blockly programming environment.
 
+Installing Blockly
+~~~~~~~~~~~~~~~~~~
+In a browser, navigate to the github repository release page for XRP-blockly:
+
+https://github.com/Open-STEM/xrp-blockly/releases/
+
+Find the most recent release - as of this writing is v0.0.5. and download the version for the computer
+platform you are using. The file names below are for version 0.0.4, be sure to take the newest release
+version that is posted.
+
+Windows
+  XRP.Blockly.Setup.0.0.4.exe
+MacOS
+  XRP.Blockly-0.0.4.dmg
+Linux
+  XRP-Blockly_0.0.4_amd64.deb
+
+After downloading the release file, double-click on it to begin the installation. Follow all the instructions
+taking all the default settings unless you have a reason to change one of them. When it is finished, you
+may delete the release file. To start using Blockly, find it in the Start Menu on Windows or the Applications
+on a Mac.
+
+
 Python
 ------
 
