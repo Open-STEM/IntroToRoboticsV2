@@ -23,7 +23,7 @@ ways that make it available to all.
 
 
 .. toctree::
-   :maxdepth: 2 
+   :maxdepth: 1
    :hidden:
    :caption: Course information
 
@@ -32,7 +32,7 @@ ways that make it available to all.
    course/course_info/joining_platforms
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: Introduction to the XRP
 
@@ -45,7 +45,7 @@ ways that make it available to all.
 
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: Robot Driving
  
@@ -53,14 +53,14 @@ ways that make it available to all.
    course/driving/effort_speed
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: Measuring Distances
 
    course/measuring_distance/index
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Following Lines
    :hidden:
 
@@ -75,7 +75,7 @@ ways that make it available to all.
    course/manipulation/index
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :caption: Delivery Challenge
    :hidden:
@@ -83,7 +83,7 @@ ways that make it available to all.
    course/delivery_challenge/index
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Issues
    :hidden:
 
