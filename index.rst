@@ -21,11 +21,74 @@ The XRP platform is part of WPI's global STEM education initiative,
 which will bring inspiration and possibility to STEM education in 
 ways that make it available to all. 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   course/index
+.. toctree::
+   :maxdepth: 2 
+   :hidden:
+   :caption: Course information
+
+   course/course_info/index
+   course/course_info/course_overview
+   course/course_info/joining_platforms
+
+.. toctree:: 
+   :maxdepth: 2
+   :hidden:
+   :caption: Introduction to the XRP
+
+   course/XRPIntro/index
+   course/XRPIntro/whatis
+   course/XRPIntro/building
+   course/XRPIntro/installing_tools
+   course/XRPIntro/installing_libraries
+   course/XRPIntro/firstprogram
+
+
+.. toctree:: 
+   :maxdepth: 2
+   :hidden:
+   :caption: Robot Driving
+ 
+   course/driving/index
+   course/driving/effort_speed
+
+.. toctree:: 
+   :maxdepth: 2
+   :hidden:
+   :caption: Measuring Distances
+
+   course/measuring_distance/index
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: Following Lines
+   :hidden:
+
+   course/line_following/index
+
+.. toctree:: 
+   :maxdepth: 1
+   :titlesonly:
+   :caption: Manipulation
+   :hidden:
+
+   course/manipulation/index
+
+.. toctree:: 
+   :maxdepth: 2
+   :titlesonly:
+   :caption: Delivery Challenge
+   :hidden:
+
+   course/delivery_challenge/index
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: Issues
+   :hidden:
+
+   Report any issues to <https:://github.com/Open-STEM/IntroToRobotics>
+   
 
 
 Indices and tables

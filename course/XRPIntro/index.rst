@@ -17,12 +17,3 @@ At the end of this module, you will be able to:
 
 
 To finish this module, review and complete all tasks outlined in each section. Then successfully pass the module quiz at the end.
-
-.. toctree::
-   :maxdepth: 2
-
-   whatis
-   building
-   installing_tools
-   installing_libraries
-   firstprogram

@@ -27,8 +27,3 @@ expect it to, feel free to contact us.
 For additional information about the program, please see the XRP web page.
 
 
-.. toctree::
-   :maxdepth: 2
-
-   course_overview
-   joining_platforms

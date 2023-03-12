@@ -16,7 +16,3 @@ At the end of this module, students will be able to...
 * Have familiarity with making and running functions
 * Break down a larger path into components and then convert into code
 
-.. toctree::
-   :maxdepth: 2
-
-   effort_speed
