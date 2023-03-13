@@ -13,7 +13,7 @@ brings together everything you have learned in the previous modules. The final
 challenge optionally has a rubric for scoring the runs completed by your 
 students by adding some competitiveness to the class if you would like to use that.
 
-deliveryRobotImage.png
+..image:: deliveryRobotImage.png
 
 Final project delivery robot challenge (see final project module for more 
 information)
