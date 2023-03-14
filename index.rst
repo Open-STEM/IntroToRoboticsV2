@@ -59,15 +59,6 @@ ways that make it available to all.
    :caption: Measuring Distances
 
    course/measuring_distance/index
-   course/measuring_distance/activity_trains
-   course/measuring_distance/contr_behav_bang_bang
-   course/measuring_distance/contr_behav_prop_contr_2
-   course/measuring_distance/contr_behav_intro
-   course/measuring_distance/distance_sensors
-   course/measuring_distance/improve
-   course/measuring_distance/wall_following
-
-
 
 .. toctree:: 
    :maxdepth: 1
