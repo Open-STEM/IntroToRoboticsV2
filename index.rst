@@ -70,6 +70,8 @@ ways that make it available to all.
    course/line_following/reflectsens
    course/line_following/onoffcontrol
    course/line_following/pcontrol
+   course/line_following/pcontrol2s
+   course/line_following/sumo
 
 .. toctree:: 
    :maxdepth: 1
