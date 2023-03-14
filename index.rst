@@ -51,6 +51,7 @@ ways that make it available to all.
  
    course/driving/index
    course/driving/effort_speed
+   course/driving/differential_steering
 
 .. toctree:: 
    :maxdepth: 1

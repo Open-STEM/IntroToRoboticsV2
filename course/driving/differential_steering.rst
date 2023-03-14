@@ -1,5 +1,5 @@
 Differential steering
-================
+=====================
 
 In the last section, we learned how to set the motor efforts. But currently, you only know how to get the robot to go straight! Let's fix that:
 
@@ -7,7 +7,7 @@ Since there is no steering wheel like you would find on a car, the way to contro
 
 
 Driving straight
--------------------------
+----------------
 
 As you saw in the previous section, when the left wheels and the right wheels are moving forward at the same speed, the robot will drive in a straight line. This is illustrated in the following image where the wheel speeds are shown by the length and direction of the arrows:
 
