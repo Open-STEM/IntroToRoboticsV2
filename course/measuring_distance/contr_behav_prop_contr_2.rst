@@ -8,7 +8,7 @@ That worked! But it seemed like the robot went too fast when it needed to go slo
 
 [insert video]
 
-How should we change that? 
+How should we change that?
 
 Let's go back to our Control Law.
 
@@ -72,21 +72,21 @@ This is called **proportional control**. The control effort is proportional to t
 
 That means that if the error is large (you have to go a far distance), so is the control effort. If the error is negative (you have to go backwards), the control effort is in the other direction.
 
-*Remember -- the error is the distance between the point you are at, and the point you want to go to.* 
+*Remember -- the error is the distance between the point you are at, and the point you want to go to.*
 
 How do you find the distance on a number line like the one above? What is the error between "30" and "20"? How do you find it?
 
 Implementing Proportional Control:
 ----------------------------------
 
-If we set the control input **equal to** the **error**, we might be satisfied, right? After all, this would make the control become bigger when the error is bigger, and when the error is negative the control input would be negative. You would be telling the robot to drive backwards. 
+If we set the control input **equal to** the **error**, we might be satisfied, right? After all, this would make the control become bigger when the error is bigger, and when the error is negative the control input would be negative. You would be telling the robot to drive backwards.
 
 The control law used here would be .
 
-But the effort is capped at "1".  If , then your effort would be too much, right? That is why in proportional control, you can **scale down** or **scale up** this control effort by an amount. This amount is called "the proportional constant" or .
+But the effort is capped at "1". If , then your effort would be too much, right? That is why in proportional control, you can **scale down** or **scale up** this control effort by an amount. This amount is called "the proportional constant" or .
 
 **If you scaled the effort down by 15, what would the effort be (at )?**
 
- In this case,  would be , and new control law would be , or 
+In this case,  would be , and new control law would be , or
 
-Try implementing this control law on your robot. How did it work? what could be done to improve it? Remember, Kp can be set to any **number** you want.
+Try implementing this control law on your robot. How did it work? what could be done to improve it? Remember, Kp can be set to any **number** you want.

@@ -9,7 +9,7 @@ So, what are some sensors that allow you to measure distances?
 Mechanical Sensors
 ~~~~~~~~~~~~~~~~~~
 
-If you touch it, then you know it's there. Mechanical sensors detect some form of mechanical deformation (bend, press, etc) and translate that into an electrical signal. This is a very naive, but still valid way to approach distance measurement. The obstructing object could activate a mechanical switch upon contact, signaling its presence. 
+If you touch it, then you know it's there. Mechanical sensors detect some form of mechanical deformation (bend, press, etc) and translate that into an electrical signal. This is a very naive, but still valid way to approach distance measurement. The obstructing object could activate a mechanical switch upon contact, signaling its presence.
 
 An example of a mechanical sensor is a Whisker Sensor. The whisker itself is a long flexible piece of metal that can bend and trigger a mechanical witch to notify the obstacle ahead. Whisker sensors can consist of multiple whiskers to sense obstacles from multiple directions.
 

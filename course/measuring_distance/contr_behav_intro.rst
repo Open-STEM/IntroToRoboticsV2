@@ -10,7 +10,7 @@ Your sensors tell you where you are. Robots need to understand where they are in
 
 [insert image]
 
-You can tell how fast you are using your speedometer, and you can see how fast the car in front of you is going. These are **sensor inputs**, and you want to take these into account when deciding whether to drive faster or slower. How a robot decides to move is called it's **control law**.
+You can tell how fast you are using your speedometer, and you can see how fast the car in front of you is going. These are **sensor inputs**, and you want to take these into account when deciding whether to drive faster or slower. How a robot decides to move is called it's **control law**.
 
 For the XRP robots, your control law will decide how much effort to use on each wheel depending on where you want to go and what sensor inputs you have. You're going to design your own robot control law.
 
