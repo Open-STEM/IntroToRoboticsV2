@@ -58,13 +58,18 @@ ways that make it available to all.
    :caption: Measuring Distances
 
    course/measuring_distance/index
+   
+
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: Following Lines
    :hidden:
-
+   :caption: Following Lines
+   
    course/line_following/index
+   course/line_following/reflectsens
+   course/line_following/onoffcontrol
+   course/line_following/pcontrol
 
 .. toctree:: 
    :maxdepth: 1
