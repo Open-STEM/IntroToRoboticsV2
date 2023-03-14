@@ -1,5 +1,5 @@
 Navigation and Line Following Overview
-==============
+======================================
 Topic Description
 -----------------
 In this module students will:
