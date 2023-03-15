@@ -1,5 +1,5 @@
-Measuring Distances
-============================
+Measuring distances using sensors
+===================================
 
 Topic Description
 -----------------
