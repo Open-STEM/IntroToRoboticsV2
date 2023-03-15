@@ -96,8 +96,8 @@ The control law used here would be :math:`effort = error`
 
 But the effort is capped at "1". If :math:`effort = 10`, then your effort would be too much, right? That is why in proportional control, you can **scale down** or **scale up** this control effort by an amount. This amount is called "the proportional constant" or :math:`k_{p}`.
 
-**If you scaled the effort down by 15, what would the effort be (at :math:`error = 10`)?**
+**If you scaled the effort down by 15, what would the effort be (at error = 10)?**
 
-In this case, :math:`k_{p}` would be \frac { 1 }{ 15 }, and new control law would be :math:`effort = \frac { error }{ 15 }`, or :math:`effort = k_{p} * error`
+In this case, :math:`k_{p}` would be :math:`\frac { 1 }{ 15 }`, and new control law would be :math:`effort = \frac { error }{ 15 }`, or :math:`effort = k_{p} * error`
 
-Try implementing this control law on your robot. How did it work? what could be done to improve it? Remember, k_{p} can be set to any **number** you want.
+Try implementing this control law on your robot. How did it work? what could be done to improve it? Remember, :math:`k_{p}` can be set to any **number** you want.
