@@ -8,7 +8,9 @@ Incorporating Feedback
 
 Your sensors tell you where you are. Robots need to understand where they are in order to make decisions about where to go, and so do you. When driving, you can choose to go faster or slower. In order to know whether to go faster or slower you need to know the speed limit, the speed of your car, and the speed of the car in front of you.
 
-[insert image]
+.. image:: media/Tailgating.jpg
+  :width: 200
+  :alt: Alternative text
 
 You can tell how fast you are using your speedometer, and you can see how fast the car in front of you is going. These are **sensor inputs**, and you want to take these into account when deciding whether to drive faster or slower. How a robot decides to move is called it's **control law**.
 

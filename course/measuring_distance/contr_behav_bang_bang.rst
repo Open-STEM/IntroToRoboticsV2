@@ -6,7 +6,9 @@ Parking your XRP
 
 You want to create a control law that parks your XRP at a set distance of 20 cm from a wall. You know that, in order to do that, you only need your distance sensor!
 
-[insert image]
+.. image:: media/parkingWall.jpg
+  :width: 100
+  :alt: Alternative text
 
 In order to build your control law, you build a table. For each of these scenarios, do you want to go forwards or backwards?
 
@@ -52,7 +54,9 @@ Bang Bang control
 
 The Robot only needed to move forwards when it was too far, and backwards when it was too close.
 
+[insert video] 
  
+
 .. code-block::python
 	if sonarDistance > targetDistance:
 

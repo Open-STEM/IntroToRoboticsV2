@@ -9,6 +9,11 @@ In the video, the left wheel is farther from the wall. If the robot is too far f
 
 The control law can be summed up like this --
 
+:math:`leftWheelEffort = defaultEffort + K_{p} * error`
+
+:math:`rightWheelEffort = defaultEffort - K_{p} * error`
+
+
 Using Proportional Control to drive straight
 --------------------------------------------
 

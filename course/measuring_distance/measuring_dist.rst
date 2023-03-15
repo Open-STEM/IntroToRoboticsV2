@@ -18,7 +18,9 @@ Distance measuring is a fundamental feature of Tesla's Autopilot software for se
 
 Tesla uses radars, a system using radio waves, for long-range sensing. A device, known as a transmitter, produces electromagnetic radio waves, which reflect back after hitting an object. Another device, known as a receiver, captures this reflected wave to calculate the distance of the object based on the wave's travel time and speed.
 
-[insert image]
+.. image:: media/tesla.jpeg
+  :width: 200
+  :alt: Alternative text
 
 Marine Echolocation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,7 +29,9 @@ Measuring distances isn't only important on land; it is important 20,000 leagues
 
 Similar to radars, sonar detects objects by transmitting ultrasonic waves and captures the reflected echoes. Based on the travel speed and time of the wave, the distance to the object can be calculated.
 
-[insert image]
+.. image:: media/marine.png
+  :width: 200
+  :alt: Alternative text
 
 Animal Echolocation
 ~~~~~~~~~~~~~~~~~~~~~~~~

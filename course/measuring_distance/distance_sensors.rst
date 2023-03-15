@@ -21,6 +21,10 @@ Lidar (Light Detection and Ranging), Sonar (Sound navigation and ranging), and R
 Using the Ultrasonic Sensor
 ------------------------------
 
+.. image:: media/setpointtarget.png
+  :width: 200
+  :alt: Alternative text
+
 We will be using an Ultrasonic Sensor which is one type of Reflective Sensor that uses Sonar to measure and calculate the distance. We have just one function for getting input from the ultrasonic sensor.
 
 .. code-block::python

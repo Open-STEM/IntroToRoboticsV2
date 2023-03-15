@@ -8,7 +8,7 @@ Getting the Robot to move
 Getting your XRP robot to move is pretty easy. On a basic level, all movement
 commands boil down to this one method:
 
-.. code-block::
+.. code-block::python
     
     drivetrain.set_effort(left_effort: float, right_effort: float);
 
