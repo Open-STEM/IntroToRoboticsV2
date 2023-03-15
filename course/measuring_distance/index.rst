@@ -20,3 +20,4 @@ At the end of this module, students will be able to:
 * Develop an autonomous wall-following program
 
 To complete this module, review and do the tasks outlined in each section, and successfully pass the module quiz at the end.
+
