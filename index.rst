@@ -59,6 +59,14 @@ ways that make it available to all.
    :caption: Measuring Distances
 
    course/measuring_distance/index
+   course/measuring_distance/Measuring_Distances
+   course/measuring_distance/Distance_Sensors
+   course/measuring_distance/Controlling_Behavior__Introduction
+   course/measuring_distance/Controlling_Behavior__BangBang
+   course/measuring_distance/Activity__Trains
+   course/measuring_distance/Controlling_Behavior__ProportionalControl
+   course/measuring_distance/Wall_Following
+   course/measuring_distance/Improving_Driving_Forwards
 
 .. toctree:: 
    :maxdepth: 1
