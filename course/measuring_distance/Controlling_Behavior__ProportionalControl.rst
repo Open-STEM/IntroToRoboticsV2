@@ -6,7 +6,11 @@ Updating Behaviors:
 That worked! But it seemed like the robot went too fast when it needed to go slow, see how it overshoots, then keeps going back and forth? It doesn't seem to stop, does it?
 
 
-//insert video
+.. video:: media/BangBang/BangBangVideo.mp4
+   :width: 500
+   :height: 300
+   :autoplay:
+   :nocontrols:
  
 
 How should we change that? 
@@ -83,7 +87,7 @@ The control law used here would be :math:`effort = error`.
 
  
 
-But the effort is capped at "1".  If :math:`error = 10`, then your effort would be too much, right? That is why in proportional control, you can scale down or scale up this control effort by an amount. This amount is called "the proportional constant" or :math:k_p.
+But the effort is capped at "1".  If :math:`error = 10`, then your effort would be too much, right? That is why in proportional control, you can scale down or scale up this control effort by an amount. This amount is called "the proportional constant" or :math:`k_p`.
 
  
 
@@ -91,9 +95,9 @@ If you scaled the effort down by 15, what would the effort be (at :math:`error =
 
  
 
-In this case, :math: 'k_p' would be :math:`\frac{1}{15}` , and new control law would be :math:`effort = \frac{error}{15}`, or
+In this case, :math:`k_p` would be :math:`\frac{1}{15}` , and new control law would be :math:`effort = \frac{error}{15}`, or
  
-.. math:: effort = k+p \cdot error
+.. math:: effort = k_p \cdot error
  
 
  
