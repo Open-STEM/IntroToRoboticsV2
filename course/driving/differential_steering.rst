@@ -43,7 +43,7 @@ Hey! We found out what the ratio between the wheel speeds is supposed to be if w
 
 But we know what the distance between the two wheels are. 
 
-.. image:: media/Screenshot 2023-03-07 142430.png
+.. image:: media/Screenshot2023-03-07142430.png
 
 If :math:`r_{bot}` is the distance between the two wheels, then
 
