@@ -51,7 +51,11 @@ ways that make it available to all.
  
    course/driving/index
    course/driving/effort_speed
+   course/driving/How_far_have_you_driven
+   course/driving/How_many_times_have_the_wheels_turned
    course/driving/differential_steering
+   course/driving/Calling_drive_functions
+   course/driving/waiting_for_button_input
 
 .. toctree:: 
    :maxdepth: 1

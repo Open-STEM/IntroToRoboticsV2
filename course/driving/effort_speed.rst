@@ -8,7 +8,7 @@ Getting the Robot to move
 Getting your XRP robot to move is pretty easy. On a basic level, all movement
 commands boil down to this one method:
 
-.. code-block::python
+.. code-block:: python
     
     drivetrain.set_effort(left_effort: float, right_effort: float);
 
@@ -56,7 +56,7 @@ Note3:
     to delete or comment out the drivetrain.set_effort(1.0, 1.0) line and save
     the program again.
 
-.. code:: Python
+.. code-block::python
 
     def main():
         while True:
@@ -74,16 +74,17 @@ in a few seconds!
 Afterward, place the robot on a ramp and run it again. Take notice of how
 the robot moves slower when on the ramp. Why does this happen?
 
-.. image:: RampAscend.png
+.. image:: media/RampAscend.png
 
 Ramp ascend
 
-.. image:: RampDescend.png
+.. image:: media/RampDescend.png
 
 Ramp descend
 
 Mini-Challenge: Climbing Slopes
 -------------------------------
+
 So if a robot drives slower up a ramp, then the natural question would
 be: how steep of a slope can the robot climb?
 

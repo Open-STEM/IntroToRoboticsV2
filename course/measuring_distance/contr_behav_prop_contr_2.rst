@@ -1,5 +1,5 @@
-Controlling Behavior: Proportional Control-2
-============================================
+Controlling Behavior: Proportional Control
+==========================================
 
 Updating Behaviors:
 -------------------
