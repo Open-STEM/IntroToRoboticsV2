@@ -47,11 +47,13 @@ Asking the robot about rotations
 To get the encoder ticks on the left motor, you can use 
 
 .. code-block:: python
+
     leftEncoderPosition = drivetrain.get_left_encoder_position()
 
 You can print the left encoder position to your computer using 
 
 .. code-block:: python 
+
     print(leftEncoderPosition)
 
 Challenge 1: Design Thinking
@@ -78,6 +80,7 @@ Call it getDistanceFromTicks( numberOfEncoderTicks ) because it gets the distanc
 once you have created the function, you can use it to find the distance a wheel has driven 
 
 .. code-block:: python
+
     leftEncoderPosition = drivetrain.get_left_encoder_position()
     rightEncoderPosition = drivetrain.get_right_encoder_position()
 

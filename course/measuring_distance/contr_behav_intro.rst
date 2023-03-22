@@ -22,12 +22,14 @@ Python Programming Note: If Statement
 An if statement will execute its inner code block if its specified condition is met. For example:
 
 .. code-block:: python
+
 	if True:
 	    print("Hello World!")
 
 The if statement above will print "Hello World!" because its condition is true.
 
 .. code-block:: python
+
 	if False:
 	    print("Hello World!")
 
@@ -35,6 +37,7 @@ The if statement above will print "Hello World!" because its condition is true.
 The if statement above will not print "Hello World!" because its condition is always false.
 
 .. code-block:: python
+
 	int i = 3;
 	if i < 5:
 	    print("Hello World!")

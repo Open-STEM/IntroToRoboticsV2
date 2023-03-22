@@ -58,6 +58,7 @@ The Robot only needed to move forwards when it was too far, and backwards when i
  
 
 .. code-block:: python
+
 	if sonarDistance > targetDistance:
 
 	 set a positive effort (move forwards)

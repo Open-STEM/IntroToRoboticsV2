@@ -25,6 +25,7 @@ Using the Ultrasonic Sensor
 We will be using an Ultrasonic Sensor which is one type of Reflective Sensor that uses Sonar to measure and calculate the distance. We have just one function for getting input from the ultrasonic sensor.
 
 .. code-block:: python
+
     sonar.get_distance()
     
 This function returns the distance, in cm, from the sensor to the nearest object.
