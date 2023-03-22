@@ -60,19 +60,90 @@ Documenting code snippets
 
 ``.. code-block:: programming_language`` is used to write a piece of code in your documentation. For example, including the following lines in your .rst file::
 
-      .. code-block::python
-        if sonarDistance > targetDistance:
+      .. code-block:: python
+      
+      if sonarDistance > targetDistance:
 
-         set a positive effort (move forwards)
+            set a positive effort (move forwards)
 
-        if sonarDistance < targetDistance:
+      if sonarDistance < targetDistance:
 
-         set a negative effort (move backwards)
+            set a negative effort (move backwards)
 
 would get you the following output:
 
-  .. code-block::python
-  
-        if sonarDistance > targetDistance:
-            
+  .. code-block:: python
+      
+      if sonarDistance > targetDistance:
+
+            set a positive effort (move forwards)
+
+      if sonarDistance < targetDistance:
+
+            set a negative effort (move backwards)
+
+
+
+Highlighting text
+---------------------------
+* use ``single asterisk``: (``*text*``) for making the text *italics*.
+* use ``double asterisks``: (``**text**``) for making the text **bold**.
+* use ``double backquotes``: (````text````) for ``highlighting`` the text. Highlight all filenames that have been mentioned as plain text in this documentation. For example: "Let us refer to the code in ``motors.py``." Here, in this plain text, the general rule is to highlight the filename.
+
+
+
+Inserting tables
+---------------------------
+
+Use::
+
+      .. list-table:: Title
+         :widths: 25 25 50
+         :header-rows: 1
+
+         * - Heading row 1, column 1
+           - Heading row 1, column 2
+           - Heading row 1, column 3
+         * - Row 1, column 1
+           -
+           - Row 1, column 3
+         * - Row 2, column 1
+           - Row 2, column 2
+           - Row 2, column 3
+
+This would output the following table:
+
+.. list-table:: Title
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Heading row 1, column 1
+     - Heading row 1, column 2
+     - Heading row 1, column 3
+   * - Row 1, column 1
+     -
+     - Row 1, column 3
+   * - Row 2, column 1
+     - Row 2, column 2
+     - Row 2, column 3
+     
+     
+Math Equations
+--------------------
+Use::
+
+      .. math::
+
+         (a + b)^2 = a^2 + 2ab + b^2
+
+         \pi * x = \frac{5}{17}
+
+This would output the following equation:
+
+.. math::
+
+   (a + b)^2 = a^2 + 2ab + b^2
+
+   \pi * x = \frac { 5 } { 17 }     # the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
+      
 
