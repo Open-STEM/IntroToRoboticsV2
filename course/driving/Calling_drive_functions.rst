@@ -3,7 +3,8 @@ Calling Drive Functions
 
 Here are functions that are built to make the robot go straight and turn
 
-.. code-block::python
+.. code-block:: python
+
     drivetrain.straight(distance: float, speed: float = 0.5, timeout: float = None) -> bool
     drivetrain.turn(turn_degrees: float, speed: float = 0.5, timeout: float = None) -> bool
 
@@ -14,7 +15,8 @@ Calling the Drive Functions:
 
 Similar to most of the code you've written so far in this section, we call these methods from inside of def main():, located within code.py:
 
-.. code-block::python
+.. code-block:: python
+
     def main():
         # Drive forwards 20 cm and then turn 90 degrees clockwise
         drivetrain.straight(20, 1)
@@ -45,7 +47,8 @@ Python Programming Note: For Loops
 
 Similar to the While loops we covered earlier, for loops are a special type of loop that are usually used to run a section of code a specified number of times. The syntax for a for loop is as follows:
 
-.. code-block::python
+.. code-block:: python
+
     for counter_name in range(number_of_loops):
         # Loop content goes here
 As a for loop cycles, "counter_name" becomes a variable equal to the number loop that is currently occurring, starting at zero. This means that on the third time running the loop content, counter_name = 2.
