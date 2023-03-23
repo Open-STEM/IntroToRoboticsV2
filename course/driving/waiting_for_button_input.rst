@@ -10,7 +10,8 @@ Using Button Inputs
 
 There are two buttons on the board from which we can get input, labeled as GP20 and GP21 respectively. As such, there are two functions we use to check if either one is being pressed:
 
-.. code-block::python
+.. code-block:: python
+    
     buttons.is_GP20_pressed()
     buttons.is_GP21_pressed()
 
@@ -20,9 +21,11 @@ Waiting for a button input
 --------------------------
 Since these functions return True if they are being pressed, and False if they aren't, waiting for a button press is as simple as:
 
-.. code-block::python
+.. code-block:: python
+    
     while not buttons.is_GP20_pressed():
         time.sleep(0.01)
+        
 The time.sleep statement is necessary in order to not overload the button pin. Checking the button 100 times a second is still more than enough precision for almost any application.
 
 Waiting for a button input allows us to start our program on command, which is a very convenient feature.
@@ -39,7 +42,8 @@ Using the Sample Code's Implementation
 --------------------------------------
 We have provided some sample code to handle the waiting for a button code. But first you have to tell Python to import that code into your program. Use the following line at the top of your program to import that code.
 
-.. code-block::python
+.. code-block:: python
+    
     from SampleCode.sample_miscellaneous import *
 
 This line gives everything in code.py access to everything in sample_miscellaneous.py, including wait_for_button().
@@ -47,7 +51,8 @@ This line gives everything in code.py access to everything in sample_miscellaneo
 It can be used very simply, by placing the call at the beginning of your def main():
 
 
-.. code-block::python
+.. code-block:: python
+    
     def main():
         wait_for_button()
         #

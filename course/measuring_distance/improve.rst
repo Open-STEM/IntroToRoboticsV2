@@ -5,6 +5,11 @@ In order to implement wall following, you could have used Proportional Control. 
 
 [insert video]
 
+.. raw::html
+
+	<video width="320" height="240" controls = ""> <src="../../_build/html/_static/improve.mp4" type="video/mp4"></video>
+
+
 In the video, the left wheel is farther from the wall. If the robot is too far from the wall, the left wheel needs to speed up.
 
 The control law can be summed up like this --

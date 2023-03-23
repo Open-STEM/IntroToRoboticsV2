@@ -56,7 +56,7 @@ Note3:
     to delete or comment out the drivetrain.set_effort(1.0, 1.0) line and save
     the program again.
 
-.. code-block::python
+.. code-block:: python
 
     def main():
         while True:
