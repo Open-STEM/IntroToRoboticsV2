@@ -6,14 +6,18 @@ Driving Straight
 
 Driving straight is pretty easy. The wheels just have to go the same distance.
 
-{insert video}
+.. raw:: html
+    <iframe width="560" height="315" src="https://youtu.be/NeNV5lUYcgo" frameborder="0" allowfullscreen></iframe>
+
 
 What if they don't go the same distance? 
 ----------------------------------------
 
 What happens if the left wheel goes slower than the right wheel?
 
-{insert video}
+.. raw:: html
+    <iframe width="560" height="315" src="https://youtu.be/kd2-mhI2CgE" frameborder="0" allowfullscreen></iframe>
+
 
 The robot goes in an arc. The wheels draw out 2 different circles with 2 different radii. The arc with the smaller radius (:math:`r1`, the white line) has a smaller circumference. That means the left wheel has driven a smaller distance. It has gone slower.
 

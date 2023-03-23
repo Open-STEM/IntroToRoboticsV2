@@ -33,9 +33,11 @@ Once you have your path written out informally, try converting that into instruc
 A Shapely Surprise
 ------------------
 Let's take the ideas we just exercised for the maze and do something a little simpler. Let's try to get the robot to drive in the shape of a square. You can choose how big you want the square to be; for this exercise it doesn't really matter. Follow the same steps as before, and write down the segments in pseudocode (words describing what the code will do informally) before translating that into actual code.
-
  
-[insert video]
+.. raw:: html
+    <iframe width="560" height="315" src="https://youtu.be/ERl_785Iss8" frameborder="0" allowfullscreen></iframe>
+
+
 XRP tracing a square
 
 You may notice that this code is pretty repetitive, consisting of the same two instructions 4 times. There's got to be a cleaner way of doing that, right?

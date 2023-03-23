@@ -74,11 +74,13 @@ in a few seconds!
 Afterward, place the robot on a ramp and run it again. Take notice of how
 the robot moves slower when on the ramp. Why does this happen?
 
-.. image:: media/RampAscend.png
+.. raw:: html
+    <iframe width="560" height="315" src="https://youtu.be/z6aIVpf3qN0" frameborder="0" allowfullscreen></iframe>
 
 Ramp ascend
 
-.. image:: media/RampDescend.png
+.. raw:: html
+    <iframe width="560" height="315" src="https://youtu.be/Zcr83kcO_Pk" frameborder="0" allowfullscreen></iframe>
 
 Ramp descend
 
