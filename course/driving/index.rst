@@ -22,10 +22,17 @@ Video Links:
 ------------
 
 https://youtu.be/Zcr83kcO_Pk
+
 https://youtu.be/z6aIVpf3qN0
+
 https://youtu.be/MMMMQEM0ZdA
+
 https://youtu.be/PboWbu-cuZU
+
 https://youtu.be/u-aMnayYO6c
+
 https://youtu.be/ERl_785Iss8
+
 https://youtu.be/kd2-mhI2CgE
+
 https://youtu.be/NeNV5lUYcgo
