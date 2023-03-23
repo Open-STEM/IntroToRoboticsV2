@@ -36,8 +36,7 @@ These are examples of encoders, where the wheel is divided into multiple section
 
 In the video below, the encoder has 60 clicks in a rotation.
 
-.. raw:: html
-    <iframe width="560" height="315" src="https://youtu.be/u-aMnayYO6c" frameborder="0" allowfullscreen></iframe>
+https://youtu.be/u-aMnayYO6c
 
 How many times did it rotate? how did you find this out? can you find how many degrees it has rotated each time it clicks from this?
 
