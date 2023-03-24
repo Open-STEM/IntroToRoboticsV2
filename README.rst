@@ -28,6 +28,8 @@ An example of the above headings can be seen in this image below:
 .. image:: headings.jpg
   :width: 800
   
+  An example of the above three headings
+  
 The code for the above image::
 
       Main Heading
@@ -52,6 +54,8 @@ An image is inserted by using the following code::
 
      .. image:: media/image1.jpg
         :width: 100
+        
+   This is the caption.
 
 This command will attach the image titled 'image1' with the '.jpg' extension and width 100, located in the folder titled 'media' relative to the current directory.
 
