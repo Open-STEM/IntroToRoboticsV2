@@ -147,3 +147,38 @@ This would output the following equation:
    \pi * x = \frac { 5 } { 17 }     # the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
       
 
+
+
+Styleguide
+----------
+
+Refer to the folders and files as Modules and Pages
+
+Get rid of the “indices and tables” section
+
+How do we introduce “challenge activities”? Other activities? Is there a difference?
+
+How do we ask questions? What are the different types of questions?  
+
+Add captions to important images 
+
+Put in links whenever other pages are linked. Open a new tab for a link
+
+Formatting lists -- 
+  numbered if they’re steps, bulleted otherwise
+  Always have the topic of the list or description of the list directly beforehand. Add colons.
+  No spaces between different list points or heading of the list and first list point
+  Indent sub-lists
+  If a numbered sub-list is below a numbered list, use letters
+
+Use \`\` \`\` to deal with embedded code.
+
+Use a sphinx “note” to refer to things about the course?
+
+Use a sphinx “reminder” to refer to things about the course?
+
+Add boxes in images when a part needs to be highlighted
+
+Add blocks for “Python Programming”. Find an appropriate name for python programming notes
+
+Bold important words
