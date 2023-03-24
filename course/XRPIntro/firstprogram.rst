@@ -18,7 +18,7 @@ start executing on the robot!
 
 Before we write any code though, there's a neat feature that will prove quite useful when testing your programs.
 
-..image:: serial.png
+.. image:: serial.png
 
 Click the ‘Serial’ button. If the robot is connected to the computer,
 this will allow you to view your robot’s logs on your computer while
