@@ -144,6 +144,6 @@ This would output the following equation:
 
    (a + b)^2 = a^2 + 2ab + b^2
 
-   \pi * x = \frac { 5 } { 17 }     # the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
+   \pi * x = \frac { 5 } { 17 }     % the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
       
 
