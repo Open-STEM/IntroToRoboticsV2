@@ -26,9 +26,7 @@ Headings
 An example of the above headings can be seen in this image below:
 
 .. image:: headings.jpg
-  :width: 800
-  
-  An example of the above three headings
+    :width: 800
   
 The code for the above image::
 
