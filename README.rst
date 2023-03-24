@@ -26,7 +26,7 @@ Headings
 An example of the above headings can be seen in this image below:
 
 .. image:: headings.jpg
-  :width: 800
+    :width: 800
   
 The code for the above image::
 
@@ -52,6 +52,8 @@ An image is inserted by using the following code::
 
      .. image:: media/image1.jpg
         :width: 100
+        
+   This is the caption.
 
 This command will attach the image titled 'image1' with the '.jpg' extension and width 100, located in the folder titled 'media' relative to the current directory.
 
@@ -144,7 +146,7 @@ This would output the following equation:
 
    (a + b)^2 = a^2 + 2ab + b^2
 
-   \pi * x = \frac { 5 } { 17 }     # the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
+   \pi * x = \frac { 5 } { 17 }     % the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
       
 
 
