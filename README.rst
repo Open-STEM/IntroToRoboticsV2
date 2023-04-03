@@ -4,6 +4,51 @@ Introduction to Robotics Curriculum
 
 A list of rules to follow while documenting a .rst file:
 
+Styleguide
+----------
+* Follow the appropriate `Headings`_ format.
+
+* Refer to the 'folders' as ``'Modules'`` and files as ``'Pages'`` in this documentation.
+
+* Add captions to important images. Checkout the `Inserting images`_ section to learn how to insert images. 
+
+* Write code snippets in boxes. Checkout the `Documenting code snippets`_ section. 
+
+* Put in links whenever other pages are linked. Open a new tab for a link.
+
+    Formatting lists --
+  
+    * Use numbered lists if they’re steps of a process/ algorithm, etc. Use bullet lists otherwise.
+    
+    * Always have the topic of the list or description of the list directly beforehand. Add colons.
+    
+    * No spaces between different list points or heading of the list and first list point.
+    
+    * Indent sub-lists.
+    
+    * If a numbered sub-list is below a numbered list, use letters.
+
+* Highlight text as per the importance. Checkout `Highlighting text`_ for more details.
+
+* Use a sphinx “note” to refer to things about the course?
+
+* Use a sphinx “reminder” to refer to things about the course?
+
+* Draw boxes in images when a part in the image needs to be highlighted.
+
+Pending tasks
+~~~~~~~~~~~~~~~~~
+
+* Remove the “indices and tables” section from index.rst
+
+* Introduce “challenge activities”? Other activities? Is there a difference?
+
+* How do we ask questions? What are the different types of questions?  
+
+* Add captions to important images 
+
+* Find an appropriate name for python programming notes
+
 Headings
 ------------
 
@@ -25,8 +70,10 @@ Headings
 
 An example of the above headings can be seen in this image below:
 
-.. image:: headings.jpg
+.. figure:: headings.jpg
     :width: 800
+    
+    The above three headings.
   
 The code for the above image::
 
@@ -50,7 +97,7 @@ Inserting images
 
 An image is inserted by using the following code::
 
-     .. image:: media/image1.jpg
+     .. figure:: media/image1.jpg
         :width: 100
         
    This is the caption.
@@ -148,39 +195,3 @@ This would output the following equation:
 
    \pi * x = \frac { 5 } { 17 }     % the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
       
-
-
-
-Styleguide
-----------
-
-Refer to the folders and files as Modules and Pages
-
-Get rid of the “indices and tables” section
-
-How do we introduce “challenge activities”? Other activities? Is there a difference?
-
-How do we ask questions? What are the different types of questions?  
-
-Add captions to important images 
-
-Put in links whenever other pages are linked. Open a new tab for a link
-
-Formatting lists -- 
-  numbered if they’re steps, bulleted otherwise
-  Always have the topic of the list or description of the list directly beforehand. Add colons.
-  No spaces between different list points or heading of the list and first list point
-  Indent sub-lists
-  If a numbered sub-list is below a numbered list, use letters
-
-Use \`\` \`\` to deal with embedded code.
-
-Use a sphinx “note” to refer to things about the course?
-
-Use a sphinx “reminder” to refer to things about the course?
-
-Add boxes in images when a part needs to be highlighted
-
-Add blocks for “Python Programming”. Find an appropriate name for python programming notes
-
-Bold important words
