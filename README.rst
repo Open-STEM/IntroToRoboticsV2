@@ -1,10 +1,10 @@
-IntroToRobotics - Style Guide
+IntroToRobotics 
 =================================
 Introduction to Robotics Curriculum
 
 A list of rules to follow while documenting a .rst file:
 
-Styleguide
+Style Guide
 ----------
 * Follow the appropriate `Headings`_ format.
 
