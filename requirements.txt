@@ -1,0 +1,3 @@
+sphinx_design == 0.4.1
+sphinxcontrib-youtube == 1.2.0
+sphinxcontrib-video == 0.1.1

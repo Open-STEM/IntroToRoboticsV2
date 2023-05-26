@@ -15,6 +15,9 @@ release = '2023.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    "sphinx_design",
+    "sphinxcontrib.youtube",
+    "sphinxcontrib.video",
 ]
 
 templates_path = ['_templates']
