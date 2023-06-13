@@ -1,11 +1,11 @@
 IntroToRobotics 
-=================================
+===============
 Introduction to Robotics Curriculum
 
 A list of rules to follow while documenting a .rst file:
 
 Style Guide
-----------
+-----------
 * Follow the appropriate `Headings`_ format.
 
 * Refer to the 'folders' as ``'Modules'`` and files as ``'Pages'`` in this documentation.
@@ -37,7 +37,7 @@ Style Guide
 * Draw boxes in images when a part in the image needs to be highlighted.
 
 Pending tasks
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 * Remove the “indices and tables” section from index.rst
 
@@ -50,22 +50,22 @@ Pending tasks
 * Find an appropriate name for python programming notes
 
 Headings
-------------
+--------
 
 * **Main Heading** - usually the title of the module, underline the main title using '=' operator. Make sure the number of '=' sign is more than the number of characters of the title. For example:: 
   
      Main Heading
-     ==============
+     ============
 
 * **Sub Heading** - underline the sub title using '-' operator. Make sure the number of '-' sign is more than the number of characters of the sub title. For example:: 
   
      Sub Heading
-     -------------
+     -----------
 
 * **Sub sub Heading** - underline the sub sub title using '~' operator. Make sure the number of '~' sign is more than the number of characters of the sub sub title. For example:: 
   
      Sub Sub Heading
-     ~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~
 
 
 An example of the above headings can be seen in this image below:
@@ -78,22 +78,22 @@ An example of the above headings can be seen in this image below:
 The code for the above image::
 
       Main Heading
-      ==============
+      ============
 
       Sample Text 1
 
       Sub Heading
-      -------------
+      -----------
 
       Sample Text 2
 
       Sub Sub Heading
-      ~~~~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~~
 
       Sample Text 3
 
 Inserting images
-------------------------
+----------------
 
 An image is inserted by using the following code::
 
@@ -105,7 +105,7 @@ An image is inserted by using the following code::
 This command will attach the image titled 'image1' with the '.jpg' extension and width 100, located in the folder titled 'media' relative to the current directory.
 
 Documenting code snippets
----------------------------
+-------------------------
 
 ``.. code-block:: programming_language`` is used to write a piece of code in your documentation. For example, including the following lines in your .rst file::
 
@@ -134,7 +134,7 @@ would get you the following output:
 
 
 Highlighting text
----------------------------
+-----------------
 * use ``single asterisk``: (``*text*``) for making the text *italics*.
 * use ``double asterisks``: (``**text**``) for making the text **bold**.
 * use ``double backquotes``: (````text````) for ``highlighting`` the text. Highlight all filenames that have been mentioned as plain text in this documentation. For example: "Let us refer to the code in ``motors.py``." Here, in this plain text, the general rule is to highlight the filename.
@@ -142,7 +142,7 @@ Highlighting text
 
 
 Inserting tables
----------------------------
+----------------
 
 Use::
 
@@ -178,7 +178,7 @@ This would output the following table:
      
      
 Math Equations
---------------------
+--------------
 Use::
 
       .. math::
@@ -195,3 +195,26 @@ This would output the following equation:
 
    \pi * x = \frac { 5 } { 17 }     % the fraction looks perfect in Readthedocs, there is some issue with viewing it in Github. 
       
+Using tabs
+==========
+An example usage of tabs and the youtube extension can be found below.
+
+.. code::
+
+  .. tab-set::
+
+      .. tab-item:: Label1
+          :sync: key1
+
+          .. code-block:: java
+
+              System.out.println("Hello world");
+
+      .. tab-item:: Label2
+          :sync: key2
+
+          .. code-block:: cpp
+
+              std::out << "hello world";
+
+  .. youtube:: dQw4w9WgXcQ

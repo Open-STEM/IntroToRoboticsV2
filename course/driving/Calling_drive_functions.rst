@@ -3,17 +3,30 @@ Calling Drive Functions
 
 Here are functions that are built to make the robot go straight and turn
 
-.. code-block:: python
+.. tab-set::
 
-    drivetrain.straight(distance: float, speed: float = 0.5, timeout: float = None) -> bool
-    drivetrain.turn(turn_degrees: float, speed: float = 0.5, timeout: float = None) -> bool
+    .. tab-item:: Python
+        :sync: key1
+
+        .. code-block:: python
+
+            drivetrain.straight(distance: float, speed: float = 0.5, timeout: float = None) -> bool
+            drivetrain.turn(turn_degrees: float, speed: float = 0.5, timeout: float = None) -> bool
+
+    .. tab-item:: Blockly
+        :sync: key2
+
+        .. code-block:: cpp
+
+            std::out << "hello world";
 
 These versions of the drive functions have a few extra features we didn't cover in the last section, such as the use of an optional timeout for if you anticipate the robot being unable to reach its target position for any reason.
 
 Calling the Drive Functions:
 ----------------------------
 
-Similar to most of the code you've written so far in this section, we call these methods from inside of def main():, located within code.py:
+Similar to most of the code you've written so far in this section, we call these methods from
+inside of def main():, located within code.py:
 
 .. code-block:: python
 
