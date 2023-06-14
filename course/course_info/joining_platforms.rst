@@ -8,7 +8,7 @@ Canvas Discussions and Discord for online support during this
 course.
 
 Discourse
--------
+---------
 The XRP Discourse server provides an easy 
 way to communicate your questions, concerns, ideas, and 
 conversations across the world (within this robotics program). 
