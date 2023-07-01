@@ -1,23 +1,34 @@
 Controlling Behavior: Introduction
 ==================================
 
-The main purpose of sensors is to introduce feedback into the system. During actuation, the state of the robot and its environment is continuously changing. Feedback informs the system how much the state has changed and how much more the state should change. Feedback introduces more control over autonomous behavior - a fundamental characteristic of all intelligent robots!
+Now that we know how to gain information about our environment through sensors, let's go over how we can use this information to control our robot's behavior.
 
-Incorporating Feedback
+
+Open Loop Control
 ----------------------
 
-Your sensors tell you where you are. Robots need to understand where they are in order to make decisions about where to go, and so do you. When driving, you can choose to go faster or slower. In order to know whether to go faster or slower you need to know the speed limit, the speed of your car, and the speed of the car in front of you.
+Before incorporating sensor information, let's go over a simple, open-loop controller. 
 
-.. image:: media/Tailgating.jpg
-  :width: 200
-  :alt: Alternative text
+All this means is that we are going to tell the robot to do something without checking to see if it actually did it.
 
-You can tell how fast you are using your speedometer, and you can see how fast the car in front of you is going. These are **sensor inputs**, and you want to take these into account when deciding whether to drive faster or slower. How a robot decides to move is called it's **control law**.
+For example, a washing machine is an open-loop controller. You tell it to wash your clothes for 30 minutes, but it doesn't actually check to see if your clothes are clean after 30 minutes. It just stops after 30 minutes.
 
-For the XRP robots, your control law will decide how much effort to use on each wheel depending on where you want to go and what sensor inputs you have. You're going to design your own robot control law.
+This is a useful controller for simpler processes like washing machines that don't need to adapt to their environment. However, for more complex processes like driving a car, we would want sensor information to acheive desired behavior. 
+
+Closed Loop Control
+----------------------
+
+Closed loop control is when we use sensor information to control our robot's behavior.
+
+For example, a self-driving car is a closed-loop controller. It uses sensor information to determine if it is in the correct lane, if it is too close to other cars, etc. and adjusts its behavior accordingly.
+
+In this lesson, we will be using closed-loop control to control our robot's behavior, specifically, we will cover bang-bang control. 
+
 
 Python Programming Note: If Statement
 -------------------------------------
+
+Before covering bang-bang control, let's go over a Python programming concept that we will be using in our control law: the if statement.
 
 An if statement will execute its inner code block if its specified condition is met. For example:
 
@@ -38,13 +49,60 @@ The if statement above will not print "Hello World!" because its condition is al
 
 .. code-block:: python
 
-	int i = 3;
+	int i = 3
 	if i < 5:
 	    print("Hello World!")
 
 The if statement above will print "Hello World!" because the variable "i" is less than 5, satisfying the condition. 
 
-You can imagine how this might be used in a control law.
+In simpler controllers, if statements can be used to define our "control law". A control law is a set of rules that determines how our robot should behave.
 
-Maybe it could be something like -- "If your sensors see that you are exactly where you need to be, you don't need to do anything!"
 
+Bang-Bang Control
+----------------------
+
+Bang-bang control is a simple closed-loop controller that uses a binary control signal (on or off) to control a process.
+
+For example, a thermostat is a bang-bang controller. If the temperature is below the desired temperature, the thermostat turns on the heater. If the temperature is above the desired temperature, the thermostat turns off the heater.
+
+In this lesson, we will be using bang-bang control to control our robot's behavior. Specifically, we will be using bang-bang control to "park" our XRP. 
+
+Parking Activity
+----------------------
+
+To help us define our control law, let's first built a decision table. For each of these scenarios, do you want to go forwards or backwards?
+
+.. list-table:: Title
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Sensor Input
+     - Action, (go forwards or backwards?)
+
+   * - You're a lot closer than **20 cm away**
+     -
+     	
+   * - You're a little closer than **20 cm away**
+     - 
+     
+   * - You're **20 cm away**
+     - 
+     
+   * - You're a little farther than **20 cm away**	
+     - 
+     
+   * - You're a lot farther than **20 cm away**
+     -   
+     
+Try implementing this table using if statements on your robot. 
+
+Design Thinking
+---------------------
+
+What are some problems you're running into?
+
+* Does the robot stop?
+* Does it move too fast?
+* Does it move too slow?
+
+Why are these problems happening, and how can they be solved?
