@@ -1,18 +1,20 @@
-Controlling Behavior: Proportional Control
+Controlling Behavior: Continuous Controllers
 ==========================================
 
-Updating Behaviors:
+Introduction:
 -------------------
 
-That worked! But it seemed like the robot went too fast when it needed to go slow, see how it overshoots, then keeps going back and forth? It doesn't seem to stop, does it?
+While the bang-bang controller works, there are issues that can be solved using another type of controller.
 
-[insert video]
+The bang-bang controller is a **discrete** controller. This means that the control input is either "on" or "off".
 
-How should we change that?
+A **continuous** controller is one that can have any value. For example, the speed of a car is a continuous controller. It can be 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, etc. It can be any number. It is not limited to "on" or "off".
+
+Continuous controllers are more difficult to implement, but they can be more effective and offer the user more control over their system. Let's try to implement one.
 
 Let's go back to our Control Law.
 
-.. list-table:: Title
+.. list-table:: 
    :widths: 50 50
    :header-rows: 1
 
@@ -34,9 +36,13 @@ Let's go back to our Control Law.
    * - You're a lot farther than **20 cm away**
      - Move Forward
 
-When we're closer, we don't have to go as fast, so let's change the table.
+Here, there are some obvious changes that we can make. For example, if we are very far away, it doesn't make sense to be moving at the same speed as if we were a little bit away. We should be moving faster.
 
-.. list-table:: Title
+This concept of "how far off" our robot is from the target is called the **error**. The error is the difference between the target and the current position. Many optimal control laws use the error to determine how the robot should react. 
+
+Let's try to visualize this with this new table:
+
+.. list-table:: 
    :widths: 50 50
    :header-rows: 1
 
@@ -63,41 +69,30 @@ When we're closer, we don't have to go as fast, so let's change the table.
 	(far from the target)
      -   
 
-.. image:: media/proportional_long1.jpg
-  :width: 200
-  :alt: Alternative text
+Now that we have a better idea of a better control law, let's try to realize it with a proportional controller. 
 
-.. image:: media/close1.jpg
-  :width: 200
-  :alt: Alternative text
+Proportional Control 
+--------------------
 
-.. image:: media/close2.jpg
-  :width: 200
-  :alt: Alternative text
-
-.. image:: media/proportional_long2.jpg
-  :width: 200
-  :alt: Alternative text
-
-This is called **proportional control**. The control effort is proportional to the error.
+A proportional controller is one multiplies the error by a constant **kp** to produce a control effort. 
 
 That means that if the error is large (you have to go a far distance), so is the control effort. If the error is negative (you have to go backwards), the control effort is in the other direction.
 
 *Remember -- the error is the distance between the point you are at, and the point you want to go to.*
 
-How do you find the distance on a number line like the one above? What is the error between "30" and "20"? How do you find it?
+Now, please note that there is no "exact" way to find kp. This is an aribtrary constant that you will have to tune to match the needs of your robot. 
 
-Implementing Proportional Control:
+That being said, thinking about how it is used in your program can help you find a kp value that works for you. For example, if you want to change the speed of your robot, then having a kp value of ~1000 is way too big and a value of ~0.001 is way too small.
+
+Like this, there are many logical steps that you can take which will help you find your kp value faster than trial and error.
+
+Other Continuous Controllers
 ----------------------------------
 
-If we set the control input **equal to** the **error**, we might be satisfied, right? After all, this would make the control become bigger when the error is bigger, and when the error is negative the control input would be negative. You would be telling the robot to drive backwards.
+You may have heard of a PID controller. This is a controller that uses the error, the integral of the error, and the derivative of the error to determine the control effort.
 
-The control law used here would be :math:`effort = error` 
+In a PID controller, the "P" stands for proportional, the "I" stands for integral, and the "D" stands for derivative.
 
-But the effort is capped at "1". If :math:`effort = 10`, then your effort would be too much, right? That is why in proportional control, you can **scale down** or **scale up** this control effort by an amount. This amount is called "the proportional constant" or :math:`k_{p}`.
+The integral and derivative are more advanced concepts that we will breifly touch on in this course. For now, all you need to know is that an integral is the sum of all the errors, and a derivative is the rate of change of the error.
 
-**If you scaled the effort down by 15, what would the effort be (at error = 10)?**
-
-In this case, :math:`k_{p}` would be :math:`\frac { 1 }{ 15 }`, and new control law would be :math:`effort = \frac { error }{ 15 }`, or :math:`effort = k_{p} * error`
-
-Try implementing this control law on your robot. How did it work? what could be done to improve it? Remember, :math:`k_{p}` can be set to any **number** you want.
+Therefore, for more complicated systems (like an autonomous car or bipedal robot), they can be very useful. However, for our relatively simple system, a proportional controller is more than enough.
