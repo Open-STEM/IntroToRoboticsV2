@@ -13,7 +13,5 @@ At the end of this module, you will be able to:
 * Recognize the characteristics of robots
 * Talk about the core disciplines that make up the field of robotics
 * Understand the components of the robot and how it is assembled
-* Have familiarity with the tools for programming
+* Build familiarity with the tools for programming the XRP's
 
-
-To finish this module, review and complete all tasks outlined in each section. Then successfully pass the module quiz at the end.

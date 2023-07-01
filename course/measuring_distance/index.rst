@@ -19,5 +19,4 @@ At the end of this module, students will be able to:
 * Use Proportional Feedback Control to control the robot's speed and achieve more accurate results.
 * Develop an autonomous wall-following program
 
-To complete this module, review and do the tasks outlined in each section, and successfully pass the module quiz at the end.
 
