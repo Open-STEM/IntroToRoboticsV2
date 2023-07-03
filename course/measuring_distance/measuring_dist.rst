@@ -30,6 +30,11 @@ Lidar (Light Detection and Ranging), Sonar (Sound navigation and ranging), and R
 
 One common example is an ultrasonic range finder, which emits sound waves and listens for the echo. The sensor then calculates the distance based on the time it takes for the sound wave to bounce back.
 
+.. tip::
+  Since an ultrasonic range finder assumes that the sound waves will bounce back from a flat wall, pointing the range finder at an angled surface can lead to inaccurate readings. Try pointing the range finder at different surfaces and see how the readings change.
+
+  How would you use this sensor to detect the distance to a wall that's angled? What information could you use about your environment to infer distances from angled/curved surfaces?
+
 Mechanical Sensors
 ------------------
 
@@ -51,11 +56,6 @@ While using the XRP, your main distance sensor will be an ultrasonic range finde
 This function returns the distance, in cm, from the sensor to the nearest object.
 
 
-Mini Challenge: Show distance
------------------------------
-Try writing code that checks the distance every 50 ms (0.05 seconds) and prints the output.
+.. note:: Try it out!
+  Try writing code that checks the distance every 50 ms (0.05 seconds) and prints the output.
 
-.. tip::
-  Since an ultrasonic range finder assumes that the sound waves will bounce back from a flat wall, pointing the range finder at an angled surface can lead to inaccurate readings. Try pointing the range finder at different surfaces and see how the readings change.
-
-  How would you use this sensor to detect the distance to a wall that's angled? What information could you use about your environment to infer distances from angled/curved surfaces?
