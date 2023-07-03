@@ -54,3 +54,8 @@ This function returns the distance, in cm, from the sensor to the nearest object
 Mini Challenge: Show distance
 -----------------------------
 Try writing code that checks the distance every 50 ms (0.05 seconds) and prints the output.
+
+.. tip::
+  Since an ultrasonic range finder assumes that the sound waves will bounce back from a flat wall, pointing the range finder at an angled surface can lead to inaccurate readings. Try pointing the range finder at different surfaces and see how the readings change.
+
+  How would you use this sensor to detect the distance to a wall that's angled? What information could you use about your environment to infer distances from angled/curved surfaces?
