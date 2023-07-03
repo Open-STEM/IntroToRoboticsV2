@@ -19,6 +19,8 @@ To move your XRP's arm, use this function;
 Other Robotics Manipulators
 -----------------------------------
 
+[insert a picture of the Spot robot with arm being used or a video of the Spot robot being used]
+
 The XRP arm is a very simple manipulator.
 
 Most robots have more complex manipulators, with more degrees of freedom.
