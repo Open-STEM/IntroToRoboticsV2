@@ -1,8 +1,5 @@
-Measuring distances using sensors
+Module Overview 
 ===================================
-
-Topic Description
------------------
 
 In this module students will:
 

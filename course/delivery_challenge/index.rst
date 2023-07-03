@@ -1,5 +1,5 @@
-Delivery Challenge
-==================
+Module Overview 
+===================================
 
 .. image:: deliveryRobotImage.png
 

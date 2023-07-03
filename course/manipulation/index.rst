@@ -1,8 +1,5 @@
-Manipulation
-============
-
-Topic Description
------------------
+Module Overview 
+===================================
 
 In this module students will:
 
