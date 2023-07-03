@@ -96,3 +96,5 @@ In a PID controller, the "P" stands for proportional, the "I" stands for integra
 The integral and derivative are more advanced concepts that we will breifly touch on in this course. For now, all you need to know is that an integral is the sum of all the errors, and a derivative is the rate of change of the error.
 
 Therefore, for more complicated systems (like an autonomous car or bipedal robot), they can be very useful. However, for our relatively simple system, a proportional controller is more than enough.
+
+Now that you have a better understanding of continuous controllers, let's try to implement one.
