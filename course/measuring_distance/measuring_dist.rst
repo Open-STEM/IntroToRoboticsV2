@@ -11,10 +11,6 @@ One example of this are bats which emit ultrasonic waves and listen to the echo 
 Similar to bats, whales also use echolocation to navigate underwater and locate food. They emit high-frequency clicking sounds using their nasal passages.
 
 .. image:: media/batEcholocation.jpg
-  :width: 200
-  :alt: Alternative text
-
-
 
 Robotic Echolocation
 ~~~~~~~~~~~~~~~~~~~~~
