@@ -1,5 +1,5 @@
 Module Overview 
-===================================
+===============
 
 In this module you will:
 
@@ -13,5 +13,5 @@ At the end of this module, you will be able to:
 * Recognize the characteristics of robots
 * Talk about the core disciplines that make up the field of robotics
 * Understand the components of the robot and how it is assembled
-* Build familiarity with the tools for programming the XRP's
+* Build familiarity with the tools for programming the XRP
 
