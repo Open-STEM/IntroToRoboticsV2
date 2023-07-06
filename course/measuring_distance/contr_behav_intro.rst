@@ -1,36 +1,35 @@
 Controlling Behavior: Introduction
 ==================================
 
-Now that we know how to gain information about our environment through sensors, let's go over how we can use this information to control our robot's behavior.
+Now that robot has information about it's environment (through the use of sensors), let's go over how we can use this information to control our robot's behavior.
 
 
 Open Loop Control
-----------------------
+-----------------
 
 Before incorporating sensor information, let's go over a simple, open-loop controller. 
 
 All this means is that we are going to tell the robot to do something without checking to see if it actually did it.
 
-For example, a washing machine is an open-loop controller. You tell it to wash your clothes for 30 minutes, but it doesn't actually check to see if your clothes are clean after 30 minutes. It just stops after 30 minutes.
+For example, an oven is an open-loop controller. If you set the cook time to 30 minutes, the oven will cook for 30 minutes regardless of whether or not the food is actually done.
 
-This is a useful controller for simpler processes like washing machines that don't need to adapt to their environment. However, for more complex processes like driving a car, we would want sensor information to acheive desired behavior. 
+This is a useful controller for simpler processes like ovens that don't need to adapt to their environment. However, for more complex processes like autonomous cars, we would want to incorporate sensor information to make sure that the car is actually doing what we want it to do.
 
 Closed Loop Control
-----------------------
+-------------------
 
 Closed loop control is when we use sensor information to control our robot's behavior.
 
 For example, a self-driving car is a closed-loop controller. It uses sensor information to determine if it is in the correct lane, if it is too close to other cars, etc. and adjusts its behavior accordingly.
 
-In this lesson, we will be using closed-loop control to control our robot's behavior, specifically, we will cover bang-bang control. 
+In this lesson, we will be using closed-loop control to control our robot's behavior, specifically, we will cover discrete control. 
 
-
-Python Programming Note: If Statement
+Python Programming Note: Conditionals
 -------------------------------------
 
-Before covering bang-bang control, let's go over a Python programming concept that we will be using in our control law: the if statement.
+A conditional is a statement in code where the program will only execute a certain block of code if a certain condition is met.
 
-An if statement will execute its inner code block if its specified condition is met. For example:
+In the context of on-off controllers, "if statements" are an important type of conditional and are shown in this example:
 
 .. code-block:: python
 
@@ -57,52 +56,11 @@ The if statement above will print "Hello World!" because the variable "i" is les
 
 In simpler controllers, if statements can be used to define our "control law". A control law is a set of rules that determines how our robot should behave.
 
+On-off Control
+--------------
 
-Bang-Bang Control
-----------------------
+On-off control is a simple closed-loop controller that uses a binary signal (on or off) to control a process.
 
-Bang-bang control is a simple closed-loop controller that uses a binary control signal (on or off) to control a process.
+For example, a thermostat is an on-off controller. If the temperature is below the target temperature, the thermostat turns on the heater. If the temperature is above the target temperature, the thermostat turns off the heater.
 
-For example, a thermostat is a bang-bang controller. If the temperature is below the desired temperature, the thermostat turns on the heater. If the temperature is above the desired temperature, the thermostat turns off the heater.
-
-In this lesson, we will be using bang-bang control to control our robot's behavior. Specifically, we will be using bang-bang control to "park" our XRP. 
-
-Parking Activity
-----------------------
-
-To help us define our control law, let's first built a decision table. For each of these scenarios, do you want to go forwards or backwards?
-
-.. list-table:: Title
-   :widths: 50 50
-   :header-rows: 1
-
-   * - Sensor Input
-     - Action, (go forwards or backwards?)
-
-   * - You're a lot closer than **20 cm away**
-     -
-     	
-   * - You're a little closer than **20 cm away**
-     - 
-     
-   * - You're **20 cm away**
-     - 
-     
-   * - You're a little farther than **20 cm away**	
-     - 
-     
-   * - You're a lot farther than **20 cm away**
-     -   
-     
-Try implementing this table using if statements on your robot. 
-
-Design Thinking
----------------------
-
-What are some problems you're running into?
-
-* Does the robot stop?
-* Does it move too fast?
-* Does it move too slow?
-
-Why are these problems happening, and how can they be solved?
+In this lesson, we will be using on-off control to control our robot's behavior. Specifically, we will use an on-off controller to "standoff" our robot from an object.

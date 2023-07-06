@@ -22,9 +22,8 @@ Now, we need to define our proportional gain.
 
     Therefore, a good starting kp value would be 0.05. 
 
-Then, we need to calculate our control signal. Remember, the control signal is the product of the proportional gain and the error.
 
-Finally, we need to set the speed of the XRP to the control signal.
+Finally, we need to set the speed of the XRP to our error times kp.
 
 This is an example program that implements a proportional controller. 
 

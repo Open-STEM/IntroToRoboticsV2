@@ -1,100 +1,47 @@
 Controlling Behavior: Continuous Controllers
-==========================================
+============================================
 
 Introduction:
--------------------
+-------------
 
-While the bang-bang controller works, there are issues that can be solved using another type of controller.
+While the on-off controller works, there are issues that can be solved using another type of controller.
 
-The bang-bang controller is a **discrete** controller. This means that the control input is either "on" or "off".
+The on-off controller is a **discrete** controller. This means that the controller has discrete states. It can be "on" or "off". It cannot be "half on" or "half off".
 
-A **continuous** controller is one that can have any value. For example, the speed of a car is a continuous controller. It can be 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, etc. It can be any number. It is not limited to "on" or "off".
+A **continuous** controller is one that can have any value. For example, the speed of a car is a continuous controller. It is not limited to "on" or "off".
 
-Continuous controllers are more difficult to implement, but they can be more effective and offer the user more control over their system. Let's try to implement one.
+Continuous controllers are more effective and offer the user more control over their system, but are also easier to implement. 
 
-Let's go back to our Control Law.
+Basic Definitions + Steps of a Proportional Controller
+------------------------------------------------------
 
-.. list-table:: 
-   :widths: 50 50
-   :header-rows: 1
+A proportional controller is the simplest type of continuous controller. It is also known as a P controller. 
 
-   * - Sensor Input
-     - Action
+Before implementing one, we need to define some terms and steps. 
 
-   * - You're a lot closer than **20 cm away**
-     - Move Back
-     	
-   * - You're a little closer than **20 cm away**
-     - Move Back
-     
-   * - You're **20 cm away**
-     - No Need to Move
-     
-   * - You're a little farther than **20 cm away**	
-     - Move Forward
-     
-   * - You're a lot farther than **20 cm away**
-     - Move Forward
+**Target Value** - The value that you want to go to. In this example, let's set our target value to 5 cm
 
-Here, there are some obvious changes that we can make. For example, if we are very far away, it doesn't make sense to be moving at the same speed as if we were a little bit away. We should be moving faster.
+**Error** - The difference between the target value and the actual value. For example, if you want to go to 5 cm but you are currently at 3 cm, then the error is 2 cm.
 
-This concept of "how far off" our robot is from the target is called the **error**. The error is the difference between the target and the current position. Many optimal control laws use the error to determine how the robot should react. 
+**Control Effort** - The value that the controller outputs.
 
-Let's try to visualize this with this new table:
+**kp** - The constant that you scale the error by to get the control effort. For example, if you want to go to 5 cm but you are currently at 3 cm, then the error is 2 cm. If **kp** is 0.5, then the control effort is 1 (0.5 * 2 cm).
 
-.. list-table:: 
-   :widths: 50 50
-   :header-rows: 1
+Now that we have defined some terms, let's go over the steps to implement a continuous controller.
 
-   * - Sensor Input
-     - Action, (go forwards or backwards? Fast or slow?)
+1.  Define your target value 
+2.  Find the error 
+3.  Multiply the error by a constant **kp** to get the control effort 
+4.  Feed the control effort into your system
 
-   * - You're a lot closer than **20 cm away**
-   	(far away from the target)
-     -
-     	
-   * - You're a little closer than **20 cm away**
-   	(close to the target)
-     - 
-     
-   * - You're **20 cm away**
-   	(at the target)
-     - 
-     
-   * - You're a little farther than **20 cm away**
-   	(close to the target)
-     - 
-     
-   * - You're a lot farther than **20 cm away**
-	(far from the target)
-     -   
-
-Now that we have a better idea of a better control law, let's try to realize it with a proportional controller. 
-
-Proportional Control 
+Tips on finding "kp"
 --------------------
 
-A proportional controller is one multiplies the error by a constant **kp** to produce a control effort. 
+Finding the right value for **kp** is a bit tricky. If **kp** is too small, then the system will not respond fast enough. If **kp** is too large, then the system will overshoot the target value and oscillate around it.
 
-That means that if the error is large (you have to go a far distance), so is the control effort. If the error is negative (you have to go backwards), the control effort is in the other direction.
+When first finding a **kp** value, you want to "scale" an expected range of errors into an acceptable control signal. 
 
-*Remember -- the error is the distance between the point you are at, and the point you want to go to.*
+For example, if your expected error ranges from 0-40 but your control signal ranges from 0-1, a "good" starting kp value would be 0.025 (1/40).\
 
-Now, please note that there is no "exact" way to find kp. This is an aribtrary constant that you will have to tune to match the needs of your robot. 
+From there, you can adjust the kp value to get the desired response after testing. 
 
-That being said, thinking about how it is used in your program can help you find a kp value that works for you. For example, if you want to change the speed of your robot, then having a kp value of ~1000 is way too big and a value of ~0.001 is way too small.
-
-Like this, there are many logical steps that you can take which will help you find your kp value faster than trial and error.
-
-Other Continuous Controllers
-----------------------------------
-
-You may have heard of a PID controller. This is a controller that uses the error, the integral of the error, and the derivative of the error to determine the control effort.
-
-In a PID controller, the "P" stands for proportional, the "I" stands for integral, and the "D" stands for derivative.
-
-The integral and derivative are more advanced concepts that we will breifly touch on in this course. For now, all you need to know is that an integral is the sum of all the errors, and a derivative is the rate of change of the error.
-
-Therefore, for more complicated systems (like an autonomous car or bipedal robot), they can be very useful. However, for our relatively simple system, a proportional controller is more than enough.
-
-Now that you have a better understanding of continuous controllers, let's try to implement one.

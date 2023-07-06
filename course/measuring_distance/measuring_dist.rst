@@ -4,25 +4,23 @@ Measuring Distances
 Animal Echolocation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To understand why we would want to be able to measure distances, let's look at how animals use distance measuring to navigate their environment.
+Information about our environment helps our robots perform complex tasks such as obstacle avoidance, navigation, and path planning. 
 
-One example of this are bats which emit ultrasonic waves and listen to the echo to determine the distance of objects. This is called echolocation. Bats use echolocation to navigate through dark caves and find food where animals like bats emit high-frequency sound waves using their mouths. They listen to the echo of the sound waves bouncing back from the environment with their highly sensitive ears, allowing them to determine the size, shape, and texture of objects.
-
-Similar to bats, whales also use echolocation to navigate underwater and locate food. They emit high-frequency clicking sounds using their nasal passages.
+Similarly, animals like bats have evolved to use processes like echolocation which allow them to navigate through dark caves and find food where animals like bats emit high-frequency sound waves using their mouths. They listen to the echo of the sound waves bouncing back from the environment with their highly sensitive ears, allowing them to determine the size, shape, and texture of objects.
 
 .. image:: media/batEcholocation.jpg
 
 Robotic Echolocation
 ~~~~~~~~~~~~~~~~~~~~~
 
-Just like bats and other animals, robots have evolved to have their own distance sensors which can give the robot more information about where it is relative to its environment. This allows the robot to make more informed decisions about how to navigate its environment.
+Just like bats, robots have evolved to have their own distance sensors which can give the robot more information about where it is relative to its environment. This allows the robot to make more informed decisions about how to navigate its environment.
 
 So, what are some sensors that allow you to measure distances?
 
 Reflective sensors
 ------------------
 
-Lidar (Light Detection and Ranging), Sonar (Sound navigation and ranging), and Radar (Radio Detection and Ranging) all follow the same principle. These sensors all have one transmitter that "sends" a signal and a receiver that "listens" for the signal that was sent out. 
+Lidar (Light Detection and Ranging), Sonar (Sound Navigation and Ranging), and Radar (Radio Detection and Ranging) all follow the same principle. These sensors all have one transmitter that "sends" a signal and a receiver that "listens" for the signal that was sent out. 
 
 One common example is an ultrasonic range finder, which emits sound waves and listens for the echo. The sensor then calculates the distance based on the time it takes for the sound wave to bounce back.
 
@@ -34,16 +32,18 @@ One common example is an ultrasonic range finder, which emits sound waves and li
 Mechanical Sensors
 ------------------
 
-Another type of sensor that can indirectly inform the robot about distance are mechanical sensors like limit switches. These sensors operate by physically touching an object and can be used to detect when a robot has reached a certain point in its environment.
+Another type of sensor that can indirectly inform the robot about distance are mechanical sensors such as limit switches. These sensors operate by physically touching an object and can be used to detect when a robot has reached a certain point in its environment.
 
-The way that these sensors work is that they have a small metal piece that is pushed in when the switch is pressed. This completes a circuit and allows the robot to know that the switch has been pressed. 
+These sensors work by completing a circuit, either using magnets or physical force. 
+
+Completion of the circuit informs the robot that a certain has taken place. For example, a limit switch can be used to detect when a robot has reached the end of a track.
 
 Using the Ultrasonic Sensor
 ---------------------------
 
 .. image:: media/setpointtarget.png
 
-While using the XRP, your main distance sensor will be an ultrasonic range finder. Here is the method call to get the distance from the sensor:
+While using the XRP, your distance sensor will be an ultrasonic range finder. Here is the method call to get the distance from the sensor:
 
 .. code-block:: python
 
