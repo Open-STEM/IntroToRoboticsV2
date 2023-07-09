@@ -50,11 +50,12 @@ ways that make it available to all.
    :caption: Robot Driving
  
    course/driving/index
-   course/driving/effort_speed
-   course/driving/How_far_have_you_driven
-   course/driving/How_many_times_have_the_wheels_turned
+   course/driving/understanding_your_robots_drivetrain
+   course/driving/basic_robot_driving
+   course/driving/driving_a_distance
+   course/driving/encoders
    course/driving/differential_steering
-   course/driving/Calling_drive_functions
+   course/driving/calling_drive_functions
    course/driving/waiting_for_button_input
 
 .. toctree:: 
