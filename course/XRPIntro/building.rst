@@ -10,8 +10,60 @@ by a step by step set of written instructions below.
 
 .. youtube:: G7gfPi7XHuA
 
+|
+|
+
 The XRP kit
 ===========
+
+The XRP kit contains all the parts you need to assemble and use your robot.
+You only need to supply 4 AA Batteries (preferably rechargeable) and a micro USB
+cable to connect your computer to the robot. The contents of the kit are shown
+to help you identify the parts during assembly.
+
+**Electronics parts**
+
+    .. image:: media/Assembly/electronics_parts.jpeg
+        :width: 200
+        :alt: Electronics parts background
+
+**Robot controller**
+
+    .. image:: media/Assembly/robot_controller.jpeg
+        :width: 200
+        :alt: Robot controller circuit board
+
+**Motors and cables**
+
+    .. image:: media/Assembly/motors_and_cables.jpeg
+        :width: 200
+        :alt: Robot drive motors and cablese
+
+**Battery case**
+
+    .. image:: media/Assembly/battery_case.jpeg
+        :width: 200
+        :alt: Battery case for AA cells
+
+**Sensor cables**
+    .. image:: media/Assembly/sensor_cables.jpeg
+        :width: 200
+        :alt: Cables for rangefinder and line follower sensors
+
+**Tires (o-rings)**
+    .. image:: media/Assembly/tires.jpeg
+        :width: 200
+        :alt: O-rings to be used as tires over the wheels
+
+**Servo motor**
+    .. image:: media/Assembly/servo.jpeg
+        :width: 200
+        :alt: Servo motor for the robot arm
+
+**Casters**
+    .. image:: media/Assembly/casters.jpeg
+        :width: 200
+        :alt: Nylon balls to use as front wheel casters
 
 Inserting the casters into the chassis
 ======================================
