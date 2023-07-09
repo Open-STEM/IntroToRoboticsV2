@@ -50,11 +50,12 @@ ways that make it available to all.
    :caption: Robot Driving
  
    course/driving/index
-   course/driving/effort_speed
-   course/driving/How_far_have_you_driven
-   course/driving/How_many_times_have_the_wheels_turned
+   course/driving/understanding_your_robots_drivetrain
+   course/driving/basic_robot_driving
+   course/driving/driving_a_distance
+   course/driving/encoders
    course/driving/differential_steering
-   course/driving/Calling_drive_functions
+   course/driving/calling_drive_functions
    course/driving/waiting_for_button_input
 
 .. toctree:: 
@@ -78,10 +79,10 @@ ways that make it available to all.
    :caption: Following Lines
    
    course/line_following/index
-   course/line_following/reflectsens
-   course/line_following/onoffcontrol
-   course/line_following/pcontrol
-   course/line_following/pcontrol2s
+   course/line_following/using_the_reflectance_sensor
+   course/line_following/on_off_control
+   course/line_following/proportional_control
+   course/line_following/proportional_control_with_two_sensors
    course/line_following/sumo
 
 .. toctree:: 

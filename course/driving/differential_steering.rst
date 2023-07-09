@@ -6,7 +6,7 @@ Driving Straight
 
 Driving straight is pretty easy. The wheels just have to go the same distance.
 
-https://youtu.be/NeNV5lUYcgo
+.. youtube:: NeNV5lUYcgo
 
 
 What if they don't go the same distance? 
@@ -14,34 +14,39 @@ What if they don't go the same distance?
 
 What happens if the left wheel goes slower than the right wheel?
 
-https://youtu.be/kd2-mhI2CgE
+.. youtube:: kd2-mhI2CgE
 
-
-The robot goes in an arc. The wheels draw out 2 different circles with 2 different radii. The arc with the smaller radius (:math:`r1`, the white line) has a smaller circumference. That means the left wheel has driven a smaller distance. It has gone slower.
-
- 
+The robot goes in an arc. The wheels draw out 2 different circles with 2
+different radii. The arc with the smaller radius (:math:`r_1`, the white line)
+has a smaller circumference. That means the left wheel has driven a smaller
+distance. It has gone slower.
 
 How would you drive in an arc with a given radius?
 --------------------------------------------------
-We know the wheels trace out arcs when we make the wheels go at different speeds, but how do we decide what the wheel speeds should be?
+We know the wheels trace out arcs when we make the wheels go at different
+speeds, but how do we decide what the wheel speeds should be?
 
 What do we know?
 ----------------
 
-Let us start with what we know about the two arcs, and the arc we want the center of the robot to go through. 
+Let us start with what we know about the two arcs, and the arc we want the
+center of the robot to go through. 
 
   
-The first thing we can say about any circle is that the radius is proportional to the circumference. This means that the inner and outer arc lengths are proportional to the inner and outer radii, or 
+The first thing we can say about any circle is that the radius is proportional
+to the circumference. This means that the inner and outer arc lengths are
+proportional to the inner and outer radii, or 
 
-.. math:: \frac{leftWheelDistance}{rightWheelDistance} = \frac{r1}{r2}
+.. math:: 
+    
+    \frac{\text{left wheel distance}}{\text{right wheel distance}} = \frac{r_1}{r_2}
 
-This is the same as saying that
+This means that the *ratio* between the wheel speeds is equal to
+:math:`\frac{r_1}{r_2}`.
 
-
-.. math:: ratioBetweenWheelSpeeds = \frac{r1}{r2}
-
-
-Hey! We found out what the ratio between the wheel speeds is supposed to be if we know the two radii. But how do we find what the two radii are? We only know what we want the radius of the orange circle to be.
+Hey! We found out what the ratio between the wheel speeds is supposed to be if
+we know the two radii. But how do we find what the two radii are? We only know
+what we want the radius of the orange circle to be.
 
 But we know what the distance between the two wheels are. 
 
@@ -49,44 +54,50 @@ But we know what the distance between the two wheels are.
 
 If :math:`r_{bot}` is the distance between the two wheels, then
 
-.. math:: r_1 = r_{desired} - \frac{r_{bot}}{2} 
+.. math:: 
+    
+    r_1 = r_{desired} - \frac{r_{bot}}{2} 
 
 since r1 is less than the desired radius, and
 
-.. math:: r_2 = r_{desired} + \frac{r_{bot}}{2}
+.. math:: 
+    
+    r_2 = r_{desired} + \frac{r_{bot}}{2}
  
-
- 
-
-We found out the radii of the circles we want the left and right wheels to trace, and we know how to find the ratio between the wheel speeds from that. 
+We found out the radii of the circles we want the left and right wheels to
+trace, and we know how to find the ratio between the wheel speeds from that. 
 
 Remember:  
-.. math:: ratioBetweenWheelSpeeds = \frac{r1}{r2}
+
+.. math:: 
+  
+    \text{ratio between wheel speeds} = \frac{r_1}{r_2}
 
 
 Putting them together, we get,
 
-.. math:: ratioBetweenWheelSpeeds = \frac{leftWheelSpeed}{rightWheelSpeed} = \frac{r_{desired} - \frac{r_{bot}}{2}}{r_{desired} + \frac{r_{bot}}{2}}
+.. math:: 
+    
+    \text{ratio between wheel speeds} = \frac{r_{desired} - \frac{r_{bot}}{2}}{r_{desired} + \frac{r_{bot}}{2}}
 
-Try it yourself
----------------
+.. admonition:: Try it out
 
-Try it yourself! Make your robot drive in a circle. Choose the radius of the circle to be whatever you want! 
+    Write code to make the robot drive in a circle. Use the :code:`set_speed`
+    function, and use a speed of 5 cm per second for the left wheel speed. 
+    Use the ratio you calculated to find out what the right wheel speed should 
+    be (multiply 5 by the ratio)
 
-  What will you set your wheel efforts to? Does it drive in a circle?
-
-  What happens if you set the wheel efforts to half of what you decided in part a? 
-
-  What happens if you flip the wheel efforts (set the left wheel effort to what you decided as the right wheel effort and vice-versa)?
+    Now try using 5 for the right wheel speed, and use the ratio for the left 
+    wheel. What happened?
 
 Additional challenges 
 ---------------------
- 
 
-Try to make the robot do a point turn! What is the radius of the circle that you want it to drive in then? 
-  (Try drawing the robot and the point you want it to turn around. What can you infer about it then?)
+Try to make the robot do a point turn! What is the radius of the circle that you
+want it to drive in then? 
 
-Try and make the robot turn around one of the wheels. What is the new desired radius?
+Try and make the robot turn around one of the wheels. What is the new desired
+radius?
 
 Try making the robot drive backwards in an arc
 

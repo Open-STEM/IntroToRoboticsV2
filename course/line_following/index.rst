@@ -1,17 +1,16 @@
-Navigation and Line Following Overview
-======================================
-Topic Description
------------------
+Module Overview
+===============
+
 In this module students will:
 
-* Acquire the basics of robot navigation
-* Learn to use the reflectance sensor 
-* Write a quick program for Robot line following
+* Understand the task of following a line with the robot
+* Learn to use the reflectance sensor to detect the line
+* Write a simple program for line following
+* Enhance the simple program with better sensor measurements and calculations to
+  follow the line more smoothly.
 
 At the end of this module, students will be able to:
 
-* Discuss the robot navigation concept
+* Discuss robot navigation concepts with their classmates
 * Get their robot to follow a line 
 * Develop simple sensor logic control for robot decision making 
-
-To complete this module, review and do the tasks outlined in each section, and successfully pass the module quiz at the end.
