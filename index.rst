@@ -65,11 +65,10 @@ ways that make it available to all.
 
    course/measuring_distance/index
    course/measuring_distance/measuring_dist
-   course/measuring_distance/distance_sensors
    course/measuring_distance/contr_behav_intro
-   course/measuring_distance/contr_behav_bang_bang
    course/measuring_distance/activity_trains
    course/measuring_distance/contr_behav_prop_contr_2
+   course/measuring_distance/activity_trains_prop
    course/measuring_distance/wall_following
    course/measuring_distance/improve
 
@@ -92,6 +91,7 @@ ways that make it available to all.
    :hidden:
 
    course/manipulation/index
+   course/manipulation/intro
 
 .. toctree:: 
    :maxdepth: 1
