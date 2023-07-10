@@ -165,9 +165,11 @@ Once they are installed, the casters should rotate freely.
 Inserting the robot controller into the chassis (2:13)
 ------------------------------------------------------
 
-If you look at the connectors on the edge of the controller board labeled "Line", "extra", "qwiik", and "range"
-have very small pieces of tape covering the openings. Remove the tape from all four connectors before inserting
-the board in the chassis.
+.. note::
+ 
+    If you look at the connectors on the edge of the controller board labeled "Line", "extra", "qwiik", and "range"
+    have very small pieces of tape covering the openings. Remove the tape from all four connectors before inserting
+    the board in the chassis.
 
 Insert the robot controller circuit board into the chassis as shown in the following picture.
 Observe the orientation of the board where the battery connector (5) istowards the back of the
