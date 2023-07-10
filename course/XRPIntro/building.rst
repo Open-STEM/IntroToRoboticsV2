@@ -186,6 +186,9 @@ from the top of this page.
 
 Adding the motors
 -----------------
+The red hobby motors supplied with the kit include encoders (sensors to measure wheel rotation) to
+make it easy to program the robot to drive for specific distances and speeds. This will give your
+robots more control and accuracy as your are writing progams to operate it.
 
 Putting the tires onto the wheels (2:30)
 ----------------------------------------
@@ -194,6 +197,11 @@ The tires are rubber o-rings that slip into the groove on the outside rim of the
 the o-ring to get it to move into place. These will provide friction when the robot is driving,
 especially on smooth surfaces.
 
+    .. image:: media/Assembly/tires_on_wheels.jpeg
+        :width: 300
+        :alt: Photo of one tire installed and one on top of the wheel
+
+
 Putting the wheels onto the motors (2:47)
 -----------------------------------------
 
@@ -201,6 +209,14 @@ The wheels press fit onto the white motor shafts. Notice that the motor shafts h
 that correspond to the flat edges in the center of the wheel. The wheel is pressed over the
 motor shaft so that the center part of the wheel that sticks out is closest to the motor body and
 that the wheel is pressed all the way onto the motor shaft.
+
+    .. image:: media/Assembly/wheel_and_motor.jpeg
+        :width: 200
+        :alt: The wheel and motor showing the shaft flat sides and the corresponding wheel shape
+
+    .. image:: media/Assembly/wheel_mounted.jpeg
+        :width: 200
+        :alt: The wheels mounted on the motors
 
 Connecting the motor cables to the motors (3:02)
 ------------------------------------------------
@@ -214,6 +230,10 @@ The wider connector on the cable is inserted into the motor. Notice that pins (w
 connector are closer to one side than the other. Similarly, the holes on the connector attached to the
 cable are closer to one side. 
 
+    .. image:: media/Assembly/cables_on_motors.jpeg
+        :width: 200
+        :alt: The cables attach to the motors by inserting the connectors
+
 Installing the motors into the chassis (3:17)
 ---------------------------------------------
 
@@ -221,9 +241,15 @@ The motors snap into the chassis from the bottom once the wheels and cables are 
 is oriented so that the wheel goes through the slot on the chassis as shown in the picture.
 Ideally you should push the wires from the motor through the opening in the chassis to the top of the
 chassis so they can be attached to the robot controller. Then seat the end of the motor opposite the
-cable first, then snap the wheel side of the motor into place. Repeat for both motors.
+cable end, then snap the wheel side of the motor into place. Repeat for both motors.
 
+    .. image:: media/Assembly/motor_half_installed.jpeg
+        :width: 200
+        :alt: Motor is inserted from the cable end first
 
+    .. image:: media/Assembly/motor_fully_installed.jpeg
+        :width: 200
+        :alt: Motor is fully seated in the chassis
 
 Connecting the motor cables to the robot controller (3:50)
 ----------------------------------------------------------
@@ -231,9 +257,29 @@ Connecting the motor cables to the robot controller (3:50)
 The motor cables are connected to the white connectors on the side of the chassis labeled Motor L and Motor R
 for the left and right motor cables.
 
+    .. image:: media/Assembly/left_motor_cable.jpeg
+        :width: 200
+        :alt: Left motor cable inserted in the controller board
+
+    .. image:: media/Assembly/right_motor_cable.jpeg
+        :width: 200
+        :alt: Right motor cable inserted in the controller board
+
 Installing the battery pack (3:59)
 ----------------------------------
+The battery pack is installed by:
 
+1. Inserting the cable through the cutout in the battery pack area in the chassis.
+2. Pushing the edge of the battery pack against the fingers in the chassis which hold it in place.
+3. Push the battery pack in place into the robot chassis so that it is full seated.
+
+    .. image:: media/Assembly/battery_pack_cable.jpeg
+        :width: 200
+        :alt: Cable inserted through the hole before inserting battery pack
+
+    .. image:: media/Assembly/battery_pack_inserted.jpeg
+        :width: 200
+        :alt: Battery pack being inserted into the chassis.
 
 Adding the battery cover (4:15)
 -------------------------------
@@ -241,6 +287,14 @@ Adding the battery cover (4:15)
 The battery cover is very easy to install, just line up the two tabs on the battery cover with the two
 slots in the chassis just outside of the battery case. Then the clip snaps into place as you push the
 battery cover into place.
+
+    .. image:: media/Assembly/battery_cover_pegs.jpeg
+        :width: 200
+        :alt: Battery cover tabs inserting into the chassis slots
+    
+    .. image:: media/Assembly/battery_cover_all.jpeg
+        :width: 200
+        :alt: Battery cover fully seated waiting to be snapped into place
 
 Adding the Line Following Sensor
 --------------------------------
@@ -251,12 +305,36 @@ reflected brightness.
 
 Connecting the cable to the line follower (4:32)
 ------------------------------------------------
+The sensor cable is connected to the line following (reflectance) sensor as shown in the picture
+below. Be sure to observe the order and color of the wires connecting to the sensor. The connectors
+simply push over the sensor pins. Be sure that they are fully seated as shown in the picture and video
+to ensure a good connection.
+
+    .. image:: media/Assembly/reflectance_wiring.jpeg
+        :width: 200
+        :alt: The cable attached to the reflectance sensor showing the order of the individual wires
 
 Inserting the line follower into the bracket (5:04)
 ---------------------------------------------------
+The reflectance sensor is inserted into the bracket as shown in the picture below. Also look at the side
+view of the assembly to see how the sensor is correctly positioned in the bracket.
 
-Attaching the line follower to the chassis (5:17)
--------------------------------------------------
+    .. image:: media/Assembly/reflectance_in_bracket.jpeg
+        :width: 200
+        :alt: Reflectance sensor inserted into the bracket
+    
+    .. image:: media/Assembly/reflectance_side_view.jpeg
+        :width: 200
+        :alt: Side view of reflectance sensor showing how it fits into the bracket
+
+Attaching the reflectance sensor to the chassis (5:17)
+------------------------------------------------------
+The reflectance sensor is installed on the chassis as shown int he picture below. The ball end of the
+bracket is inserted into the slot in the front rail.
+
+    .. image:: media/Assembly/reflectance_sensor_on_chassis.jpeg
+        :width: 200
+        :alt: The reflectance sensor attached to the chassis
 
 Adding the ultrasonic rangefinder
 ---------------------------------
@@ -267,17 +345,49 @@ sound round-trip is measured to determine distance to nearby objects.
 
 Attaching the bracket to the chassis (5:27)
 -------------------------------------------
+The rangefinder bracket is attached to the front of the chassis just above the reflectance sensor
+as shown in the picture below.
+
+    .. image:: media/Assembly/rangefinder_bracket_on_chassis.jpeg
+        :width: 200
+        :alt: Rangefinder bracket attached to the chassis
+
 
 Wiring the rangefinder (5:39)
 -----------------------------
+The rangefinder is wired by attaching the four wires from the sensor cable to the pins on the rangefinder
+as shown in the picture below. Be sure to connect the wires to the pins in the right order.
+
+.. image:: media/Assembly/reflectance_with_wires.jpeg
+    :width: 200
+    :alt: Reflectance sensor with wires attached
 
 Attaching the rangefinder to the bracket (6:06)
 -----------------------------------------------
+Attach the rangefinder to the bracket as shown in the picture below.
 
+    .. image:: media/Assembly/rangefinder_on_chassis.jpeg
+        :width: 200
+        :alt: Rangefinder mounted on the bracket and the chassis
 
 
 Connecting the cables for the line follower and rangefinder (6:14)
 ------------------------------------------------------------------
+The cables from the reflectance sensor (line follower) and the rangefinder are connected to
+the connectors on the controller board. Notice that there are labels on the board for each
+of these cables to help you get them into the right connectors. The line follower cable goes
+into the connector labeled Line and the rangefinder goes into the connector labeled Range.
+It is a good idea to put a small loop in the wire that can be tucked into the chassis
+before connecting it to help keep the wiring neat and less likely to get snagged.
+
+    .. image:: media/Assembly/line_connector.jpeg
+        :width: 200
+        :alt: The line follower cable inserted into the connector on the controller board
+    
+    .. image:: media/Assembly/range_connector.jpeg
+        :width: 200
+        :alt: The range finder cable inserted into the connector on the controller board
+
 
 Attaching the servo
 -------------------
