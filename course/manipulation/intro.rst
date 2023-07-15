@@ -12,14 +12,29 @@ Your XRP does this with a simple 1 DOF arm.
 
 In this case, "DOF" stands for "Degree of Freedom" and refers to the number of ways the arm can move. 
 
+Accurate Control of the XRP arm
+-------------------------------
+
 To move your XRP's arm, use this function:
 
-[insert the function call that would move the arm ]
+.. code-block:: python
+
+    servo.set_angle(angle)
+
+In this case, the function takes in a single argument, which is the angle that you want the arm to move to.
+
+This angle is measured using angles and has a range of [0, 135] degrees. 
+
+.. admonition:: Try it out
+
+    Try writing code that moves the arm to an angle of 90 degrees, sleeps for 1 second, and then moves the arm back to an angle of 0 degrees.
 
 Other Robotics Manipulators
 ---------------------------
 
-[insert a picture of the Spot robot with arm being used or a video of the Spot robot being used]
+.. error:: 
+
+    TODO add video of SPOT robot opening a door
 
 The XRP arm is a very simple manipulator.
 
