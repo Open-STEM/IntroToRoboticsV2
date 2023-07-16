@@ -65,8 +65,7 @@ ways that make it available to all.
 
    course/measuring_distance/index
    course/measuring_distance/intro
-   course/measuring_distance/stop_at_distance
-   course/measuring_distance/stop_and_turn
+   course/measuring_distance/obstacle_avoidance
    course/measuring_distance/locate_object
    course/measuring_distance/parking_garage
 

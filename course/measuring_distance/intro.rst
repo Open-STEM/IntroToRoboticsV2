@@ -55,3 +55,7 @@ This function returns the distance, in cm, from the sensor to the nearest object
 .. note:: Try it out!
   Try writing code that checks the distance every 50 ms (0.05 seconds) and prints the output.
 
+
+.. error:: 
+
+    TODO add a block of code that completes the try it out block 
