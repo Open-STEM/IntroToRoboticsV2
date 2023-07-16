@@ -1,16 +1,18 @@
-Activity: Standoff!
+Distance Tracking 
 =================
 
-Now that you made your robot park, can you make it do these?
+Now that we've covered on-off control, let's use that information to track an object from a certain distance. 
 
-Activity 1: Following a moving wall
------------------------------------
+The Process
+-----------
 
-Set the robot to be a fixed distance from a wall, and do the same parking activity from before, but this time, try moving the wall. See if the robot will follow the wall well. Move it back and forth and your robot should follow. 
+Essentially, we want our robot to go towards the object if it's too far and away from the object if it's too close. 
 
-Activity 2: Making a Train
---------------------------
+We can do this by using the distance sensor to determine how far away the object is and then using that information to determine how the direction in which the robot should be going.
 
-If they can follow walls... why can't they follow other robots? Try putting multiple robots, one behind another, and doing this same activity. In front of the first robot, put a wall, and make it move. Now, you've created a way to control all of these robots!
+For this activity, let's use a target distance of 20 cm. 
 
-Note that this train may break apart because the robots end up facing sideways after some time.
+.. error:: 
+
+    TODO add code to complete this
+
