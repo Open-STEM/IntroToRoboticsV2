@@ -24,17 +24,32 @@ The code for this is as follows:
 
     TODO add code that stops at a certain distance from an object
 
+The Second Step
+~~~~~~~~~~~~~~~
+
+Now that we can stop at a certain distance from an object, let's turn around at 180 degrees and then carry on our way.
+
+All you need to do now is include your previous code in a while loop that runs forever.
+
+Then, when an object is detected, you can turn around and continue on your way.
+
+The code for this is as follows:
+
+.. error:: 
+
+    TODO add code that stops at a certain distance from an object and turns around 
+
 
 Now What?
 ~~~~~~~~~
 
-Now that we can stop at a certain distance from an object, we want to be able to avoid the object and continue on our way.
+Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle. 
 
-To do this, many robots like IRobot's Roomba use a simple algorithm known as "bump and run".
+To fix this, many robots like IRobot's Roomba use a simple algorithm known as "bump and run".
 
-The idea behind bump and run is that if you bump into an object, you should turn away from it and continue on your way.
+The idea behind bump and run is that if you bump into an object, you should turn away from it at a random angle and continue on your way.
 
-One thing to specify here is that when turning, it is important to turn a random angle. This is because if you turn the same angle every time, you will eventually get stuck in a loop where you keep bumping into the same object.
+The reason that we specify that the robot must turn at a random angle is because if we turn at the same angle every time, we will get stuck in a cycle again.
 
 Also, we still want to be able to have some control over the range of angles that our robot turns. 
 

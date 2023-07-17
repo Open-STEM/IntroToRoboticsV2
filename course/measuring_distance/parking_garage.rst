@@ -1,5 +1,5 @@
-Parking Garage Challenge!
-===========================
+Parking Garage Challenge! (Bonus Activity)
+===========================================
 
 Now that we've covered how to avoid obstacles and locate nearby objects, let's now try and "park" our XRP's 
 
