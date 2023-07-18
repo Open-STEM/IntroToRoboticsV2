@@ -17,7 +17,7 @@ Here is a sketch of the setup:
 
 Now, implement a proportional controller given the steps that you have previously followed and the tips noted above. 
 
-Watch this video to see what a working wall-follower looks like. 
+Watch this video to see what a working wall-follower looks like. Good luck implementing this next class!
 
 [insert video]
 

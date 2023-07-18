@@ -9,4 +9,5 @@ In this module students will:
 At the end of this module, students will be able to:
 
 * Write a quick program for controlling the robot arm
+* Implement custion functions for controlling the robot arm
 * Manipulate their environment using the robot arm

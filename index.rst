@@ -64,14 +64,25 @@ ways that make it available to all.
    :caption: Measuring Distances
 
    course/measuring_distance/index
-   course/measuring_distance/measuring_dist
-   course/measuring_distance/distance_sensors
-   course/measuring_distance/contr_behav_intro
-   course/measuring_distance/contr_behav_bang_bang
-   course/measuring_distance/activity_trains
-   course/measuring_distance/contr_behav_prop_contr_2
-   course/measuring_distance/wall_following
-   course/measuring_distance/improve
+   course/measuring_distance/intro
+   course/measuring_distance/obstacle_avoidance
+   course/measuring_distance/locate_object
+   course/measuring_distance/parking_garage
+
+
+   .. toctree:: 
+   :maxdepth: 1
+   :hidden:
+   :caption: Robot Control
+
+   course/robot_control/index
+   course/robot_control/intro_to_robot_control
+   course/robot_control/distance_tracker
+   course/robot_control/intro_to_prop_control
+   course/robot_control/prop_distance_tracker
+   course/robot_control/intro_to_prop_wall_following
+   course/robot_control/prop_wall_following
+   
 
 .. toctree:: 
    :maxdepth: 1
@@ -92,6 +103,8 @@ ways that make it available to all.
    :hidden:
 
    course/manipulation/index
+   course/manipulation/intro
+   course/manipulation/custom_functions
 
 .. toctree:: 
    :maxdepth: 1

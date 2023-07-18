@@ -29,4 +29,15 @@ This is an example program that implements a proportional controller.
 
 [insert code]
 
+.. admonition:: Try it out
+    
+    Now that you've designed a successful proportional controller, let's try some other values for kp.
+
+    First, let's try making kp too small (0.01). What happens?
+
+    When kp is too small, the XRP doesn't react fast enough to the error, and it takes a long time to get to the target. 
+
+    Next, let's try making kp too big (1). What happens?
+
+    The behavior you're seeing is called oscillation and happens when kp is too high. 
 
