@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'XRP'
-copyright = '2023, FRC'
+copyright = '2023, WPI'
 author = 'FRC'
 release = '2023.0'
 
