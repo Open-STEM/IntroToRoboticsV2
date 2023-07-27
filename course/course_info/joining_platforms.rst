@@ -41,9 +41,10 @@ When signing up remember to use xrp.discourse.group for the site's address when 
 GitHub issues
 -------------
 
-Another way to contact us, particularly about issues with any of the software is
-to create issues in the GitHub repositories where the software is developed.
+Another way to contact us, particularly about issues or bugs with any of the software is
+to create issues in the GitHub repository where the software is developed.
 
-We will have more information about this when the software becomes live.
-
-
+To create a GitHub issue for the XRP team to adress, navigate to our  
+`GitHub repository's issue page <https://github.com/Open-STEM/XRP-Library/issues>`_ and select "New issue". 
+Describe your problem in detail and click "Submit new issue" to post your issue in the repository. 
+A member of the XRP team will reach out if we have further questions.
