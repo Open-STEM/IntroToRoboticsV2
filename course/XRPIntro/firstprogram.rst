@@ -1,7 +1,7 @@
 Writing your first robot program: Python
 ========================================
 
-As mentioned earlier, we'll be using Mu to edit and run CircuitPython code
+As mentioned earlier, we'll be using the XRP code
 and view serial output from the robot. Be sure that your robot is plugged
 into the computer and turned on, and then open up the Mu application.
 
