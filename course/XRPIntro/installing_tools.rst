@@ -15,29 +15,6 @@ good choice for programming the robot, especially for learners with little to no
 programming experience.  Does not easily scale for larger programs and is only
 usable within the Blockly programming environment.
 
-Installing Blockly
-~~~~~~~~~~~~~~~~~~
-In a browser, navigate to the github repository release page for XRP-blockly:
-
-https://github.com/Open-STEM/xrp-blockly/releases/
-
-Find the most recent release - as of this writing is v0.0.5. and download the version
-for the computer platform you are using. The file names below are for version 0.0.4,
-be sure to take the newest release version that is posted.
-
-Windows
-  XRP.Blockly.Setup.0.0.4.exe
-MacOS
-  XRP.Blockly-0.0.4.dmg
-Linux
-  XRP-Blockly_0.0.4_amd64.deb
-
-After downloading the release file, double-click on it to begin the installation. Follow
-all the instructions
-taking all the default settings unless you have a reason to change one of them. When it
-is finished, you
-may delete the release file. To start using Blockly, find it in the Start Menu on
-Windows or the Applications on a Mac.
 
 
 Python
@@ -59,59 +36,3 @@ used by the XPR Robot.
    concepts at the same time. But the decision will depend on the level and experience
    of the students taking the course.
 
-Installing Mu Editor
-~~~~~~~~~~~~~~~~~~~~
-
-Mu is a simple and concise editor that allows us to edit our CircuitPython code, and view
-serial output from our robot. To install, go to the following
-webpage: https://codewith.mu/en/download 
-
-.. image:: media/MU_1.png
-  :width: 400
-  :alt: Alternative text
-
-Download the file corresponding to your operating system, and then open the downloaded file
-and follow the installation prompts that are provided.
-
-Mu allows you to run different implementations of Python for different microcontrollers.
-In our case, we want to run CircuitPython, which is compatible with our Maker Pi RP2040.
-Select the “Mode” button shown below.
-
-.. image:: media/MU_2.png
-  :width: 400
-  :alt: Alternative text
-
-Select CircuitPython and confirm by clicking ‘OK’.
-
-.. image:: media/MU_3.png
-  :width: 400
-  :alt: Alternative text
-
-In the Mu Editor, you may notice a symbol of a red ‘x’ on a microchip in the bottom right
-corner of the window.
-
-.. image:: media/MU_4.png
-  :width: 400
-  :alt: Alternative text
-
-This indicates that Mu has not detected a robot device attached to the computer.
-In order to write and download programs to the robot, you’ll need to connect your computer
-to the robot via a Micro-USB cable. **Connect the robot and turn it on using the switch
-near the back of the robot chassis.**
-
-.. note::
-
-   Some micro USB cables are only designed to carry power. The one provided in your kit
-   will carry the power and data which is required for programming your robot.
-
-.. image:: media/MU_5.png
-  :width: 400
-  :alt: Alternative text
-
-At the bottom right corner of the screen, the red "chip" icon will now be grey,
-indicating a successful connection between the robot and the computer running Mu Editor.
-
-At this point, you can upload and run programs to the robot written in the main window.
-
-Additional resources about using Mu Editor for programming your robot can be found
-on the project website: https://codewith.mu 
