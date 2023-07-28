@@ -70,7 +70,7 @@ ways that make it available to all.
    course/measuring_distance/parking_garage
 
 
-   .. toctree:: 
+.. toctree:: 
    :maxdepth: 1
    :hidden:
    :caption: Robot Control
