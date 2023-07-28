@@ -56,9 +56,7 @@ distance driven by the left encoder is less than 20 cm.
 Consider a similar use case for the reflectance sensor: driving forward until a
 dark line is detected.
 
-.. error:: 
-    
-    TODO make and insert video
+.. image:: stopatline.gif
 
 How could we go about programming this? Well, let's consider what values the
 reflectance sensor would read throughout this program:

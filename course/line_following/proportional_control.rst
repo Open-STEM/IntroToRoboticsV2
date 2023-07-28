@@ -13,9 +13,7 @@ Let's circle back to the previous exercise - following the line by either
 turning left or right depending on whether the robot is situated to the left or
 the right of the line. This is a video showing it in action:
 
-.. error:: 
-
-    TODO insert video
+.. image:: linefollowing.gif
 
 What is immediately striking about following the line in this way? Well, the
 robot must constantly oscillate in order to stay on the edge of the line,
