@@ -5,7 +5,7 @@ Fix the 'Note' box
 Installing the programming tools
 ================================
 
-Two primary programming tools will be used in this course:
+There are two programming languages used throughout this course, Blockly and Python.
 
 Blockly
 -------
