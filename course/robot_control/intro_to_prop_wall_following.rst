@@ -19,6 +19,6 @@ Now, implement a proportional controller given the steps that you have previousl
 
 Watch this video to see what a working wall-follower looks like. Good luck implementing this next class!
 
-[insert video]
+ .. image:: wallfollowing.gif
 
 
