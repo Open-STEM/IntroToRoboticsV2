@@ -40,7 +40,6 @@ ways that make it available to all.
    course/XRPIntro/whatis
    course/XRPIntro/building
    course/XRPIntro/installing_tools
-   course/XRPIntro/installing_libraries
    course/XRPIntro/firstprogram
 
 
@@ -70,7 +69,7 @@ ways that make it available to all.
    course/measuring_distance/parking_garage
 
 
-   .. toctree:: 
+.. toctree:: 
    :maxdepth: 1
    :hidden:
    :caption: Robot Control
