@@ -33,7 +33,7 @@ Please follow these steps to join the Discourse server:
    chat with the other members of the course. We hope you will find this course fun and interesting!
 
 If you want Discourse on your phone, for Android or iPhone 
-there is a Discourse app in the App Store that you can 
+there is a Discourse app in the App Store that you can
 download. You can also download a desktop app for Discord.
 When signing up remember to use xrp.discourse.group for the site's address when asked.
 
