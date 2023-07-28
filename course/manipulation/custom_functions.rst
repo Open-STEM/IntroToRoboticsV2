@@ -24,7 +24,6 @@ Finally, we can move the arm forward until the basket is in the robot's grasp an
 
 Here is a video of the robot picking up a basket:
 
-.. error:: 
-
-    TODO add video of an XRP robot picking up a basket 
+.. image:: 
+    RobotGrab.gif
     

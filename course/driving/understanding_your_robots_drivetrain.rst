@@ -7,11 +7,13 @@ Introduction
 The main body of your XRP is called the *drivetrain*. We call it this because it
 holds the two wheels which drive your robot around. Specifically, the XRP has a 
 *differential drivetrain*. This is the same kind of drivetrain that you would 
-see on a riding lawn mower or a skid-steer loader.
+see on a skid-steer loader. 
 
-.. error::
-    
-    TODO: Add pictures of the XRP and a skid steer loader.
+.. image:: media/skidSteerLoader.png
+  :width: 300
+
+.. image:: media/XRPImage.jpeg
+  :width: 300
 
 .. tip:: 
     
