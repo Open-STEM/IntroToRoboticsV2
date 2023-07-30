@@ -25,7 +25,7 @@ might have. If you have any questions or find anything not working as you
 expect it to, feel free to contact us.
 
 For questions and technical support for the XRP, see our Discourse server.
-There are instructions on how to sign up in the :ref: `Joining Platforms`
+There are instructions on how to sign up in the `Joining Platforms`
 section of this course.
 
 
