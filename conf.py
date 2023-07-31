@@ -18,6 +18,7 @@ extensions = [
     "sphinx_design",
     "sphinxcontrib.youtube",
     "sphinxcontrib.video",
+    "sphinx.ext.autosectionlabel"
 ]
 
 templates_path = ['_templates']
