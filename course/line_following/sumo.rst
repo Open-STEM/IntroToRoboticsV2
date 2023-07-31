@@ -1,7 +1,7 @@
 Challenge: Sumo-Bots!
 =====================
 
-.. image:: sumo.png
+.. image:: media/sumo.png
 
 It's time for SUMO bots! Two XRP bots battle it out in the ring in a completely
 autonomous match to push the other robot outside of the ring.

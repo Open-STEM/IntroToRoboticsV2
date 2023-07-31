@@ -5,7 +5,8 @@ In this module students will:
 
 * Understand the task of following a line with the robot
 * Learn to use the reflectance sensor to detect the line
-* Write a simple program for line following
+* Write simple programs for detecting and responding to lines
+* Write simple programs to follow lines
 * Enhance the simple program with better sensor measurements and calculations to
   follow the line more smoothly.
 

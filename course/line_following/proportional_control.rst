@@ -1,5 +1,5 @@
-Proportional control
-====================
+Following the Line: Proportional Control
+========================================
 
 In the measuring distances module, you used proportional control to make the
 robot drive straight along a wall. We can apply proportional control to the line
@@ -11,9 +11,7 @@ The perks of proportional control
 
 Let's circle back to the previous exercise - following the line by either
 turning left or right depending on whether the robot is situated to the left or
-the right of the line. This is a video showing it in action:
-
-.. image:: linefollowing.gif
+the right of the line.
 
 What is immediately striking about following the line in this way? Well, the
 robot must constantly oscillate in order to stay on the edge of the line,
@@ -27,7 +25,10 @@ cases, for anywhere from a sharp left turn to going perfectly straight to a
 sharp right turn, and everything in between, based on whether the reflectance
 sensor is completely on white, grey, black, or somewhere in between.
 
-.. image:: pcontrol1.png
+.. figure:: media/p_control_1.png
+    :align: center
+
+    Desired steering actions based on what the sensor sees.
 
 Having a long chain of if-else statements doesn't sound fun. Perhaps we can look
 at this with a completely fresh approach?
@@ -76,7 +77,11 @@ Implementing proportional control
 
 Based on the computed error, we want that to determine how much the robot turns. 
 
-.. Image:: pcontrol2.png
+.. figure:: media/p_control_2.png
+    :align: center
+
+    Desired steering actions and proportional control output based on what the
+    sensor sees.
 
 This image illustrates how the error impacts how much we want to turn. Remember:
 making the robot turn is simply setting the left and right motors to different
@@ -125,9 +130,12 @@ line results in the robot completely losing where it is. Also, the KP value was
 not equal to 1 here; it's up to you to figure out the best KP value for your
 bot.
 
-.. error:: 
 
-    TODO add video
+.. figure:: media/proportional_line_following.gif
+    :align: center
+
+    XRP following a line with proportional control. The robot would not be able 
+    to follow a curved line this quickly using on-off control!
 
 .. admonition:: Try it out
     

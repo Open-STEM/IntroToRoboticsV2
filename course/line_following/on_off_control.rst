@@ -1,4 +1,4 @@
-Following the line: On/Off control
+Following the Line: On/Off Control
 ==================================
 
 Now, let's turn our attention towards one of the core challenges in the final
@@ -53,6 +53,7 @@ be related to whether the value is greater or less than 0.5.
     Consider the following example code:
 
     .. code-block:: python
+
         from XRPLib.defaults import *
 
         if drivetrain.get_left_encoder_position() > 20:
@@ -66,7 +67,10 @@ be related to whether the value is greater or less than 0.5.
     or counterclockwise depending on a condition using an :code:`if` /
     :code:`else` statement.
 
-.. Image:: onoffcontrol.png
+.. figure:: media/on_off_control.png
+    :align: center
+
+    Actions your robot should take based on what the sensor sees.
 
 Above is an illustration of how we'd want the robot to act based on the reading
 of the sensor.
@@ -77,7 +81,8 @@ of the sensor.
     the robot one direction or another based on the reflectance sensor. To do 
     this, you'll use the :code:`drivetrain.set_speed` function using different
     speeds for the left and right wheels. Remember, using a higher speed on the
-    left wheel will make the robot turn right, and vice versa.
+    left wheel will make the robot turn right, and vice versa. You can use your 
+    ``is_over_line()`` function to check if the sensor sees a line.
 
     You will need to experiment with different speed values for each wheel; too
     high and your robot will drive off the line before it gets a chance to
