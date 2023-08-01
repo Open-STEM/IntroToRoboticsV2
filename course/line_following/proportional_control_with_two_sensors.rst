@@ -1,14 +1,14 @@
-Following the Line: Proportional Control with 2 Sensors
-=======================================================
-
-Motivation
-----------
+Following the Line: Proportional Control with Both Sensors
+==========================================================
 
 Line following with proportional control using one sensor is quite an
 improvement to on/off control. Yet, it's not perfect - if the reflectance sensor
 crosses over the center of the line, it's game over.
 
-.. image:: pcontrol2s1.png
+.. figure:: media/p_control_2_sensors_actions.png
+    :align: center
+
+    Desired steering actions based on what the sensor sees.
 
 The issue is - the robot has no way of knowing which side of the line it is
 following at all! If it sees the right edge of the line, it will assume it still
@@ -27,16 +27,25 @@ line, there are a few major "categories" of behaviors the robot would perform.
 For a minute, assume the rectangle is a black line and the two red squares are
 the location of the reflectance sensors.
 
-.. image:: pcontrol2s2.png
+.. figure:: media/p_control_2_sensors_left.png
+    :align: center
+
+    Simplified view of both reflectance sensors completely off of the line.
 
 Sensors read ~0 and ~0. Robot does not know if it is on either the left or right
 side of the line.
 
-.. image:: pcontrol2s3.png
+.. figure:: media/p_control_2_sensors_half.png
+    :align: center
+
+    Simplified view of both reflectance sensors half on the line.
 
 Sensors read ~0 and ~1. Robot knows it is on the left side and turns right.
 
-.. image:: pcontrol2s4.png
+.. figure:: media/p_control_2_sensors_centered.png
+    :align: center
+
+    Simplified view of both reflectance sensors centered on the line.
 
 Sensors read ~0.5 and ~0.5. Robot knows it is on the center and goes straight.
 
