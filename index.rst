@@ -66,7 +66,6 @@ ways that make it available to all.
    course/measuring_distance/intro
    course/measuring_distance/obstacle_avoidance
    course/measuring_distance/locate_object
-   course/measuring_distance/parking_garage
 
 
 .. toctree:: 
@@ -97,6 +96,7 @@ ways that make it available to all.
    course/line_following/proportional_control
    course/line_following/proportional_control_with_two_sensors
    course/line_following/stopping_at_intersection
+   course/line_following/parking_garage
 
 
 .. toctree:: 
@@ -108,6 +108,7 @@ ways that make it available to all.
    course/manipulation/index
    course/manipulation/intro
    course/manipulation/custom_functions
+   course/manipulation/line_follow_drop
 
 .. toctree:: 
    :maxdepth: 1

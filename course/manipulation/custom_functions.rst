@@ -27,3 +27,10 @@ Here is a video of the robot picking up a basket:
 .. image:: 
     RobotGrab.gif
     
+
+Integrating Locating and Pickup 
+-------------------------------
+
+Now that we've covered how to pick up a basket, we can start to think about how to integrate this with code that we have previously written to locate a nearby object. 
+
+To do this, you will essentially re-use the code that you have written to how execute the pickup process when the robot is in front of the basket.

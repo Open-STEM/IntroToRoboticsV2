@@ -1,5 +1,5 @@
-Wall Following
-==============
+Introduction to Wall Following
+==============================
 Now that you've developed a program to keep a certain distance from an object, let's implement this by having the XRP follow a wall while maintaining a target distance.
 
 Building a control law
