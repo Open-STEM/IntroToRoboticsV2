@@ -10,9 +10,6 @@ Essentially, we want our robot to go towards the object if it's too far and away
 
 We can do this by using the distance sensor to determine how far away the object is and then using that information to determine how the direction in which the robot should be going.
 
-For this activity, let's use a target distance of 20 cm. 
+For this activity, let's use a target distance of 30 cm. 
 
-.. error:: 
-
-    TODO add code to complete this
-
+.. image:: SimpleStandoff.png
