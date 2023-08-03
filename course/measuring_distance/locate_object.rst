@@ -62,11 +62,15 @@ In this case, we can use a "first edge" flag and a "second edge" flag.
 
 The first edge flag will be set to true when the robot first detects a sudden decrease in distance measurements (i.e. the robot detects the first edge of an object)
 
-When the first edge is set to be true, the robot can start keeping track of "elapsed time". 
+When the first edge is set to be true, the robot will take note of that angle, let's call it "firstAngle"
 
 The second edge flag will be set to true when the robot detects a sudden increase in distance measurements (i.e. the robot detects the second edge of an object)
 
-Now that the second edge is also set to be true, the robot can now turn in the opposite direction for half of the elapsed time.
+Now that the second edge is also set to be true, the robot can then take note of that angle, let's call it "secondAngle".
+
+We then know that the center of the object is at the angle halfway between firstAngle and secondAngle.
+
+To find that angle, we can take the average of firstAngle and secondAngle; and then save that angle as "centerAngle".
 
 This method will allow the robot to accurately locate the center of an object.
 
