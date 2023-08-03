@@ -4,8 +4,9 @@ Using the XRP Web Server
 Introduction:
 -------------
 
-A web server is a program that allows computers to communicate using the internet. 
-Web servers power everything we do on the internet, from 
+A web server is a computer program that takes instructions from other computer over the internet. 
+Web servers are used to display web pages, run video games, send messages, and do almost anything else you can do on the internet.
+Using the XRP's built-in web server, you can wirelessly display values on your computer and send instructions to the XRP with 
+just the press of a button. With this functionality you can easily debug programs and even use your phone or computer to remotely control your XRP.
 
-You can also use a web server to allow your computer or phone to control the XRP using wifi,
-and that is the goal of this lesson.
+TODO: explain how to run the web server and provide screenshot examples
