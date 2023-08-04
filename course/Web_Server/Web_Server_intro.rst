@@ -9,4 +9,32 @@ They are used to display web pages, run video games, send messages, and do almos
 Using the XRP's built-in web server, you can wirelessly display values on your computer and even send instructions to the XRP with 
 just the press of a button. With this functionality you can easily debug programs and even use your phone or computer to remotely control your XRP.
 
-TODO: explain how to run the web server and provide screenshot examples
+writing programs that use the wen server is simple. 
+If you are using python, the beginning of your program must include these two lines of code. If you are using blockly, this will be done for you.
+
+.. code-block:: python
+
+    from XRPLib.webserver import Webserver
+
+.. code-block:: python
+
+    webserver = Webserver.get_default_webserver()
+
+Next, you can add buttons and text output. This is covered in the later sections, so this is a good time to read about those and return to this page when you have your inputs and outputs written.
+
+Once you have the code for your buttons and text output, end the program with 
+
+.. code-block:: python
+
+    webserver.start_network(ssid="xrp", password="password")
+    
+.. code-block:: python
+    
+    webserver.start_server()
+
+or if you are using blobkly:
+
+.. image:: 
+    start-server.png
+
+Finally, search for wifi networks on your phone or computer, and join the wifi network with the name and password you chose, and open a new page on your browser. You should see your new custom dashboard!
