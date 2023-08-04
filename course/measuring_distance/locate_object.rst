@@ -12,7 +12,7 @@ The easiest way to explain the intuition behind this process is sonar.
 
 The robot will essentially spin in a circle and take a reading at each angle.
 
-Then, when an object is detected to be within a certain distance, the robot will stop spinning and go towards the objcet. 
+Then, when an object is detected to be within a certain distance, the robot will stop spinning and go towards the object. 
 
 This is a very simple way to locate an object, but it is also very effective (and will be especially helpful during your final project). 
 
