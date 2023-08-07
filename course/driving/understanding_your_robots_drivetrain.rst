@@ -15,14 +15,59 @@ see on a skid-steer loader.
 .. image:: media/XRPImage.jpeg
   :width: 300
 
-.. tip:: 
-    
-    Don't worry if you've never heard of a *differential drivetrain* before, we
-    will learn more about what this means later in the module!
-
 Each wheel of your XRP's drivetrain has a motor attached to it. We can use code 
-to tell this motor what we'd like it to do. Before we write any code, though, we
-need to learn a little bit about how these motors work.
+to tell this motor what we'd like it to do. Getting the robot to move in a desired
+path is done by setting the speeds of the two drive motors. There are a lot of
+variations in how those motors can be set, here are some basic examples.
+
+The XRP robot turns using skid-steering which means that while the robot is turning
+some of the wheels, sometimes the front casters, will be skidding. This requires
+more energy to complete the turns and depends on the friction of the front casters
+and the particular driving surface.
+
+Driving straight
+----------------
+The most fundamental common driving that the robot will do is traveling straight.
+To do this, both wheels move in the forward direction, that is they turn so that
+the robot moves straight.
+
+.. image:: media/forwardsdriving.png
+  :width: 300
+
+Turning in an arc
+-----------------
+Robots can turn in an arc shaped turn, where one wheel drives faster than the other
+causing the robot to turn away from the faster wheel. As the difference in speed
+of the two wheels increases, the turn tightens. If the turn continues, the robot
+will drive in a complete circle, in this case, the radius of the circle decreases
+as the wheel speed differences increase.
+
+.. image:: media/arc turn.png
+  :width 300
+
+Turning in place
+----------------
+One advantage the robot has over a car steering system is that it can turn in place
+where the robot turns on a point, for the XRP, roughly between the two wheels. This
+allows the robot to easily get out of tight spaces without having to make a wide
+arc turn. The point turn is often used for navigating the robot between two places
+since it follows an easily predictable path.
+
+.. image:: media/pointturn.png
+  :width: 300
+
+Turning on one wheel
+--------------------
+If one wheel drives forward or backward, and the other wheel remains stopped, the
+robot will turn in place, with the turning center being the stationary wheel. This
+is often called a swing-turn because the robot swings around the non-moving wheel.
+With a swing turn, the diameter of the circle traced by the outside wheel is
+double the wheel track.
+
+.. image:: media/swingturn.png
+  :width: 300
+
+
 
 Effort
 ------
