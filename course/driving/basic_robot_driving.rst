@@ -15,15 +15,24 @@ there's an easier way to write code to move the robot.
 Getting your XRP robot to move is simple! You can use this function to set the 
 effort of the left and right wheels of the robot at the same time:
 
-.. code-block:: python
+.. tabs::
 
-    from XRPLib.defaults import *
+    .. code-tab:: Python
 
-    drivetrain.set_effort(left_effort, right_effort)
+        .. code-block:: python
 
-:code:`left_effort` and :code:`right_effort` are the parameters of the function.
-The functions you used before only had one parameter, but functions can have as
-few or as many parameters as you want, or even none at all.
+            from XRPLib.defaults import *
+
+            drivetrain.set_effort(left_effort, right_effort)
+
+        :code:`left_effort` and :code:`right_effort` are the parameters of the function.
+        The functions you used before only had one parameter, but functions can have as
+        few or as many parameters as you want, or even none at all.
+
+    .. code-tab:: Blockly
+
+        .. image:: media/arcturn.png
+            :width: 300
 
 .. hint:: 
 
