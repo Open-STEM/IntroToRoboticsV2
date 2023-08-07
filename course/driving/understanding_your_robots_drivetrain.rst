@@ -28,7 +28,7 @@ and the particular driving surface.
 Driving straight
 ----------------
 The most fundamental common driving that the robot will do is traveling straight.
-To do this, both wheels move in the forward direction, that is they turn so that
+To do this, both wheels move forward at the same speed so that
 the robot moves straight.
 
 .. image:: media/forwardsdriving.png
