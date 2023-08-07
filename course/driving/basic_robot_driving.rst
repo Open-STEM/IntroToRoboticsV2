@@ -55,18 +55,3 @@ XRP aren't perfect. Every motor is a little bit different. Some of them have
 more friction inside them than others. In the next module we'll learn some ways 
 to solve this problem so your robot goes straight every time.
 
-.. youtube:: z6aIVpf3qN0
-
-.. youtube:: Zcr83kcO_Pk
-
-Mini-Challenge: Climbing Slopes
--------------------------------
-
-If your robot drives slower up a ramp, then the natural question would be: how
-steep of a slope can the robot climb?
-
-.. admonition:: Try it out
-
-    Have your robot drive on a ramp and then raise the ramp until the robot is
-    no longer able to move forwards. Is that angle what you expected? If your
-    robot started sliding back down the ramp, think about why that happened.

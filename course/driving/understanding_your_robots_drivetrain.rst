@@ -168,7 +168,10 @@ Understanding Effort
 .. youtube:: Zcr83kcO_Pk
 
 These two videos demonstrate the effect of effort because the robots in each video are moving with 
-the same effort. In the first video, the robot is slowly moving uphil
+the same effort. In the first video, the robot is slowly moving uphill because gravity is fighting against
+its effort. In the second video, the robot is moving more quickly downhill because gravity is working in the
+same direction as the effort. The force output from the motors is the same, but the speed will depend on
+resistance to the force.
 
 Going backwards
 ---------------
