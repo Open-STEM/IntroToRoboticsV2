@@ -1,7 +1,7 @@
 Implementing a Proportional Controller
 ======================================
 
-Now that you've learned about proportional controllers, let's implement one on the train activity
+Now that you've learned about proportional controllers, let's implement one on the distance tracking activity
 
 Steps
 -----
@@ -10,7 +10,7 @@ The first step when creating a proportional controller is to define your target 
 
 For our target, let's set it to 20 cm. 
 
-The error is the difference between the target and the current distance from the object in front of the XRP. 
+In this case, the error is the difference between the target and the current distance from the object in front of the XRP. 
 
 Now, we need to define our proportional gain. 
 
@@ -27,8 +27,10 @@ Finally, we need to set the speed of the XRP to our error times kp.
 
 This is an example program that implements a proportional controller. 
 
-[insert code]
+.. error:: 
 
+    TODO add code to complete this
+    
 .. admonition:: Try it out
     
     Now that you've designed a successful proportional controller, let's try some other values for kp.

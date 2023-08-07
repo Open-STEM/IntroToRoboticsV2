@@ -1,5 +1,5 @@
-Controlling Behavior: Continuous Controllers
-============================================
+Introduction to Proportional Control
+====================================
 
 Introduction:
 -------------
