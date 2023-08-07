@@ -160,6 +160,16 @@ you would modify the code to spin the right motor? Simply replace
     Notice how the wheel slows down when you do this, since it would need more
     effort to keep going the same speed.
 
+Understanding Effort
+--------------------
+  
+.. youtube:: z6aIVpf3qN0
+
+.. youtube:: Zcr83kcO_Pk
+
+These two videos demonstrate the effect of effort because the robots in each video are moving with 
+the same effort. In the first video, the robot is slowly moving uphil
+
 Going backwards
 ---------------
 
