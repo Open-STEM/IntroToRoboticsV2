@@ -25,14 +25,14 @@ effort of the left and right wheels of the robot at the same time:
 
             drivetrain.set_effort(0.5, 0.5)
 
-        :code:`left_effort` and :code:`right_effort` are the parameters of the function.
-        The functions you used before only had one parameter, but functions can have as
-        few or as many parameters as you want, or even none at all.
-
     .. tab-item:: Blockly
 
         .. image:: media/seteffortexample.png
             :width: 300
+
+:code:`0.5` and :code:`0.5` are the parameters of the function.
+The functions you used before only had one parameter, but functions can have as
+few or as many parameters as you want, or even none at all.
 
 .. hint:: 
 
@@ -41,12 +41,6 @@ effort of the left and right wheels of the robot at the same time:
 
 Here is some code you can use to drive both the left and right motors at 50% 
 effort.
-
-.. code-block:: python
-
-    from XRPLib.defaults import *
-    
-    drivetrain.set_effort(0.5, 0.5)
 
 .. admonition:: Try it out
     
