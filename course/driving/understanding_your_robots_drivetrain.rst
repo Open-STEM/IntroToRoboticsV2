@@ -42,7 +42,7 @@ of the two wheels increases, the turn tightens. If the turn continues, the robot
 will drive in a complete circle, in this case, the radius of the circle decreases
 as the wheel speed differences increase.
 
-.. image:: media/arc turn.png
+.. image:: media/arcturn.png
   :width 300
 
 Turning in place
