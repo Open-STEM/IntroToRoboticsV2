@@ -50,7 +50,7 @@ We know that we can ask the wheels to spin at a certain speed using a function,
 but what if we want to make the robot drive a certain distance?
 
 We could ask the robot to move at a speed value, and if we know how far it will 
-move each second, we can calculate how many seconds we should drive for to reach
+move each second (for this example we are using a speed of 5 cm/s), we can calculate how many seconds we should drive for to reach
 that distance. If we know how many centimeters we want to go, and we know how 
 many centimeters we move in one second, we have this equation:
 

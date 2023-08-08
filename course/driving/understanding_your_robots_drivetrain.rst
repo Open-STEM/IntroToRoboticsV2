@@ -15,20 +15,20 @@ see on a skid-steer loader.
 .. image:: media/XRPImage.jpeg
   :width: 300
 
-Each wheel of your XRP's drivetrain has a motor attached to it. We can use code 
-to tell this motor what we'd like it to do. Getting the robot to move in a desired
-path is done by setting the speeds of the two drive motors. There are a lot of
-variations in how those motors can be set, here are some basic examples.
-
 The XRP robot turns using skid-steering which means that while the robot is turning
 some of the wheels, sometimes the front casters, will be skidding. This requires
 more energy to complete the turns and depends on the friction of the front casters
 and the particular driving surface.
 
+Each wheel of your XRP's drivetrain has a motor attached to it. We can use code 
+to tell this motor what we'd like it to do. Getting the robot to move in a desired
+path is done by setting the speeds of the two drive motors. There are a lot of
+variations in how these motors can be set. Here are some basic examples:
+
 Driving straight
 ----------------
 The most fundamental common driving that the robot will do is traveling straight.
-To do this, both wheels move in the forward direction, that is they turn so that
+To do this, both wheels move forward at the same speed so that
 the robot moves straight.
 
 .. image:: media/forwardsdriving.png
@@ -36,19 +36,19 @@ the robot moves straight.
 
 Turning in an arc
 -----------------
-Robots can turn in an arc shaped turn, where one wheel drives faster than the other
+Robots can turn in an arc-shaped turn, where one wheel drives faster than the other,
 causing the robot to turn away from the faster wheel. As the difference in speed
-of the two wheels increases, the turn tightens. If the turn continues, the robot
-will drive in a complete circle, in this case, the radius of the circle decreases
+between the two wheels increases, the turn tightens. If the turn continues, the robot
+will drive in a complete circle. In this case, the radius of the circle decreases
 as the wheel speed differences increase.
 
 .. image:: media/arcturn.png
-  :width 300
+  :width: 300
 
 Turning in place
 ----------------
-One advantage the robot has over a car steering system is that it can turn in place
-where the robot turns on a point, for the XRP, roughly between the two wheels. This
+One advantage the XRP has over a car steering system is that it can turn in place
+where the robot turns on a point roughly between the two wheels. This
 allows the robot to easily get out of tight spaces without having to make a wide
 arc turn. The point turn is often used for navigating the robot between two places
 since it follows an easily predictable path.
@@ -60,7 +60,7 @@ Turning on one wheel
 --------------------
 If one wheel drives forward or backward, and the other wheel remains stopped, the
 robot will turn in place, with the turning center being the stationary wheel. This
-is often called a swing-turn because the robot swings around the non-moving wheel.
+is often called a swing turn because the robot swings around the non-moving wheel.
 With a swing turn, the diameter of the circle traced by the outside wheel is
 double the wheel track.
 
@@ -98,8 +98,7 @@ First movements
 
 .. note:: 
 
-    Put your XRP on top of a box or other object so that the wheels don't touch
-    the ground or table.
+    Elevate your XRP on top of a box or other object so that the wheels aren't touching anything and can spin freely.
 
 Before driving the robot around, let's write some simple code to spin one of the
 wheels. This will help you get familiar with the XRP programming environment and
@@ -107,7 +106,7 @@ check that your XRP itself is working properly.
 
 .. admonition:: Try it out
 
-    Create a new file in the IDE, called :code:`spin_wheels.py`. Add the 
+    Create a new file in the IDE called :code:`spin_wheels.py`. Add the 
     following code to it:
 
     .. code-block:: python
@@ -121,32 +120,33 @@ check that your XRP itself is working properly.
 Let's break down the code line by line:
 
 :code:`from XRPLib.defaults import *` tells your robot to load code from 
-**XRPLib**. Don't worry too much about what all the commands in the line mean 
-right now, just know that you'll put this line at the top of most of your robot
+**XRPLib**. Don't worry too much about what all the commands in this line mean 
+right now, just know that you'll put this line at the top of most of your XRP
 programs.
 
-:code:`left_motor.set_effort(0.5)` calls a *function* called :code:`set_effort`
-on the left motor. The :code:`0.5` is a *parameter* to this function which tells
-it that we'd like the motor to apply 50% effort. On the XRP, we write
-percentages as decimal numbers between 0 and 1, with 1 being 100%.
+:code:`left_motor.set_effort(0.5)` is a *function* provided for you in **XRPLib** 
+called :code:`set_effort` that is applied to the left motor. The :code:`0.5` is a *parameter* to 
+this function which tells it that we'd like the motor to apply 50% effort. 
+On the XRP, we write percentages as decimal numbers between 0 and 1, with 1 being 100%.
 
-A *function* is a block of code that can be used multiple times in your program
-to make complicated tasks easier. For example, the
-:code:`left_motor.set_effort()` function tells the left motor to apply an effort
-you as the programmer specify.
+.. Explain functions in greater depth later on (pinwheel activity?)
+.. A *function* is a block of code that can be used multiple times in your program
+.. to make complicated tasks easier. For example, the
+.. :code:`left_motor.set_effort()` function tells the left motor to apply an effort
+.. you as the programmer specify.
 
-:code:`left_motor.set_effort` is a function that we provide for you in
-**XRPLib**. Later in the course you will see how you can write your own
-functions to make it easy to make the robot do complicated sequences of actions.
+.. :code:`left_motor.set_effort` is a function that we provide for you in
+.. **XRPLib**. Later in the course you will see how you can write your own
+.. functions to make it easy to make the robot do complicated sequences of actions.
 
-When you want to use a function, you *call* it by writing its name in your code.
-This causes the function's code to start running.
+.. When you want to use a function, you *call* it by writing its name in your code.
+.. This causes the function's code to start running.
 
-The number you put between the parenthesis is a *parameter* (sometimes also
-called called an *argument*) of the function. These allow you to tell the
-function how it should do its job. As the programmer, you must provide a *value*
-for each *parameter*. If we wanted to make the robot drive forwards at full
-speed, we would *call* the function like this:
+.. The number you put between the parenthesis is a *parameter* (sometimes also
+.. called called an *argument*) of the function. These allow you to tell the
+.. function how it should do its job. As the programmer, you must provide a *value*
+.. for each *parameter*. If we wanted to make the robot drive forwards at full
+.. speed, we would *call* the function like this:
 
 Now that we've tested the left motor, let's test the right one! How do you think
 you would modify the code to spin the right motor? Simply replace
