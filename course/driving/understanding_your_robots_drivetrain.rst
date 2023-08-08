@@ -124,7 +124,7 @@ Let's break down the code line by line:
 right now, just know that you'll put this line at the top of most of your XRP
 programs.
 
-:code:`left_motor.set_effort(0.5)` is a *function* provided for you in **XRPLib** 
+:code:`left_motor.set_effort(0.5)` uses a *function* provided for you in **XRPLib** 
 called :code:`set_effort` that is applied to the left motor. The :code:`0.5` is a *parameter* to 
 this function which tells it that we'd like the motor to apply 50% effort. 
 On the XRP, we write percentages as decimal numbers between 0 and 1, with 1 being 100%.
