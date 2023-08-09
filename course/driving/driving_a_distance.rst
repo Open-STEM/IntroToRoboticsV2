@@ -18,11 +18,16 @@ to speed back up.
 
 To set the speed of the drivetrain motors, we use a new function:
 
-.. code-block:: python
+.. tab-set::
+    .. tab-item:: Python
+        .. code-block:: python
+            from XRPLib.defaults import *
 
-    from XRPLib.defaults import *
-
-    drivetrain.set_speed(5, 5)
+            drivetrain.set_speed(5, 5)
+    
+    .. tab-item:: Blockly
+        .. image:: setSpeed.png
+            :width: 300
 
 This tells the drivetrain to set the speed of each motor to 5 centimeters per 
 second. This means if you put the robot down and let it drive, it would move 5 
@@ -91,14 +96,20 @@ To make this work, we need to learn about a new function in Python:
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
 continuing to run your code.
 
-.. code-block:: python
+.. tab-set::
+    .. tab-item:: Python
+        .. code-block:: python
 
-    from XRPLib.defaults import *
-    from time import sleep # We need to import the speed function to use it.
+            from XRPLib.defaults import *
+            from time import sleep # We need to import the speed function to use it.
 
-    drivetrain.set_speed(5, 5)
-    sleep(x) # replace x with the time you calculated to go one meter.
-    drivetrain.stop() # This is another function which makes it easy to stop the robot
+            drivetrain.set_speed(5, 5)
+            sleep(x) # replace x with the time you calculated to go one meter.
+            drivetrain.stop() # This is another function which makes it easy to stop the robot
+        
+    .. tab-item:: Blockly
+        .. image:: media/setSpeedSleep.png
+            :width: 300
 
 .. tip:: 
     
@@ -124,6 +135,7 @@ Let's say that we want to drive three distances in a row: 25, 50, and 75 cm.
 How could we program the robot to do this? The easy solution is to copy and 
 paste the code you wrote before three times, and modify it each time:
 
+.. add blockly tab once math can be inputted into "sleep" block
 .. code-block:: python
 
     from XRPLib.defaults import *
@@ -153,13 +165,19 @@ Python uses the keyword :code:`def` to let you, the programmer, tell it that you
 would like to *define* a new function. A full function definition looks like 
 this:
 
-.. code-block:: python
+.. tab-set::
+    .. tab-item:: Python
+        .. code-block:: python
 
-    def function_name(parameter1, parameter2, parameter3):
-        # put your code here
-        # code in your function can use the parameters by name like this:
-        print(parameter1 / 5)
+            def function_name(parameter1, parameter2, parameter3):
+                # put your code here
+                # code in your function can use the parameters by name like this:
+                print(parameter1 / 5)
 
+    .. tab-item:: Blockly
+        .. image:: media/function.png
+            :width: 300
+            
 In this example function, there are three parameters. Functions can have as 
 many or as few parameters as you want, or even have no parameters at all.
 
