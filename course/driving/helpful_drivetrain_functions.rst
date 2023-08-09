@@ -41,8 +41,8 @@ This function is similar to the :code:`straight` function, except that it
 rotates the robot instead of driving it forwards.
 
 The :code:`turn_degrees` parameter lets you tell the robot how many degrees it
-should turn. Positive values will turn clockwise, and negative values turn
-counterclockwise.
+should turn. Positive values will turn counterclockwise, and negative values turn
+clockwise.
 
 .. admonition:: Try it out
 
