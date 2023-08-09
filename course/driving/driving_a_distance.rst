@@ -95,7 +95,7 @@ the denominator of the fraction to that speed to fix the equation.
 
 To put the above theory into practice, we need to learn about a new function in Python: 
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
-continuing to the next instruction in code.
+continuing to the next instruction in the code.
 
 .. code-block:: python
 
