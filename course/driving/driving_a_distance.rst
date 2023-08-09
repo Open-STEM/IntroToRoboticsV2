@@ -49,10 +49,14 @@ Driving a distance
 We know that we can ask the wheels to spin at a certain speed using a function, 
 but what if we want to make the robot drive a certain distance?
 
-We could ask the robot to move at a speed value, and if we know how far it will 
-move each second (for this example we are using a speed of 5 cm/s), we can calculate how many seconds we should drive for to reach
-that distance. If we know how many centimeters we want to go, and we know how 
-many centimeters we move in one second, we have this equation:
+We could ask the robot to move at some speed, and if we know how far it will 
+move each second (for this example we are using a speed of 5 cm/s), we can calculate
+how many seconds we should drive for to reach that distance.
+
+Let's use :math:`d` to represent the distance we want to drive in cm. But, we want
+a number in seconds, so we need to convert by the means of *dimensional analysis*.
+
+To do this, write an expression for the known value with units included: 
 
 .. math:: 
 
@@ -64,19 +68,31 @@ algebra to solve for :math:`x`.
 
 We can cancel out the units. This is called *dimensional analysis*:
 
+.. math::
+    (d  \text{ cm})
+
+Dimensional analysis involves multiplying this expression by special representations
+of "1" to convert units. In this case, our speed is 5 cm per second, so we can equate
+:math:`5 \text{ seconds} = 1 \text{ cm}`. Rearranging, we have our special representation of 1:
+
 .. math:: 
 
-    \frac{5 \text{ cm}}{1 \cancel{\text{ second}}} \cdot \frac{x \cancel{\text{ seconds}}}{} = d \text{ cm}
+    \frac{5 \text{ seconds}}{1 \text{ cm}} = 1
 
-Now, we can rearrange the equation to solve for :math:`x`:
+We can now multiply our expression with this special representation of 1:
 
-.. math:: 
+.. math::
+    (d \text{ cm}) \cdot \frac{1 \text{ second}}{5 \text{ cm}}
 
-    x = \frac{d}{5}
+Cancelling out units and simplifying, we obtain:
 
-This equation makes sense! If we want to go 5 cm, :math:`\frac{5}{5} = 1`, so we
-drive for one second. If we want to go 2.5 cm, we are only going half the 
-distance so it will take half the time.
+.. math::
+    (d  \cancel{\text{ cm}}) \cdot \frac{1 \text{ second}}{5 \cancel{\text{ cm}}} = \frac{d}{5} \text{ seconds}
+
+
+This resultant expression makes sense! If we want to go 5 cm, we plug in d = 5, and :math:`\frac{5}{5} = 1`,
+so we drive for one second. If we want to go 2.5 cm, we plug in d = 2.5, and :math:`\frac{2.5}{5} = 0.5`,
+so we drive for half a second.
 
 Keep in mind that this equation is only valid if the robot is moving at 5 cm per
 second. If you change that speed to be faster or slower, you'll need to change
