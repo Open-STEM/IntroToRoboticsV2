@@ -195,11 +195,13 @@ This table shows some different effort values and what the wheel would do:
      - Wheel action
    * - 1
      - Wheel spins forwards at 100% effort
-   * - -1
-     - Wheel spins backwards at 100% effort
    * - 0.5
      - Wheel spins forwards at 50% effort
-   * - -0.25
-     - Wheel spins backwards at 25% effort
    * - 0
      - Wheel stops spinning
+   * - -0.5
+     - Wheel spins backwards at 50% effort
+   * - -1
+     - Wheel spins backwards at 100% effort
+
+
