@@ -36,7 +36,7 @@ few or as many parameters as you want, or even none at all.
 
 .. hint:: 
 
-    Remember that parameters are how you can tell a function how to do its job.
+    Parameters are inputs to a function that can dictate attributes like distance or angle to vary its behavior.
 
 
 Here is some code you can use to drive both the left and right motors at 50% 
