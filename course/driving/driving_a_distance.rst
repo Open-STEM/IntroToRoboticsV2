@@ -24,9 +24,9 @@ To set the speed of the drivetrain motors, we use a new function:
 
     drivetrain.set_speed(5, 5)
 
-This tells the drivetrain to set the speed of each motor to 5 centimeters per 
-second. This means if you put the robot down and let it drive, it would move 5 
-centimeters forwards each second.
+This tells the drivetrain to set the speed of each drivetrain wheel to travel at
+5 centimeters per second. This means if you put the robot down and let both motors
+drive at this speed, the robot would move 5 centimeters forwards each second.
 
 .. admonition:: Try it out
 
