@@ -1,11 +1,10 @@
 Helpful Drivetrain Functions
-=======================
+============================
 
 Throughout this module, we've explored different ways to drive forwards
 and turn, through setting efforts, speeds, and reading the encoders. However,
-XRPLib also provides some handy functions to easily drive straight some distance
-and perform a point turn for some angle. These functions use more complicated calculations
-than you did in your :code:`drive_distance` function to ensure that the XRP 
+XRPLib also provides some handy functions to make it easy for the user.
+These functions use more complicated calculations to ensure that the XRP 
 drives smoothly and exactly to the right distance every time.
 
 .. code-block:: python

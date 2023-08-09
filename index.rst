@@ -58,6 +58,7 @@ ways that make it available to all.
    course/driving/helpful_drivetrain_functions
    course/driving/driving_with_geometry
    course/driving/waiting_for_button_input
+   course/driving/parking
 
 .. toctree:: 
    :maxdepth: 1

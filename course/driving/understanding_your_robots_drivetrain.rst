@@ -1,4 +1,4 @@
-Understanding your robot's drivetrain
+Understanding Your Robot's Drivetrain
 =====================================
 
 Introduction
