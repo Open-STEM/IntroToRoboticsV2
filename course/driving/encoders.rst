@@ -1,4 +1,4 @@
-The Encoders
+The encoders
 ============
 
 In the last lesson we mentioned *encoders*. What are they and what do they do?

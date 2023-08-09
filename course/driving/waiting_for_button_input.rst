@@ -1,4 +1,4 @@
-Waiting for Button Input
+Waiting for button input
 ========================
 
 You may have noticed that your code runs immediately after uploading it. This is
