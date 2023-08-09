@@ -55,6 +55,7 @@ ways that make it available to all.
    course/driving/encoders
    course/driving/differential_steering
    course/driving/calling_drive_functions
+   course/driving/driving_with_geometry
    course/driving/waiting_for_button_input
 
 .. toctree:: 
