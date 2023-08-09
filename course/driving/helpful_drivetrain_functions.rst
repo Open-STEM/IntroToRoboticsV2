@@ -1,9 +1,10 @@
-Calling drive functions
+Helpful Drivetrain Functions
 =======================
 
-Driving straight and turning in place are two things you'll be doing a lot with 
-your XRP. Since these are such common tasks, **XRPLib** has built in functions
-to do them for you accurately. These functions use more complicated calculations
+Throughout this module, we've explored different ways to drive forwards
+and turn, through setting efforts, speeds, and reading the encoders. However,
+XRPLib also provides some handy functions to easily drive straight some distance
+and perform a point turn for some angle. These functions use more complicated calculations
 than you did in your :code:`drive_distance` function to ensure that the XRP 
 drives smoothly and exactly to the right distance every time.
 
