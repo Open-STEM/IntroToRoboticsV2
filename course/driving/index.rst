@@ -1,4 +1,4 @@
-Module overview
+Module Overview
 ===============
 
 In this module students will:

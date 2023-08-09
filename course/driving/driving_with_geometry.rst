@@ -1,4 +1,4 @@
-Driving with geometry
+Driving With Geometry
 =====================
 
 The XRP's driving and turning functions can also be used to draw geometric patterns!

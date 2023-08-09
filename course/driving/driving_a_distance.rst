@@ -1,4 +1,4 @@
-Driving a distance
+Driving a Distance
 ==================
 
 Controlling your speed

@@ -1,4 +1,4 @@
-Turning to an angle
+Turning to an Angle
 ===================
 
 If you want to turn your XRP to a certain angle, there are two ways to do this.
