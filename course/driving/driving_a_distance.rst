@@ -18,17 +18,6 @@ to speed back up.
 
 To set the speed of the drivetrain motors, we use a new function:
 
-<<<<<<< HEAD
-.. tab-set::
-    .. tab-item:: Python
-        .. code-block:: python
-            from XRPLib.defaults import *
-
-            drivetrain.set_speed(5, 5)
-    
-    .. tab-item:: Blockly
-        .. image:: setSpeed.png
-=======
 .. tab-set:: 
 
     .. tab-item:: Python
@@ -42,7 +31,6 @@ To set the speed of the drivetrain motors, we use a new function:
     .. tab-item:: Blockly
 
         .. image:: media/setspeedexample.png
->>>>>>> main
             :width: 300
 
 This tells the drivetrain to set the speed of each drivetrain wheel to travel at
@@ -118,21 +106,6 @@ To put the above theory into practice, we need to learn about a new function in 
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
 continuing to the next instruction in the code.
 
-<<<<<<< HEAD
-.. tab-set::
-    .. tab-item:: Python
-        .. code-block:: python
-
-            from XRPLib.defaults import *
-            from time import sleep # We need to import the speed function to use it.
-
-            drivetrain.set_speed(5, 5)
-            sleep(x) # replace x with the time you calculated to go one meter.
-            drivetrain.stop() # This is another function which makes it easy to stop the robot
-        
-    .. tab-item:: Blockly
-        .. image:: media/setSpeedSleep.png
-=======
 .. tab-set:: 
 
     .. tab-item:: Python
@@ -150,7 +123,6 @@ continuing to the next instruction in the code.
     .. tab-item:: Blockly
 
         .. image:: media/setspeedandsleep.png
->>>>>>> main
             :width: 300
 
 .. tip:: 
@@ -205,12 +177,6 @@ Let's write our own function to drive the robot a certain distance.
 
 .. tab-set:: 
 
-<<<<<<< HEAD
-.. tab-set::
-    .. tab-item:: Python
-        .. code-block:: python
-
-=======
     .. tab-item:: Python
 
         Python uses the keyword :code:`def` to let you, the programmer, tell it that you
@@ -219,20 +185,10 @@ Let's write our own function to drive the robot a certain distance.
 
         .. code-block:: python
 
->>>>>>> main
             def function_name(parameter1, parameter2, parameter3):
                 # put your code here
                 # code in your function can use the parameters by name like this:
                 print(parameter1 / 5)
-<<<<<<< HEAD
-
-    .. tab-item:: Blockly
-        .. image:: media/function.png
-            :width: 300
-            
-In this example function, there are three parameters. Functions can have as 
-many or as few parameters as you want, or even have no parameters at all.
-=======
 
         In this example function, there are three parameters. Functions can have as 
         many or as few parameters as you want, or even have no parameters at all.
@@ -255,7 +211,6 @@ many or as few parameters as you want, or even have no parameters at all.
         .. image:: media/blocklyfunctioncall.png
             :width: 300
 
->>>>>>> main
 
 .. admonition:: Try it out
 
