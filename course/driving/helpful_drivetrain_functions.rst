@@ -11,7 +11,9 @@ drives smoothly and exactly to the right distance every time.
 
     .. tab-item:: Python
 
-        drivetrain.straight(distance, max_effort = 0.5, timeout = None)
+        .. code-block:: python
+
+            drivetrain.straight(distance, max_effort = 0.5, timeout = None)
 
     .. tab-item:: Blockly
 
