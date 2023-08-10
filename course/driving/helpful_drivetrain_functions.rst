@@ -7,9 +7,16 @@ XRPLib also provides some handy functions to make it easy for the user.
 These functions use more complicated calculations to ensure that the XRP 
 drives smoothly and exactly to the right distance every time.
 
-.. code-block:: python
+.. tab-set:: 
 
-    drivetrain.straight(distance, max_effort = 0.5, timeout = None)
+    .. tab-item:: Python
+
+        drivetrain.straight(distance, max_effort = 0.5, timeout = None)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/straight.png
+            :width: 300
 
 This function will drive the robot straight forward for a distance in
 centimeters that you specify. The other two parameters are *optional*. You can 
@@ -33,9 +40,16 @@ you set, so it will try forever and none of your code will run afterwards. The
 timeout lets you set a maximum time that the XRP should try for before giving
 up. Usually, you won't need to use this, but it is there if you need it.
 
-.. code-block:: python
+.. tab-set:: 
 
-    drivetrain.turn(turn_degrees, max_effort = 0.5, timeout = None)
+    .. tab-item:: Python
+
+        drivetrain.turn(turn_degrees, max_effort = 0.5, timeout = None)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/turn.png
+            :width: 300
 
 This function is similar to the :code:`straight` function, except that it
 rotates the robot instead of driving it forwards.
