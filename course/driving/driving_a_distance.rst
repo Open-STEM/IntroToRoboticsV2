@@ -29,9 +29,9 @@ To set the speed of the drivetrain motors, we use a new function:
         .. image:: setSpeed.png
             :width: 300
 
-This tells the drivetrain to set the speed of each motor to 5 centimeters per 
-second. This means if you put the robot down and let it drive, it would move 5 
-centimeters forwards each second.
+This tells the drivetrain to set the speed of each drivetrain wheel to travel at
+5 centimeters per second. This means if you put the robot down and let both motors
+drive at this speed, the robot would move 5 centimeters forwards each second.
 
 .. admonition:: Try it out
 
@@ -54,34 +54,40 @@ Driving a distance
 We know that we can ask the wheels to spin at a certain speed using a function, 
 but what if we want to make the robot drive a certain distance?
 
-We could ask the robot to move at a speed value, and if we know how far it will 
-move each second (for this example we are using a speed of 5 cm/s), we can calculate how many seconds we should drive for to reach
-that distance. If we know how many centimeters we want to go, and we know how 
-many centimeters we move in one second, we have this equation:
+We could ask the robot to move at some speed, and if we know how far it will 
+move each second (for this example we are using a speed of 5 cm/s), we can calculate
+how many seconds we should drive for to reach that distance.
+
+Let's use :math:`d` to represent the distance we want to drive in cm. But, we want
+a number in seconds, so we need to convert by the means of *dimensional analysis*.
+
+To do this, write an expression for the known value with units included:
+
+.. math::
+    (d  \text{ cm})
+
+Dimensional analysis involves multiplying this expression by special representations
+of "1" to convert units. In this case, our speed is 5 cm per second, so we can equate
+:math:`5 \text{ cm} = 1 \text{ second}`. Rearranging, we have our special representation of 1:
 
 .. math:: 
 
-    \frac{5 \text{ cm}}{1 \text{ second}} \cdot \frac{x \text{ seconds}}{} = d \text{ cm}
+    \frac{1 \text{ second}}{5 \text{ cm}} = 1
 
-Where :math:`d` is how far you want to go, and :math:`x` is how many seconds it
-will take to get there. We know the value of :math:`d`, so we need to use
-algebra to solve for :math:`x`.
+We can now multiply our expression with this special representation of 1:
 
-We can cancel out the units. This is called *dimensional analysis*:
+.. math::
+    (d \text{ cm}) \cdot \frac{1 \text{ second}}{5 \text{ cm}}
 
-.. math:: 
+Cancelling out units and simplifying, we obtain:
 
-    \frac{5 \text{ cm}}{1 \cancel{\text{ second}}} \cdot \frac{x \cancel{\text{ seconds}}}{} = d \text{ cm}
+.. math::
+    (d  \cancel{\text{ cm}}) \cdot \frac{1 \text{ second}}{5 \cancel{\text{ cm}}} = \frac{d}{5} \text{ seconds}
 
-Now, we can rearrange the equation to solve for :math:`x`:
 
-.. math:: 
-
-    x = \frac{d}{5}
-
-This equation makes sense! If we want to go 5 cm, :math:`\frac{5}{5} = 1`, so we
-drive for one second. If we want to go 2.5 cm, we are only going half the 
-distance so it will take half the time.
+This resultant expression makes sense! If we want to go 5 cm, we plug in d = 5, and :math:`\frac{5}{5} = 1`,
+so we drive for one second. If we want to go 2.5 cm, we plug in d = 2.5, and :math:`\frac{2.5}{5} = 0.5`,
+so we drive for half a second.
 
 Keep in mind that this equation is only valid if the robot is moving at 5 cm per
 second. If you change that speed to be faster or slower, you'll need to change
@@ -92,9 +98,9 @@ the denominator of the fraction to that speed to fix the equation.
     Calculate how many seconds you need to drive for to go one meter if your 
     robot is moving at 5 cm per second. Remember, there are 100 cm in a meter.
 
-To make this work, we need to learn about a new function in Python: 
+To put the above theory into practice, we need to learn about a new function in Python: 
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
-continuing to run your code.
+continuing to the next instruction in the code.
 
 .. tab-set::
     .. tab-item:: Python

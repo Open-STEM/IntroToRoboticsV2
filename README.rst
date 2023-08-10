@@ -1,5 +1,9 @@
 IntroToRobotics 
 ===============
+
+This is the active development repository for the readthedocs curriculum, found here:
+https://introtoroboticsv2.readthedocs.io/en/latest/index.html
+
 Introduction to Robotics Curriculum
 
 A list of rules to follow while documenting a .rst file:
