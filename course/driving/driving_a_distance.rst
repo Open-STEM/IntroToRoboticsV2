@@ -149,6 +149,7 @@ Let's say that we want to drive three distances in a row: 25, 50, and 75 cm.
 How could we program the robot to do this? The easy solution is to copy and 
 paste the code you wrote before three times, and modify it each time:
 
+.. add blockly tab once math can be inputted into "sleep" block
 .. code-block:: python
 
     from XRPLib.defaults import *

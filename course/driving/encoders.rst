@@ -164,3 +164,49 @@ In this case, the next line tells the robot to stop.
 
     To read the right encoder, you use
     :code:`drivetrain.get_right_encoder_position()`
+
+Turning to a heading
+---------------------
+
+Once you know how to drive a certain distance with the XRP, it is easy to turn to a certain heading with it. 
+First, you need to calculate the distance that a wheel must travel so that you are facing the correct heading,
+and then simply rotate the XRP until the encoders have traveled that distance.
+
+Calculating the necessary distance is complicated, but we can break down this problem into steps.
+
+first, lets make a fraction that represents from 0.0 to 1.0 how far around the robot's circumference 
+the wheels need to travel. In this case 0.0 is 0 degrees and 1.0 is 360 degrees. 
+
+Now to get the distance the wheel travels, we need to multiply this fraction by the total distance the wheel
+travels to rotate 360 degrees, this number is the circumference of a circle with the diameter same diameter 
+as the robot. We can calculare this by multiplying the wheel track distance by pi. 
+
+finally, to get the number of wheel rotations, we need to divide this distance by the circumference of 
+the wheel, or pi times the wheel diameter. We can cancel pi from both sides of this division and that
+leaves us with.  
+
+.. math:: 
+
+    \frac{\text{target degrees} \cdot \text{robot wheel track}} {360 \cdot \text{wheel diameter}}
+
+Now that we have the number of wheel rotations, the rest of the program is easy. just turn the robot in the direction of the turn, and stop once
+the number of rotations has exceeded the calculated rotation goal.
+
+.. tab-set::
+    .. tab-item:: Python
+        .. code-block:: python
+            def turn(target):
+                global rotations
+                differentialDrive.reset_encoder_position()
+                rotations = (target * 15.5) / (360 * 6)
+                if target > 0:
+                    differentialDrive.set_effort((-0.3), 0.3)
+                else:
+                    differentialDrive.set_effort(0.3, (-0.3))
+                while not math.fabs(motor1.get_position()) >= math.fabs(rotations):
+                
+                differentialDrive.stop()
+
+    .. tab-item:: Blockly
+        .. image:: media/encoder-turn-blockly.png
+            :width: 300

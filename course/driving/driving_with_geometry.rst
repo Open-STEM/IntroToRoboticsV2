@@ -108,6 +108,7 @@ by tracing several polygons consecutively and turning slightly between each new 
 something like this:
 
 .. image:: media/pinwheel-square.jpg
+    :width: 240
 
 Programming this may seem like a daunting task, but it is actually quite simple. Every time you want to trace a piece
 of the pinwheel, you just need to call your polygon function from before and then turn your robot slightly. We can calculate the measure of this
