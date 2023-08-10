@@ -83,15 +83,20 @@ determines the number of degrees of your polgyon's exterior angles. With this in
 can now write a function to trace any regular polygon!
 
 .. tab-set::
+    
     .. tab-item:: Python
+
         .. code-block:: python
+        
             def polygon(sideLength, numSides):
                 for i in range(int(numSides)):
                     differentialDrive.turn((360 / numSides), 0.5)
                     differentialDrive.straight(sideLength, 0.5)
 
     .. tab-item:: Blockly
+
         .. image:: media/polygon-blockly.png
+
             :width: 300
 
 Pinwheel

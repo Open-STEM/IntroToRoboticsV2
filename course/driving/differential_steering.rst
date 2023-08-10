@@ -1,18 +1,9 @@
-Differential steering
-=====================
+Advanced: Circles and Differential Steering
+===========================================
 
-Driving Straight
-----------------
-
-Driving straight is pretty easy. The wheels just have to go the same distance.
-
-.. youtube:: NeNV5lUYcgo
-
-
-What if they don't go the same distance? 
-----------------------------------------
-
-What happens if the left wheel goes slower than the right wheel?
+In this section, we derive the math needed to drive in circles of any radius.
+Fundamentally, this requires driving the two motors at different ratio, but it
+takes a little calculation to figure out this ratio for a given radius.
 
 .. youtube:: kd2-mhI2CgE
 

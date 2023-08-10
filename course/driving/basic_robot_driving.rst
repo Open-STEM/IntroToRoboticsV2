@@ -1,4 +1,4 @@
-Getting the robot moving
+Getting the Robot Moving
 ========================
 
 Basic driving

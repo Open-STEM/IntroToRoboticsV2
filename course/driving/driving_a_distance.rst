@@ -1,4 +1,4 @@
-Driving a distance
+Driving a Distance
 ==================
 
 Controlling your speed
@@ -56,28 +56,18 @@ how many seconds we should drive for to reach that distance.
 Let's use :math:`d` to represent the distance we want to drive in cm. But, we want
 a number in seconds, so we need to convert by the means of *dimensional analysis*.
 
-To do this, write an expression for the known value with units included: 
-
-.. math:: 
-
-    \frac{5 \text{ cm}}{1 \text{ second}} \cdot \frac{x \text{ seconds}}{} = d \text{ cm}
-
-Where :math:`d` is how far you want to go, and :math:`x` is how many seconds it
-will take to get there. We know the value of :math:`d`, so we need to use
-algebra to solve for :math:`x`.
-
-We can cancel out the units. This is called *dimensional analysis*:
+To do this, write an expression for the known value with units included:
 
 .. math::
     (d  \text{ cm})
 
 Dimensional analysis involves multiplying this expression by special representations
 of "1" to convert units. In this case, our speed is 5 cm per second, so we can equate
-:math:`5 \text{ seconds} = 1 \text{ cm}`. Rearranging, we have our special representation of 1:
+:math:`5 \text{ cm} = 1 \text{ second}`. Rearranging, we have our special representation of 1:
 
 .. math:: 
 
-    \frac{5 \text{ seconds}}{1 \text{ cm}} = 1
+    \frac{1 \text{ second}}{5 \text{ cm}} = 1
 
 We can now multiply our expression with this special representation of 1:
 
@@ -103,9 +93,9 @@ the denominator of the fraction to that speed to fix the equation.
     Calculate how many seconds you need to drive for to go one meter if your 
     robot is moving at 5 cm per second. Remember, there are 100 cm in a meter.
 
-To make this work, we need to learn about a new function in Python: 
+To put the above theory into practice, we need to learn about a new function in Python: 
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
-continuing to run your code.
+continuing to the next instruction in the code.
 
 .. code-block:: python
 

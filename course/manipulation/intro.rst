@@ -32,8 +32,8 @@ This angle is measured using angles and has a range of [0, 135] degrees.
 Other Robotics Manipulators
 ---------------------------
 
-    There are many types of robotic manipulation. `Here <https://www.youtube.com/watch?v=wXxrmussq4E>`_ is a very complicated example,
-    where Boston Dynamics' Spot robot opens a door and lets itself in
+There are many types of robotic manipulation. `Here <https://www.youtube.com/watch?v=wXxrmussq4E>`_ is a very complicated example,
+where Boston Dynamics' Spot robot opens a door and lets itself in.
 
 The XRP arm is a very simple manipulator.
 
