@@ -174,19 +174,42 @@ the only change between each block is the parameter we are passing to the
 :code:`sleep` function. This is a perfect example of why we have functions.
 Let's write our own function to drive the robot a certain distance.
 
-Python uses the keyword :code:`def` to let you, the programmer, tell it that you
-would like to *define* a new function. A full function definition looks like 
-this:
+.. tab-set:: 
 
-.. code-block:: python
+    .. tab-item:: Python
 
-    def function_name(parameter1, parameter2, parameter3):
-        # put your code here
-        # code in your function can use the parameters by name like this:
-        print(parameter1 / 5)
+        Python uses the keyword :code:`def` to let you, the programmer, tell it that you
+        would like to *define* a new function. A full function definition looks like 
+        this:
 
-In this example function, there are three parameters. Functions can have as 
-many or as few parameters as you want, or even have no parameters at all.
+        .. code-block:: python
+
+            def function_name(parameter1, parameter2, parameter3):
+                # put your code here
+                # code in your function can use the parameters by name like this:
+                print(parameter1 / 5)
+
+        In this example function, there are three parameters. Functions can have as 
+        many or as few parameters as you want, or even have no parameters at all.
+
+    .. tab-item:: Blockly
+
+        In Blockly, you create functions by dragging a block that looks like the picture
+        below. The interface allows you to specify the function name, and pass *parameters*
+        to the function body. Here, we have a function called some_task (which you should rename
+        based on what your function does) that takes in a parameter called :code:`text`, and uses
+        prints the :code:`text` value. Functions can have as  many or as few parameters as you want,
+        or even have no parameters at all.
+
+        .. image:: media/blocklyfunctiondefinition.png
+            :width: 300
+
+        The below blocks *calls* the function we defined above to run it. The value "Hello" is passed
+        to the :code:`text` parameter, which results in "Hello" being printed to the console.
+
+        .. image:: media/blocklyfunctioncall.png
+            :width: 300
+
 
 .. admonition:: Try it out
 
