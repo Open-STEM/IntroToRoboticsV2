@@ -37,14 +37,23 @@ The XRP handles doing all the math to convert these switches into a real
 distance measurement for you, so you don't have to worry about it. We can use 
 some new :code:`drivetrain` functions to see what the encoders are measuring:
 
-.. code-block:: python
+.. tab-set:: 
 
-    from XRPLib.defaults import *
-    from time import sleep
+    .. tab-item:: Python
 
-    while True:
-        print(drivetrain.get_left_encoder_position())
-        sleep(1)
+        .. code-block:: python
+
+            from XRPLib.defaults import *
+            from time import sleep
+
+            while True:
+                print(drivetrain.get_left_encoder_position())
+                sleep(1)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/encoder.png
+            :width: 300
 
 This code uses something new: a :code:`while` *loop*. A :code:`while` loop will
 run the code underneath it until a *condition* is no longer equal to
@@ -119,12 +128,23 @@ Now that you know that the encoders actually measure the distance, it would be
 better to use them for your :code:`drive_distance` function. We can modify your 
 function to use a :code:`While` loop:
 
-.. code-block:: python
+.. tab-set:: 
 
-    def drive_distance(distance_to_drive)
-        while drivetrain.get_left_encoder_position() < distance_to_drive:
-            drivetrain.set_speed(5, 5)
-        drivetrain.stop()
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            def drive_distance(distance_to_drive):
+                while drivetrain.get_left_encoder_position() < distance_to_drive:
+                    drivetrain.set_speed(5, 5)
+                    time.sleep(0.01)
+                drivetrain.stop()
+
+    .. tab-item:: Blockly
+
+        .. image:: media/drivedistanceencoder.png
+            :width: 300
+    
 
 This code block uses a loop to constantly check if the left encoder position is
 less than the distance you want the robot to go. Once it is no longer less than 

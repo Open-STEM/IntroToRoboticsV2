@@ -18,6 +18,7 @@ to speed back up.
 
 To set the speed of the drivetrain motors, we use a new function:
 
+<<<<<<< HEAD
 .. tab-set::
     .. tab-item:: Python
         .. code-block:: python
@@ -27,6 +28,21 @@ To set the speed of the drivetrain motors, we use a new function:
     
     .. tab-item:: Blockly
         .. image:: setSpeed.png
+=======
+.. tab-set:: 
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            from XRPLib.defaults import *
+
+            drivetrain.set_speed(5, 5)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/setspeedexample.png
+>>>>>>> main
             :width: 300
 
 This tells the drivetrain to set the speed of each drivetrain wheel to travel at
@@ -102,6 +118,7 @@ To put the above theory into practice, we need to learn about a new function in 
 :code:`sleep`, which makes the XRP wait for some number of seconds before 
 continuing to the next instruction in the code.
 
+<<<<<<< HEAD
 .. tab-set::
     .. tab-item:: Python
         .. code-block:: python
@@ -115,6 +132,25 @@ continuing to the next instruction in the code.
         
     .. tab-item:: Blockly
         .. image:: media/setSpeedSleep.png
+=======
+.. tab-set:: 
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            from XRPLib.defaults import *
+            from time import sleep # We need to import the speed function to use it.
+
+            drivetrain.set_speed(5, 5)
+            sleep(x) # replace x with the time you calculated to go one meter.
+            drivetrain.stop() # This is another function which makes it easy to stop the robot
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/setspeedandsleep.png
+>>>>>>> main
             :width: 300
 
 .. tip:: 
@@ -167,18 +203,28 @@ the only change between each block is the parameter we are passing to the
 :code:`sleep` function. This is a perfect example of why we have functions.
 Let's write our own function to drive the robot a certain distance.
 
-Python uses the keyword :code:`def` to let you, the programmer, tell it that you
-would like to *define* a new function. A full function definition looks like 
-this:
+.. tab-set:: 
 
+<<<<<<< HEAD
 .. tab-set::
     .. tab-item:: Python
         .. code-block:: python
 
+=======
+    .. tab-item:: Python
+
+        Python uses the keyword :code:`def` to let you, the programmer, tell it that you
+        would like to *define* a new function. A full function definition looks like 
+        this:
+
+        .. code-block:: python
+
+>>>>>>> main
             def function_name(parameter1, parameter2, parameter3):
                 # put your code here
                 # code in your function can use the parameters by name like this:
                 print(parameter1 / 5)
+<<<<<<< HEAD
 
     .. tab-item:: Blockly
         .. image:: media/function.png
@@ -186,6 +232,30 @@ this:
             
 In this example function, there are three parameters. Functions can have as 
 many or as few parameters as you want, or even have no parameters at all.
+=======
+
+        In this example function, there are three parameters. Functions can have as 
+        many or as few parameters as you want, or even have no parameters at all.
+
+    .. tab-item:: Blockly
+
+        In Blockly, you create functions by dragging a block that looks like the picture
+        below. The interface allows you to specify the function name, and pass *parameters*
+        to the function body. Here, we have a function called some_task (which you should rename
+        based on what your function does) that takes in a parameter called :code:`text`, and uses
+        prints the :code:`text` value. Functions can have as  many or as few parameters as you want,
+        or even have no parameters at all.
+
+        .. image:: media/blocklyfunctiondefinition.png
+            :width: 300
+
+        The below blocks *calls* the function we defined above to run it. The value "Hello" is passed
+        to the :code:`text` parameter, which results in "Hello" being printed to the console.
+
+        .. image:: media/blocklyfunctioncall.png
+            :width: 300
+
+>>>>>>> main
 
 .. admonition:: Try it out
 
