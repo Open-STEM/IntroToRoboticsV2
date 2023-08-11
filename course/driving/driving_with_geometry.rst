@@ -27,8 +27,13 @@ three times and turn 120 degrees in between each drive straight.
 
 
 .. tab-set::
+
     .. tab-item:: Python
+
         .. code-block:: python
+
+            from XRPLib.defaults import *
+
             differentialDrive.straight(30, 0.5)
             differentialDrive.turn(120, 0.5)
             differentialDrive.straight(30, 0.5)
@@ -36,7 +41,9 @@ three times and turn 120 degrees in between each drive straight.
             differentialDrive.straight(30, 0.5)
 
     .. tab-item:: Blockly
-        .. image:: media/triangle-blockly.png
+
+        .. image:: media/triabgle-blockly.png
+
             :width: 300
 
 
@@ -48,18 +55,25 @@ the exterior angles are also 90 degrees. Keeping a side length of 30 cm, we can 
 programming our robot to drive straight for 30 cm four times and turn 90 degrees between each drive straight.
 
 .. tab-set::
+
     .. tab-item:: Python
+
         .. code-block:: python
-            differentialDrive.straight(30, 0.5)
-            differentialDrive.turn(90, 0.5)
-            differentialDrive.straight(30, 0.5)
-            differentialDrive.turn(90, 0.5)
-            differentialDrive.straight(30, 0.5)
-            differentialDrive.turn(90, 0.5)
-            differentialDrive.straight(30, 0.5)
+
+            from XRPLib.defaults import *
+
+            drivetrain.straight(30, 0.5)
+            drivetrain.turn(90, 0.5)
+            drivetrain.straight(30, 0.5)
+            drivetrain.turn(90, 0.5)
+            drivetrain.straight(30, 0.5)
+            drivetrain.turn(90, 0.5)
+            drivetrain.straight(30, 0.5)
 
     .. tab-item:: Blockly
+
         .. image:: media/square-blockly.png
+
             :width: 300
 
 Polygons
@@ -88,6 +102,8 @@ can now write a function to trace any regular polygon!
 
         .. code-block:: python
         
+            from XRPLib.defaults import *
+
             def polygon(sideLength, numSides):
                 for i in range(int(numSides)):
                     differentialDrive.turn((360 / numSides), 0.5)
@@ -116,13 +132,20 @@ turn by dividing 360 degrees by the number of polygons we are tracing in order t
 Repeat this process as many times as there are polygons in the pinwheel, and your pattern will be finished!
 
 .. tab-set::
+
     .. tab-item:: Python
+
         .. code-block:: python
+
+            from XRPLib.defaults import *
+
             def pinwheel(sideLength, numSides, instances):
                 for i in range(int(instances)):
                     polygon(numSides, numSides)
-                    differentialDrive.turn((360 / instances), 0.5)
+                    drivetrain.turn((360 / instances), 0.5)
 
     .. tab-item:: Blockly
+
         .. image:: media/pinwheel-blockly.png
+            
             :width: 300
