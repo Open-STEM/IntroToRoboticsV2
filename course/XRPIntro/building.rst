@@ -257,6 +257,16 @@ cable end, then snap the wheel side of the motor into place. Repeat for both mot
         :width: 200
         :alt: Motor is fully seated in the chassis
 
+Photo of the controller board
+-----------------------------
+Many of the following instructions require attaching cables to the connectors on the
+controller board on the robot. The printing on the board identifying the purposes of
+each of the connectors and the pins is very small to fit on the small board. To make
+assembly easier, refer to the following photograph of the board if needed.
+
+.. image:: media/Assembly/RobotController.jpg
+    :width: 500
+
 Connecting the motor cables to the robot controller (3:50)
 ----------------------------------------------------------
 
@@ -407,7 +417,9 @@ The servo horn is the small white plastic arm that attaches to the servo by pres
 servo shaft. There are several servo horns that come with the servo accessories. The one that
 you should use has a hole for attaching to the servo shaft at one end, and a small arm at the
 other end. It gets installed into the slot at the end of the larger black servo arm as shown
-in the picture below and the video.
+in the picture below and the video. **Be sure to install the servo arm so that it is
+oriented as shown in the photo, in particular make sure that the mounting flange is
+facing the correct direction**. 
 
     .. image:: media/Assembly/servo_horn_install.jpeg
         :width: 200
@@ -452,3 +464,18 @@ Controller board.
     .. image:: media/Assembly/servo_cable_installed.jpeg
         :width: 200
         :alt: The servo cable is installed into the controller board. Make sure to connect it as shown.
+
+Troubleshooting the robot build
+===============================
+Generally the build of the robot is very strightforward, but from feedback we have compiled this section
+that describes some of the common issues we have seen as people are building the XRP.
+
+Rangefinder or the line following sensors don't work in the Installation Vefrificaton Test 
+------------------------------------------------------------------------------------------
+It is very easy to accidentally attach the rangefinder and line following sensor cables to the
+wrong connectors on the controller board. Be sure to verify that the rangefinder is in the
+connector marked "Range" and the line following sensor is in the connector marked "Line".
+
+If the connectors are reversed and you have to remove them, **be sure to only remove the connector
+by pulling on the plastic shell**. Do not pull on the wires as you might accidently pull them out
+of the connector.

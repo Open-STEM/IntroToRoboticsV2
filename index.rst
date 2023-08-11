@@ -53,10 +53,12 @@ ways that make it available to all.
    course/driving/basic_robot_driving
    course/driving/driving_a_distance
    course/driving/encoders
-   course/driving/differential_steering
    course/driving/calling_drive_functions
+   course/driving/helpful_drivetrain_functions
    course/driving/driving_with_geometry
    course/driving/waiting_for_button_input
+   course/driving/parking
+   course/driving/differential_steering
 
 .. toctree:: 
    :maxdepth: 1
