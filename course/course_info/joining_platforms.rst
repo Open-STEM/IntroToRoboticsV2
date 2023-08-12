@@ -45,6 +45,6 @@ Another way to contact us, particularly about issues or bugs with any of the sof
 to create issues in the GitHub repository where the software is developed.
 
 To create a GitHub issue for the XRP team to adress, navigate to our  
-`GitHub repository's issue page <https://github.com/Open-STEM/XRP-Library/issues>`_ and select "New issue". 
+`GitHub repository's issue page <https://github.com/Open-STEM/XRP_MicroPython/issues>`_ and select "New issue". 
 Describe your problem in detail and click "Submit new issue" to post your issue in the repository. 
 A member of the XRP team will reach out if we have further questions.

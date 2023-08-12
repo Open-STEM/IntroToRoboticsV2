@@ -1,5 +1,5 @@
-Module Overview
-===============
+Robot Driving: Module Overview
+==============================
 
 In this module students will:
 

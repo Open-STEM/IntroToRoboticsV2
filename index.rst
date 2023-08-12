@@ -124,11 +124,9 @@ ways that make it available to all.
 .. toctree:: 
    :maxdepth: 1
    :caption: Issues
-   :hidden:
+   :hidden:   
 
-   Report any issues to <https:://github.com/Open-STEM/IntroToRobotics>
-   
-
+   `Report course issues <https://github.com/Open-STEM/IntroToRoboticsV2/issues>`_
 
 Indices and tables
 ==================

@@ -32,11 +32,16 @@ One common example is an ultrasonic range finder, which emits sound waves and li
 Mechanical Sensors
 ------------------
 
-Another type of sensor that can indirectly inform the robot about distance are mechanical sensors such as limit switches. These sensors operate by physically touching an object and can be used to detect when a robot has reached a certain point in its environment.
+Another type of sensor that can directly inform the robot about distance are
+mechanical sensors such as limit switches. These sensors operate by sensing
+touching an object and can be used to detect when a robot has reached a certain
+point in its environment.
 
 These sensors work by completing a circuit, either using magnets or physical force. 
 
-Completion of the circuit informs the robot that a certain has taken place. For example, a limit switch can be used to detect when a robot has reached the end of a track.
+Completion of the circuit informs the robot that the actuator has reached a particularl
+position.
+For example, a limit switch can be used to detect when a robot has reached the end of a track.
 
 Using the Ultrasonic Sensor
 ---------------------------

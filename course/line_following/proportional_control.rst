@@ -85,7 +85,7 @@ Based on the computed error, we want that to determine how much the robot turns.
 
 This image illustrates how the error impacts how much we want to turn. Remember:
 making the robot turn is simply setting the left and right motors to different
-efforts1. So, the solution is to set a base effort, say, 50% effort, that both
+efforts. So, the solution is to set a base effort, say, 50% effort, that both
 motors move at when the error is at 0. Then, have the calculated error influence
 the difference in efforts between the two motors. As explained through code:
 
