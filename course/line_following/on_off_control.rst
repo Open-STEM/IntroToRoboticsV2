@@ -44,28 +44,37 @@ than left).
 This seems like a solution involving an if-else statement. Our condition would
 be related to whether the value is greater or less than 0.5.
 
-.. tip:: 
+An :code:`if` / :code:`else` statement allows you to run different blocks of
+code based on a *condition* (the same kind of *condition* you used in a
+:code:`while` loop)
 
-    An :code:`if` / :code:`else` statement allows you to run different blocks of
-    code based on a *condition* (the same kind of *condition* you used in a
-    :code:`while` loop)
+Consider the following example code:
 
-    Consider the following example code:
+.. tab-set::
 
-    .. code-block:: python
+    .. tab-item:: Python
 
-        from XRPLib.defaults import *
+        .. code-block:: python
 
-        if drivetrain.get_left_encoder_position() > 20:
-            print("Left encoder is greater than 20 cm")
-        else:
-            print("Left encoder is less than 20 cm")
-        
-    In this example code we just show different messages on the computer based
-    on the value of the left encoder, but you could put whatever code you want
-    in the blocks instead. For example, you could have the robot turn clockwise
-    or counterclockwise depending on a condition using an :code:`if` /
-    :code:`else` statement.
+            from XRPLib.defaults import *
+
+            while True:
+                if drivetrain.get_left_encoder_position() > 20:
+                    print("Left encoder is greater than 20 cm")
+                else:
+                    print("Left encoder is less than 20 cm")
+
+    .. tab-item:: Blockly
+
+        .. image:: media/if-else.png
+            :width: 300
+
+    
+In this example code we just show different messages on the computer based
+on the value of the left encoder, but you could put whatever code you want
+in the blocks instead. For example, you could have the robot turn clockwise
+or counterclockwise depending on a condition using an :code:`if` /
+:code:`else` statement.
 
 .. figure:: media/on_off_control.png
     :align: center
