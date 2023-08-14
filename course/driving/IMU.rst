@@ -22,19 +22,21 @@ getting these values is easy. The functions for getting acceleration in any axis
 
 .. tab-set:: 
 
-    .. code-block:: Python
+    .. tab-item:: Python
 
-        from XRPLib.imu import IMU
+        .. code-block:: python
 
-        imu = IMU.get_default_imu()
-        imu.calibrate(1)
+            from XRPLib.imu import IMU
+
+            imu = IMU.get_default_imu()
+            imu.calibrate(1)
 
 
-        imu.get_acc_x()
+            imu.get_acc_x()
 
-        imu.get_acc_y()
+            imu.get_acc_y()
 
-        imu.get_acc_z()
+            imu.get_acc_z()
 
     .. tab-item:: Blockly
 
@@ -45,19 +47,21 @@ Getting the angles in each axis is just as easy, the functions for doing so are 
 
 .. tab-set:: 
 
-    .. code-block:: Python
+    .. tab-item:: Python
 
-        from XRPLib.imu import IMU
+        .. code-block:: python
 
-        imu = IMU.get_default_imu()
-        imu.calibrate(1)
+            from XRPLib.imu import IMU
+
+            imu = IMU.get_default_imu()
+            imu.calibrate(1)
 
 
-        imu.get_yaw()
+            imu.get_yaw()
 
-        imu.get_roll()
+            imu.get_roll()
 
-        imu.get_pitch()
+            imu.get_pitch()
 
     .. tab-item:: Blockly
 
@@ -74,12 +78,28 @@ Turning to an angle is the most common use of the IMU. If you know what heading 
 robot to turn to, you can set up a proportional control loop to move your measured heading to your desired heading.
 
 .. tab-set::
+
     .. tab-item:: Python
+
         .. code-block:: python
-            
+
+            from XRPLib.imu import IMU
+            from XRPLib.differential_drive import DifferentialDrive
+
+            imu = IMU.get_default_imu()
+            imu.calibrate(1)
+
+            differentialDrive = DifferentialDrive.get_default_differential_drive()
+
+            # Describe this function...
+            def do_something(targetAngle):
+                kP = 0.02
+                while (imu.get_yaw()) >= targetAngle:
+                    differentialDrive.set_effort((((targetAngle - (imu.get_yaw())) * kP) * -1), ((targetAngle - (imu.get_yaw())) * kP))
+            differentialDrive.stop()
 
     .. tab-item:: Blockly
-        .. image:: 
+        .. image:: media/gyroturn-blockly.png
             :width: 300
 
 
