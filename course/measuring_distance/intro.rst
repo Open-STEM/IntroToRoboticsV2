@@ -50,9 +50,18 @@ Using the Ultrasonic Sensor
 
 While using the XRP, your distance sensor will be an ultrasonic range finder. Here is the method call to get the distance from the sensor:
 
-.. code-block:: python
+.. tab-set:: 
 
-    sonar.get_distance()
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+          rangefinder.distance()
+
+    .. tab-item:: Blockly
+
+        .. image:: media/sonardistance.png
+            :width: 300
     
 This function returns the distance, in cm, from the sensor to the nearest object.
 
