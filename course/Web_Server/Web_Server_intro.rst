@@ -37,4 +37,4 @@ or if you are using blobkly:
 .. image:: 
     start-server.png
 
-Finally, search for wifi networks on your phone or computer, and join the wifi network with the name and password you chose, and open a new page on your browser. You should see your new custom dashboard!
+Finally, search for wifi networks on your phone or computer, and join the wifi network with the name and password you chose. Open a new page on your browser, and you should see your new custom dashboard!
