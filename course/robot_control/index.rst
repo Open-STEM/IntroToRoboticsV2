@@ -1,5 +1,5 @@
-Module Overview 
-===================================
+Robot Control: Module Overview 
+==============================
 
 In this module students will:
 

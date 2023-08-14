@@ -1,5 +1,5 @@
-Module Overview 
-===============
+Introduction to the XRP: Module Overview 
+========================================
 
 In this module you will:
 

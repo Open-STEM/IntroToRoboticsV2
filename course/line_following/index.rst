@@ -1,5 +1,5 @@
-Module Overview
-===============
+Sensing and Following Lines: Module Overview
+============================================
 
 In this module students will:
 

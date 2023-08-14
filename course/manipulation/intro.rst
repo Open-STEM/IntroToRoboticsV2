@@ -21,9 +21,8 @@ To move your XRP's arm, use this function:
 
     servo.set_angle(angle)
 
-In this case, the function takes in a single argument, which is the angle that you want the arm to move to.
-
-This angle is measured using angles and has a range of [0, 135] degrees. 
+In this case, the function takes in a single argument, which is the angle in degrees that you want
+the arm to move to. The angle has a range of [0, 135] degrees. 
 
 .. admonition:: Try it out
 

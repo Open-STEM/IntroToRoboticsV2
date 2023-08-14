@@ -1,5 +1,5 @@
-Module Overview 
-===================================
+Measuring Distances: Module Overview 
+====================================
 
 In this module students will:
 
