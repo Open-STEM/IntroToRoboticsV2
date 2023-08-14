@@ -65,5 +65,21 @@ Getting the angles in each axis is just as easy, the functions for doing so are 
             :width: 300
 
 You can use these values to determine the direction your robot is pointed in, the steepness of a surface 
-it is driving up, or even the sideways tilt if it is driving on an uneven surface
+it is driving up, or even the sideways tilt if it is driving on an uneven surface.
+
+Turning With The IMU
+--------------------
+
+Turning to an angle is the most common use of the IMU. If you know what heading you want your 
+robot to turn to, you can set up a proportional control loop to move your measured heading to your desired heading.
+
+.. tab-set::
+    .. tab-item:: Python
+        .. code-block:: python
+            
+
+    .. tab-item:: Blockly
+        .. image:: 
+            :width: 300
+
 
