@@ -52,6 +52,7 @@ ways that make it available to all.
    course/driving/understanding_your_robots_drivetrain
    course/driving/basic_robot_driving
    course/driving/driving_a_distance
+   course/driving/IMU
    course/driving/encoders
    course/driving/calling_drive_functions
    course/driving/helpful_drivetrain_functions
