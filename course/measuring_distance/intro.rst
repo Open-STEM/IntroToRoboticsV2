@@ -72,4 +72,4 @@ This function returns the distance, in cm, from the sensor to the nearest object
 
 .. error:: 
 
-    TODO add a block of code that completes the try it out block 
+    TODO add a block of code that completes the try it out block
