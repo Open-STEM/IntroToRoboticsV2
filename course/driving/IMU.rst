@@ -4,7 +4,7 @@ Using the XRP IMU
 Introduction:
 -------------
 
-The XRP's circuit board contains avery useful sensor called an inertial measurement unit (IMU). 
+The XRP's circuit board contains a very useful sensor called an inertial measurement unit (IMU). 
 This sensor uses several internal senors to determine what direction the robot is pointing in, as well as 
 the acceleration in its primary directions.
 
@@ -13,16 +13,16 @@ the acceleration in its primary directions.
 
 .. note:: 
     The imu measures the acceleration in centimeters per second squared in the 3 main directions: 
-    forward and backward(z), side to side(x), and up and down(y).
-    It also measures the ange in degrees with yaw (turning side to side), pitch(pointing up or down),
-    and roll(tilting to a side)
+    forward and backward (z), side to side (x), and up and down (y).
+    It also measures the ange in degrees with yaw (turning side to side), pitch (pointing up or down),
+    and roll (tilting to a side)
 
 getting these values is easy. The functions for getting acceleration in any axis are below:
 
 
 .. tab-set:: 
 
-    .. tab-item:: Python
+    .. code-block:: Python
 
         from XRPLib.imu import IMU
 
@@ -45,7 +45,7 @@ Getting the angles in each axis is just as easy, the functions for doing so are 
 
 .. tab-set:: 
 
-    .. tab-item:: Python
+    .. code-block:: Python
 
         from XRPLib.imu import IMU
 
