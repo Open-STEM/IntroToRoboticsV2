@@ -34,12 +34,12 @@ certain distance:
     .. tab-item:: Blockly
 
         .. image:: media/stop_at_distance.png
-
             :width: 300
 
-        In this code, the condition being checked is
-        .. image:: media/left_encoder_condition.png
-        meaning that the robot will
+        .. |ico1| image:: media/left_encoder_condition.png
+            :height: 3ex
+
+        In this code, the condition being checked is |ico1| meaning that the robot will
         drive forward at 5 cm/s until the left encoder reads a distance of 20 cm. This 
         code can be easily modified to replace the current condition with a condition 
         that uses the function you wrote.
