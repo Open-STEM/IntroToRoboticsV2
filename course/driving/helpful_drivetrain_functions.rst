@@ -46,7 +46,9 @@ up. Usually, you won't need to use this, but it is there if you need it.
 
     .. tab-item:: Python
 
-        drivetrain.turn(turn_degrees, max_effort = 0.5, timeout = None)
+        .. code-block:: python
+
+            drivetrain.turn(turn_degrees, max_effort = 0.5, timeout = None)
 
     .. tab-item:: Blockly
 
