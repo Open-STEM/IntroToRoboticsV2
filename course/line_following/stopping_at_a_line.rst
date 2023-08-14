@@ -10,7 +10,7 @@ you'll use that function to make the robot stop when it sees a line.
 
     The XRP stopping when it sees a line.
 
-Recall code fLet's consider a previous exercise - using a while loop to drive a
+Let's consider a previous exercise - using a while loop to drive a
 certain distance:
 
 .. code-block:: python
