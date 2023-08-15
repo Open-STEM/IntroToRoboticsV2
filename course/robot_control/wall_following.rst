@@ -20,7 +20,7 @@ Now, implement a proportional controller given the steps that you have previousl
 
 Watch this video to see what a working wall-follower looks like. 
 
- .. image:: wallfollowing.gif
+ .. image:: media/wallfollowing.gif
 
 
 Implementing Wall Following
@@ -30,4 +30,30 @@ Today, let's use the information we learned last time to actually implement a wa
 
 Here is some code that would allow your XRP to track a wall on the right side of the robot. 
 
+.. tab-set::
 
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            from XRPLib.differential_drive import DifferentialDrive
+            from XRPLib.rangefinder import Rangefinder
+
+            kP = None
+            targetDist = None
+
+            differentialDrive = DifferentialDrive.get_default_differential_drive()
+
+            rangefinder = Rangefinder.get_default_rangefinder()
+
+
+            kP = 0.02
+            targetDist = 20
+            while True:
+                differentialDrive.set_effort((0.4 + kP * ((rangefinder.distance()) - targetDist)), (0.4 + (kP * ((rangefinder.distance()) - targetDist)) * -1))
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/wall-follow-blockly.png
+            :width: 300

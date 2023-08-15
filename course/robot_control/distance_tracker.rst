@@ -12,4 +12,4 @@ We can do this by using the distance sensor to determine how far away the object
 
 For this activity, let's use a target distance of 30 cm. 
 
-.. image:: SimpleStandoff.png
+.. image:: media/SimpleStandoff.png
