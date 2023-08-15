@@ -4,11 +4,12 @@ Now that you've developed a program to keep a certain distance from an object, l
 
 Building a control law
 ----------------------
-What do we want to do when we are too close to the wall? How do we start to move closer to the wall?
 
-Here is a sketch of the setup:
+when you follow a wall, all you need to do is steer the robot so you can keep a certain distance from the wall.
+If you are following a wall on your right side, you will turn right if you are too far and left if you are too close.
+We can easily do this with a proportional control loop. The steering correction can be proportional to the error,
+in this case the difference between the distance to the wall and the target distance to the wall.
 
-.. image:: media/wallFollow.png
  
 .. tip::
    Remember that you will want to incorporate a "base effort" to ensure that the robot is moving forward at all times. Let's set this to **0.5**.
@@ -29,6 +30,4 @@ Today, let's use the information we learned last time to actually implement a wa
 
 Here is some code that would allow your XRP to track a wall on the right side of the robot. 
 
-.. error:: 
 
-    TODO add a visual and complete code to complete this
