@@ -87,6 +87,15 @@ motor how fast it should move, but rather how hard it should work. If you tell
 your robot's motors to work at a constant effort, your robot's speed will change
 depending on whether it is driving on a flat surface or an inclined one.
 
+.. youtube:: z6aIVpf3qN0
+
+.. youtube:: Zcr83kcO_Pk
+
+In both videos, the robot is using the same effort. In the first video, the robot is slowly moving uphill because gravity is fighting against
+its effort. In the second video, the robot is moving quickly downhill because gravity is working in the
+same direction as the effort. The force output from the motors is the same, but the speed will depend on
+resistance to the force.
+
 .. tip:: 
 
     Effort is also like the throttle in a car. If you're going up a hill, you 
@@ -160,18 +169,6 @@ you would modify the code to spin the right motor? Simply replace
     Notice how the wheel slows down when you do this, since it would need more
     effort to keep going the same speed.
 
-Understanding Effort
---------------------
-  
-.. youtube:: z6aIVpf3qN0
-
-.. youtube:: Zcr83kcO_Pk
-
-These two videos demonstrate the effect of effort because the robots in each video are moving with 
-the same effort. In the first video, the robot is slowly moving uphill because gravity is fighting against
-its effort. In the second video, the robot is moving more quickly downhill because gravity is working in the
-same direction as the effort. The force output from the motors is the same, but the speed will depend on
-resistance to the force.
 
 Going backwards
 ---------------
