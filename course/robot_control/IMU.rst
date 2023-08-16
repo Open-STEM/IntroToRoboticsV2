@@ -110,7 +110,7 @@ robot to turn to, you can set up a proportional control loop to move your measur
 
     .. tab-item:: Blockly
         
-        .. image:: gyroturn-blockly.png
+        .. image:: media/gyroturn-blockly.png
             :width: 600
 
 
