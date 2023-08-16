@@ -12,4 +12,30 @@ We can do this by using the distance sensor to determine how far away the object
 
 For this activity, let's use a target distance of 30 cm. 
 
-.. image:: media/SimpleStandoff.png
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            from XRPLib.rangefinder import Rangefinder
+            from XRPLib.differential_drive import DifferentialDrive
+
+            rangefinder = Rangefinder.get_default_rangefinder()
+
+            differentialDrive = DifferentialDrive.get_default_differential_drive()
+
+            while True:
+                if (rangefinder.distance()) < 27.5:
+                    differentialDrive.set_effort((-0.3), (-0.3))
+                elif (rangefinder.distance()) > 32.5:
+                    differentialDrive.set_effort(0.3, 0.3)
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/SimpleStandoff.png
+            :width: 300
+
+
+
