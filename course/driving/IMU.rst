@@ -9,7 +9,7 @@ This sensor uses several internal senors to determine what direction the robot i
 the acceleration in its primary directions.
 
 .. image ::
-    6dof.jpg
+    media/6dof.jpg
 
 .. note:: 
     The imu measures the acceleration in centimeters per second squared in the 3 main directions: 
@@ -41,7 +41,7 @@ getting these values is easy. The functions for getting acceleration in any axis
     .. tab-item:: Blockly
 
         .. image:: media/acceleration-blockly.png
-            :width: 300
+            :width: 500
 
 Getting the angles in each axis is just as easy, the functions for doing so are below:
 
@@ -66,7 +66,7 @@ Getting the angles in each axis is just as easy, the functions for doing so are 
     .. tab-item:: Blockly
 
         .. image:: media/gyro-blockly.png
-            :width: 300
+            :width: 500
 
 You can use these values to determine the direction your robot is pointed in, the steepness of a surface 
 it is driving up, or even the sideways tilt if it is driving on an uneven surface.
@@ -101,6 +101,6 @@ robot to turn to, you can set up a proportional control loop to move your measur
     .. tab-item:: Blockly
         
         .. image:: media/gyroturn-blockly.png
-            :width: 300
+            :width: 500
 
 
