@@ -59,16 +59,21 @@ pick up bags and three specified drop zones. Most bags will be placed at the end
 main road, though some will be placed in a “free range” zone. Figure 1 shows a typical
 arena, though we realize that there will be some variation in each course.
 
+.. image:: deliveryRobotMap.png
+
+Figure 1: Diagram of the arena. Individual arenas will vary.
+
 Bags
 ----
 You will be expected to build your own delivery bags, for example from paper or card
 stock and paper clips. You should have at least two bags ready for the demo. You
-may “recycle” them as the demo progresses. [Insert approximate dimensions of bag that
-the XRP can pick up]
+may “recycle” them as the demo progresses. Here is an example of an easy to make bag
+that can be constructed from a drink disposable cup you might find in a restaurant. 
 
-.. image:: deliveryRobotMap.png
+.. image:: bag.jpeg
+    :width: 300
 
-Figure 1: Diagram of the arena. Individual arenas will vary.
+Figure 2: Example of a bag for the delivery challenge
 
 Collection
 ----------

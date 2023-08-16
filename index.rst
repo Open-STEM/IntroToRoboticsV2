@@ -81,8 +81,7 @@ ways that make it available to all.
    course/robot_control/distance_tracker
    course/robot_control/intro_to_prop_control
    course/robot_control/prop_distance_tracker
-   course/robot_control/intro_to_prop_wall_following
-   course/robot_control/prop_wall_following
+   course/robot_control/wall_following
    course/robot_control/IMU
    
 

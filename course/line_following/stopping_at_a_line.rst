@@ -13,19 +13,36 @@ you'll use that function to make the robot stop when it sees a line.
 Let's consider a previous exercise - using a while loop to drive a
 certain distance:
 
-.. code-block:: python
+.. tab-set::
 
-    from XRPLib.defaults import *
+    .. tab-item:: Python
 
-    while drivetrain.get_left_encoder_position() < 20:
-        drivetrain.set_speed(5, 5)
-    drivetrain.stop()
+        .. code-block:: python
 
-In this code, the condition being checked is
-``drivetrain.get_left_encoder_position() < 20`` meaning that the robot will
-drive forward at 5 cm/s until the left encoder reads a distance of 20 cm. This 
-code can be easily modified to replace the current condition with a condition 
-that uses the function you wrote.
+            from XRPLib.defaults import *
+
+            while drivetrain.get_left_encoder_position() < 20:
+                drivetrain.set_speed(5, 5)
+            drivetrain.stop()
+
+        In this code, the condition being checked is
+        ``drivetrain.get_left_encoder_position() < 20`` meaning that the robot will
+        drive forward at 5 cm/s until the left encoder reads a distance of 20 cm. This 
+        code can be easily modified to replace the current condition with a condition 
+        that uses the function you wrote.
+    
+    .. tab-item:: Blockly
+
+        .. image:: media/stop_at_distance.png
+            :width: 300
+
+        .. |ico1| image:: media/left_encoder_condition.png
+            :height: 3ex
+
+        In this code, the condition being checked is |ico1| meaning that the robot will
+        drive forward at 5 cm/s until the left encoder reads a distance of 20 cm. This 
+        code can be easily modified to replace the current condition with a condition 
+        that uses the function you wrote.
 
 .. admonition:: Try it out
 
