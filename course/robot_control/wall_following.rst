@@ -56,4 +56,4 @@ Here is some code that would allow your XRP to track a wall on the right side of
     .. tab-item:: Blockly
 
         .. image:: media/wall-follow-blockly.png
-            :width: 300
+            :width: 600
