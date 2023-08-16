@@ -24,7 +24,7 @@ Watch this video to see what a working wall-follower looks like.
 
 
 Implementing Wall Following
-===========================
+---------------------------
 
 Today, let's use the information we learned last time to actually implement a wall-follower. 
 
