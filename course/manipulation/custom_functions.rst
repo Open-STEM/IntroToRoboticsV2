@@ -1,11 +1,11 @@
-Custom Functions 
-================
+Picking up a Basket
+===================
 
 Now that we've covered how to move the XRP arm to specific angles, we can start to think about how to use the arm 
 to pick up objects. In this section, we'll cover how to use the arm to pick up a basket used for your final project.
 
-Picking up a Basket 
--------------------
+The Process 
+-----------
 
 Let's first think about what the process of picking up a basket would look like. 
 
