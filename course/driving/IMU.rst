@@ -41,7 +41,7 @@ getting these values is easy. The functions for getting acceleration in any axis
     .. tab-item:: Blockly
 
         .. image:: media/acceleration-blockly.png
-            :width: 500
+            :width: 600
 
 Getting the angles in each axis is just as easy, the functions for doing so are below:
 
@@ -101,6 +101,6 @@ robot to turn to, you can set up a proportional control loop to move your measur
     .. tab-item:: Blockly
         
         .. image:: media/gyroturn-blockly.png
-            :width: 500
+            :width: 600
 
 
