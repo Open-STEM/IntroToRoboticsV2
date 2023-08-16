@@ -83,24 +83,34 @@ robot to turn to, you can set up a proportional control loop to move your measur
 
         .. code-block:: python
 
+            import math
             from XRPLib.imu import IMU
+            from XRPLib.encoded_motor import EncodedMotor
             from XRPLib.differential_drive import DifferentialDrive
+
+            targetAngle = None
+            kP = None
 
             imu = IMU.get_default_imu()
             imu.calibrate(1)
 
+            motor1 = EncodedMotor.get_default_encoded_motor(1)
+
             differentialDrive = DifferentialDrive.get_default_differential_drive()
 
-            # Describe this function...
-            def do_something(targetAngle):
-                kP = 0.02
-                while (imu.get_yaw()) >= targetAngle:
-                    differentialDrive.set_effort((((targetAngle - (imu.get_yaw())) * kP) * -1), ((targetAngle - (imu.get_yaw())) * kP))
+            def turn(targetAngle):
+            global kP
+            kP = 0.015
+            while not (math.fabs(targetAngle - (imu.get_yaw())) < 3 and (motor1.get_speed()) < 5):
+                differentialDrive.set_effort((((targetAngle - (imu.get_yaw())) * kP) * -1), ((targetAngle - (imu.get_yaw())) * kP))
             differentialDrive.stop()
+
+
+            turn(90)
 
     .. tab-item:: Blockly
         
-        .. image:: media/gyroturn-blockly.png
+        .. image:: gyroturn-blockly.png
             :width: 600
 
 
