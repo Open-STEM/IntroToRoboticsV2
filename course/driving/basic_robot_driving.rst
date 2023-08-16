@@ -12,8 +12,8 @@ there's an easier way to write code to move the robot.
 
     For this lesson, put your XRP on a flat surface like a table or the floor.
 
-Getting your XRP robot to move is simple! You can use this function to set the 
-effort of the left and right wheels of the robot at the same time:
+Getting your XRP robot to move is simple! Here is some code you can use to drive both the left and right motors at 50% 
+effort:
 
 .. tab-set:: 
 
@@ -38,9 +38,6 @@ few or as many parameters as you want, or even none at all.
 
     Parameters are inputs to a function that can dictate attributes like distance or angle to vary its behavior.
 
-
-Here is some code you can use to drive both the left and right motors at 50% 
-effort.
 
 .. admonition:: Try it out
     
