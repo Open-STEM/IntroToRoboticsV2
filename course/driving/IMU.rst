@@ -99,6 +99,7 @@ robot to turn to, you can set up a proportional control loop to move your measur
             differentialDrive.stop()
 
     .. tab-item:: Blockly
+        
         .. image:: media/gyroturn-blockly.png
             :width: 300
 
