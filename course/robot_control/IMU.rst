@@ -1,5 +1,5 @@
-Using the XRP IMU
-=================
+Proportional Control With The IMU
+=================================
 
 Introduction:
 -------------
