@@ -32,21 +32,42 @@ rangefinder distance is less than 10 cm.
         .. image:: media/forwarduntildistance.png
             :width: 300
 
-The Second Step
+Step 2: Turing 180 degrees once an object is detected
 ~~~~~~~~~~~~~~~
 
-Now that we can stop at a certain distance from an object, let's turn around at 180 degrees and then carry on our way.
+Instead of simply stopping, we'd like to turn around 180 degrees, go forward, and repeat,
+turning 180 whenever we detect an object.
 
-All you need to do now is include your previous code in a while loop that runs forever.
+To turn 180 degrees, we'd want to replace :code:`drivetrain.stop()` with :code:`drivetrain.turn(180)`.
+After this, we'd want to go forward again. But instead of writing :code:`drivetrain.set_speed(10, 10)` again,
+notice that we're just trying to run these two steps over and over:
+    1. Go forward until an object is detected
+    2. Turn 180 degrees
 
-Then, when an object is detected, you can turn around and continue on your way.
+Looks like we can just wrap these two steps in a while loop! Here's what the code looks like:
 
-The code for this is as follows:
+.. tab-set::
 
-.. error:: 
+    .. tab-item:: Python
 
-    TODO add code that stops at a certain distance from an object and turns around 
+        .. code-block:: python
 
+            # Repeat these two steps over and over again
+            while True:
+
+                # Go forward until an object is detected
+                drivetrain.set_speed(10, 10)
+                while rangefinder.distance() > 10:
+                    time.sleep(0.1)
+
+                # Turn 180 degrees
+                drivetrain.turn(180)
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/forwardturnrepeat.png
+            :width: 300
 
 Now What?
 ~~~~~~~~~
