@@ -1,5 +1,5 @@
 ======================
-Building the XRP robot
+Building the XRP Robot
 ======================
 
 Assembling the XRP robot is easy, but be sure to follow the steps here to be sure that
@@ -8,12 +8,12 @@ the wiring is correct and all the pieces are added correctly to the chassis.
 Below is a video provided by SparkFun Electronics showing how to assemble the robot followed
 by a step by step set of written instructions below.
 
-.. youtube:: G7gfPi7XHuA
+.. youtube:: JQyKhzlMSms
 
 |
 |
 
-The XRP kit (1:22)
+The XRP kit (0:37)
 ==================
 
 The XRP kit contains all the parts you need to assemble and use your robot.
@@ -152,17 +152,7 @@ Each of the following sections has a time reference for the video at the top of 
 can see how to assemble that part. We suggest that you view the entire video before starting the
 assembly so you can get a good overview of how it goes together.
 
-Inserting the casters into the chassis (2:07)
----------------------------------------------
-
-    .. image:: media/Assembly/installing_casters.jpeg
-        :width: 300
-        :alt: Nylon casters inserted into the chassis
-
-Install the white front casters (balls) into the chassis by pushing them into place.
-Once they are installed, the casters should rotate freely.
-
-Inserting the robot controller into the chassis (2:13)
+Inserting the robot controller into the chassis (1:18)
 ------------------------------------------------------
 
 .. note::
@@ -190,25 +180,57 @@ from the top of this page.
         :width: 300
         :alt: Second stem in stalling the controller by pushing it forwards and down into place
 
+Installing the battery pack (1:39)
+----------------------------------
+The battery pack is installed by:
+
+1. Inserting the cable through the cutout in the battery pack area in the chassis.
+2. Pushing the edge of the battery pack against the fingers in the chassis which hold it in place.
+3. Push the battery pack in place into the robot chassis so that it is full seated.
+
+    .. image:: media/Assembly/battery_pack_cable.jpeg
+        :width: 200
+        :alt: Cable inserted through the hole before inserting battery pack
+
+    .. image:: media/Assembly/battery_pack_inserted.jpeg
+        :width: 200
+        :alt: Battery pack being inserted into the chassis.
+
+Adding the battery cover (2:29)
+-------------------------------
+
+The battery cover is very easy to install, just line up the two tabs on the battery cover with the two
+slots in the chassis just outside of the battery case. Then the clip snaps into place as you push the
+battery cover into place.
+
+    .. image:: media/Assembly/battery_cover_pegs.jpeg
+        :width: 200
+        :alt: Battery cover tabs inserting into the chassis slots
+    
+    .. change image (no motors)
+
+    .. image:: media/Assembly/battery_cover_all.jpeg
+        :width: 200
+        :alt: Battery cover fully seated waiting to be snapped into place
+
+Inserting the casters into the chassis (3:06)
+---------------------------------------------
+    .. change picture (add battery)
+
+    .. image:: media/Assembly/installing_casters.jpeg
+        :width: 300
+        :alt: Nylon casters inserted into the chassis
+
+Install the white front casters (balls) into the chassis by pushing them into place.
+Once they are installed, the casters should rotate freely.
+
 Adding the motors
 -----------------
 The red hobby motors supplied with the kit include encoders (sensors to measure wheel rotation) to
 make it easy to program the robot to drive for specific distances and speeds. This will give your
 robots more control and accuracy as your are writing progams to operate it.
 
-Putting the tires onto the wheels (2:30)
-----------------------------------------
-
-The tires are rubber o-rings that slip into the groove on the outside rim of the wheel. Simply stretch
-the o-ring to get it to move into place. These will provide friction when the robot is driving,
-especially on smooth surfaces.
-
-    .. image:: media/Assembly/tires_on_wheels.jpeg
-        :width: 300
-        :alt: Photo of one tire installed and one on top of the wheel
-
-
-Putting the wheels onto the motors (2:47)
+Putting the wheels onto the motors (3:22)
 -----------------------------------------
 
 The wheels press fit onto the white motor shafts. Notice that the motor shafts have two flat sides
@@ -224,7 +246,18 @@ that the wheel is pressed all the way onto the motor shaft.
         :width: 200
         :alt: The wheels mounted on the motors
 
-Connecting the motor cables to the motors (3:02)
+Putting the tires onto the wheels (3:45)
+----------------------------------------
+
+The tires are rubber o-rings that slip into the groove on the outside rim of the wheel. Simply stretch
+the o-ring to get it to move into place. These will provide friction when the robot is driving,
+especially on smooth surfaces.
+
+    .. image:: media/Assembly/tires_on_wheels.jpeg
+        :width: 300
+        :alt: Photo of one tire installed and one on top of the wheel
+
+Connecting the motor cables to the motors (3:52)
 ------------------------------------------------
 
 The motor cables connect the motor to the robot controller so that it can drive the drive the motors
@@ -240,7 +273,7 @@ cable are closer to one side.
         :width: 200
         :alt: The cables attach to the motors by inserting the connectors
 
-Installing the motors into the chassis (3:17)
+Installing the motors into the chassis (4:09)
 ---------------------------------------------
 
 The motors snap into the chassis from the bottom once the wheels and cables are installed. The motor
@@ -267,7 +300,7 @@ assembly easier, refer to the following photograph of the board if needed.
 .. image:: media/Assembly/RobotController.jpg
     :width: 500
 
-Connecting the motor cables to the robot controller (3:50)
+Connecting the motor cables to the robot controller (4:43)
 ----------------------------------------------------------
 
 The motor cables are connected to the white connectors on the side of the chassis labeled Motor L and Motor R
@@ -281,45 +314,19 @@ for the left and right motor cables.
         :width: 200
         :alt: Right motor cable inserted in the controller board
 
-Installing the battery pack (3:59)
-----------------------------------
-The battery pack is installed by:
-
-1. Inserting the cable through the cutout in the battery pack area in the chassis.
-2. Pushing the edge of the battery pack against the fingers in the chassis which hold it in place.
-3. Push the battery pack in place into the robot chassis so that it is full seated.
-
-    .. image:: media/Assembly/battery_pack_cable.jpeg
-        :width: 200
-        :alt: Cable inserted through the hole before inserting battery pack
-
-    .. image:: media/Assembly/battery_pack_inserted.jpeg
-        :width: 200
-        :alt: Battery pack being inserted into the chassis.
-
-Adding the battery cover (4:15)
--------------------------------
-
-The battery cover is very easy to install, just line up the two tabs on the battery cover with the two
-slots in the chassis just outside of the battery case. Then the clip snaps into place as you push the
-battery cover into place.
-
-    .. image:: media/Assembly/battery_cover_pegs.jpeg
-        :width: 200
-        :alt: Battery cover tabs inserting into the chassis slots
-    
-    .. image:: media/Assembly/battery_cover_all.jpeg
-        :width: 200
-        :alt: Battery cover fully seated waiting to be snapped into place
-
-Adding the Line Following Sensor
+Adding the Sensors
 --------------------------------
 The line following sensor can detect lines on the driving surface that have a different reflectivity.
 These are typically used in robot applications to follow lines or locating interesting places on a
 board or mat. It has two pairs of LEDs and photo sensors to emit infrared light and measure the
 reflected brightness.
 
-Connecting the cable to the line follower (4:32)
+The ultrasonic rangefinder uses sound to measure the distance to objects in front of the sensor.
+An ultrasonic (inaudible high frequency) short sound is sent from one of the transducers which
+is reflected back by nearby objects and received by the second transducer. The time of the
+sound round-trip is measured to determine distance to nearby objects.
+
+Wiring the sensors (5:11)
 ------------------------------------------------
 The sensor cable is connected to the line following (reflectance) sensor as shown in the picture
 below. Be sure to observe the order and color of the wires connecting to the sensor. The connectors
@@ -330,7 +337,34 @@ to ensure a good connection.
         :width: 200
         :alt: The cable attached to the reflectance sensor showing the order of the individual wires
 
-Inserting the line follower into the bracket (5:04)
+The rangefinder is wired by attaching the four wires from the sensor cable to the pins on the rangefinder
+as shown in the picture below. Be sure to connect the wires to the pins in the right order.
+
+.. image:: media/Assembly/reflectance_with_wires.jpeg
+    :width: 200
+    :alt: Reflectance sensor with wires attached
+
+Attaching the brackets to the chassis (5:44)
+------------------------------------------------------
+The rangefinder bracket is attached to the front of the chassis just above the reflectance sensor
+as shown in the picture below.
+
+    .. change image
+
+    .. image:: media/Assembly/rangefinder_bracket_on_chassis.jpeg
+        :width: 200
+        :alt: Rangefinder bracket attached to the chassis
+    
+The reflectance sensor is installed on the chassis as shown in the picture below. The ball end of the
+bracket is inserted into the slot in the front rail.
+
+    .. change image
+
+    .. image:: media/Assembly/reflectance_sensor_on_chassis.jpeg
+        :width: 200
+        :alt: The reflectance sensor attached to the chassis
+
+Inserting the line follower into the bracket (6:19)
 ---------------------------------------------------
 The reflectance sensor is inserted into the bracket as shown in the picture below. Also look at the side
 view of the assembly to see how the sensor is correctly positioned in the bracket.
@@ -343,42 +377,7 @@ view of the assembly to see how the sensor is correctly positioned in the bracke
         :width: 200
         :alt: Side view of reflectance sensor showing how it fits into the bracket
 
-Attaching the reflectance sensor to the chassis (5:17)
-------------------------------------------------------
-The reflectance sensor is installed on the chassis as shown int he picture below. The ball end of the
-bracket is inserted into the slot in the front rail.
-
-    .. image:: media/Assembly/reflectance_sensor_on_chassis.jpeg
-        :width: 200
-        :alt: The reflectance sensor attached to the chassis
-
-Adding the ultrasonic rangefinder
----------------------------------
-The ultrasonic rangefinder uses sound to measure the distance to objects in front of the sensor.
-An ultrasonic (inaudible high frequency) short sound is sent from one of the transducers which
-is reflected back by nearby objects and received by the second transducer. The time of the
-sound round-trip is measured to determine distance to nearby objects.
-
-Attaching the bracket to the chassis (5:27)
--------------------------------------------
-The rangefinder bracket is attached to the front of the chassis just above the reflectance sensor
-as shown in the picture below.
-
-    .. image:: media/Assembly/rangefinder_bracket_on_chassis.jpeg
-        :width: 200
-        :alt: Rangefinder bracket attached to the chassis
-
-
-Wiring the rangefinder (5:39)
------------------------------
-The rangefinder is wired by attaching the four wires from the sensor cable to the pins on the rangefinder
-as shown in the picture below. Be sure to connect the wires to the pins in the right order.
-
-.. image:: media/Assembly/reflectance_with_wires.jpeg
-    :width: 200
-    :alt: Reflectance sensor with wires attached
-
-Attaching the rangefinder to the bracket (6:06)
+Attaching the rangefinder to the bracket (6:38)
 -----------------------------------------------
 Attach the rangefinder to the bracket as shown in the picture below.
 
@@ -387,7 +386,7 @@ Attach the rangefinder to the bracket as shown in the picture below.
         :alt: Rangefinder mounted on the bracket and the chassis
 
 
-Connecting the cables for the line follower and rangefinder (6:14)
+Connecting the cables for the line follower and rangefinder (6:55)
 ------------------------------------------------------------------
 The cables from the reflectance sensor (line follower) and the rangefinder are connected to
 the connectors on the controller board. Notice that there are labels on the board for each
@@ -411,7 +410,46 @@ The servo is used to rotate the arm to the desired position. It has the advantag
 over a normal motor in that it has sensors inside of it to allow it to move to
 a desired position that you can program.
 
-Inserting the servo horn into the robot arm (6:37)
+Attaching the servo bracket to the robot chassis (7:29)
+-----------------------------------------------------------
+The servo is attached to the robot by first inserting the ball end of the bracket into the upper
+slot on the back rail, then snapping the bottom part of the bracket over the bottom part of the rail.
+
+    .. change image 
+
+    .. image:: media/Assembly/ball_end_of_servo.jpeg
+        :width: 200
+        :alt: Inserting the ball end of the servo bracket into the slot into the top slot on the chassis rail
+    
+    .. change image
+
+    .. image:: media/Assembly/top_servo_bracket.jpeg
+        :width: 200
+        :alt: Pushing the bottom part of the servo bracket over the bottom part of the chassis rail
+
+Mounting the servo to the servo bracket (7:54)
+----------------------------------------------
+The servo snaps into the servo bracket as shown in the photo below.
+
+    .. change image (no arm)
+
+    .. image:: media/Assembly/servo_on_bracket.jpeg
+        :width: 200
+        :alt: The servo mounted in the bracket ready to snap onto the robot
+
+Connecting the servo cable to the robot controller (8:06)
+---------------------------------------------------------
+The servo cable is connected to the slot labeled Servo 1 on the robot controller board as shown in the
+photo below. Be sure to connect it as shown with the black wire connecting to the Gnd terminal on the Robot
+Controller board.
+
+    .. change image (no arm)
+
+    .. image:: media/Assembly/servo_cable_installed.jpeg
+        :width: 200
+        :alt: The servo cable is installed into the controller board. Make sure to connect it as shown.
+
+Inserting the servo horn into the robot arm (8:27)
 --------------------------------------------------
 The servo horn is the small white plastic arm that attaches to the servo by pressing onto the
 servo shaft. There are several servo horns that come with the servo accessories. The one that
@@ -425,7 +463,7 @@ facing the correct direction**.
         :width: 200
         :alt: Servo horn (white piece) from the bag of servo accessories is installed in the servo arm
 
-Mounting the arm to the servo (6:58)
+Mounting the arm to the servo (8:45)
 ------------------------------------
 The servo arm simply presses onto the white shaft on the servo. The servo shaft only has about 180
 degrees of rotation so it's important to install the arm so that it can move through its full range
@@ -433,37 +471,7 @@ of motion while mounted on the robot. Holding the servo so that it's flat with t
 the left, the arm should be mounted so that it has 180 degrees of motion from front to back. That is
 the arm will never travel below the level of the servo body. You can see how this is done by looking
 at the video at the indicated time stamp.
-
-Mounting the servo to the servo bracket (7:19)
-----------------------------------------------
-The servo snaps into the servo bracket as shown in the photo below.
-
-    .. image:: media/Assembly/servo_on_bracket.jpeg
-        :width: 200
-        :alt: The servo mounted in the bracket ready to snap onto the robot
-
-Attaching the servo and bracket to the robot chassis (7:29)
------------------------------------------------------------
-The servo is attached to the robot by first inserting the ball end of the bracket into the upper
-slot on the back rail, then snapping the bottom part of the bracket over the bottom part of the rail.
-
-    .. image:: media/Assembly/ball_end_of_servo.jpeg
-        :width: 200
-        :alt: Inserting the ball end of the servo bracket into the slot into the top slot on the chassis rail
-
-    .. image:: media/Assembly/top_servo_bracket.jpeg
-        :width: 200
-        :alt: Pushing the bottom part of the servo bracket over the bottom part of the chassis rail
-
-Connecting the servo cable to the robot controller (7:53)
----------------------------------------------------------
-The servo cable is connected to the slot labeled Servo 1 on the robot controller board as shown in the
-photo below. Be sure to connect it as shown with the black wire connecting to the Gnd terminal on the Robot
-Controller board.
-
-    .. image:: media/Assembly/servo_cable_installed.jpeg
-        :width: 200
-        :alt: The servo cable is installed into the controller board. Make sure to connect it as shown.
+.. add image?
 
 Troubleshooting the robot build
 ===============================
