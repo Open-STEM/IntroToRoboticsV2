@@ -17,7 +17,7 @@ the acceleration in its primary directions.
     It also measures the ange in degrees with yaw (turning side to side), pitch (pointing up or down),
     and roll (tilting to a side)
 
-getting these values is easy. The functions for getting acceleration in any axis are below:
+Getting these values is easy. The functions for getting acceleration in any axis are below:
 
 
 .. tab-set:: 
