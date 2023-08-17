@@ -24,7 +24,7 @@ For this activity, let's use a target distance of 30 cm.
 
             while True:
                 if (rangefinder.distance()) < 30:
-                    drivetrain.set_speed((-20), (-20))
+                    drivetrain.set_speed(-20, -20)
                 elif (rangefinder.distance()) > 30:
                     drivetrain.set_speed(20, 20)
 
@@ -49,7 +49,7 @@ So what if we add a third case that tells the robot's motors to stop when sonar 
 
             while True:
                 if (rangefinder.distance()) < 30:
-                    drivetrain.set_speed((-20), (-20))
+                    drivetrain.set_speed(-20, -20)
                 elif (rangefinder.distance()) > 30:
                     drivetrain.set_speed(20, 20)
                 else:
