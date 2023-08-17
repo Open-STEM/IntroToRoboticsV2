@@ -139,10 +139,10 @@ Repeat this process as many times as there are polygons in the pinwheel, and you
 
             from XRPLib.defaults import *
 
-            def pinwheel(sideLength, numSides, instances):
-                for i in range(int(instances)):
-                    polygon(numSides, numSides)
-                    drivetrain.turn((360 / instances), 0.5)
+            def pinwheel(sideLength, numSides, numShapes):
+                for i in range(numShapes):
+                    polygon(sideLength, numSides)
+                    drivetrain.turn((360 / numShapes), 0.5)
 
     .. tab-item:: Blockly
 
