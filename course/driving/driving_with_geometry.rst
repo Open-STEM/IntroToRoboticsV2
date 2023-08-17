@@ -142,10 +142,9 @@ Repeat this process as many times as there are polygons in the pinwheel, and you
             def pinwheel(sideLength, numSides, numShapes):
                 for i in range(numShapes):
                     polygon(sideLength, numSides)
-                    drivetrain.turn((360 / numShapes), 0.5)
+                    drivetrain.turn(360 / numShapes, 0.5)
 
     .. tab-item:: Blockly
 
         .. image:: media/pinwheel-blockly.png
-            
             :width: 300
