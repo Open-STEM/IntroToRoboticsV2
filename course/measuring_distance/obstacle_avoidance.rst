@@ -110,7 +110,7 @@ number is small. So, we'd want to give a reasonable random range of angles for t
         Blockly provides a handy block for generating a random number between lower and upper bounds, inclusive.
 
         .. image:: media/forwardturnrepeatrandom.png
-            :width: 300
+            :width: 400
 
 
 And voi la! We have now successfully created a program where our robot can avoid objects forever!
