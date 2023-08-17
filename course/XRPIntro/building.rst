@@ -471,6 +471,7 @@ of motion while mounted on the robot. Holding the servo so that it's flat with t
 the left, the arm should be mounted so that it has 180 degrees of motion from front to back. That is
 the arm will never travel below the level of the servo body. You can see how this is done by looking
 at the video at the indicated time stamp.
+
 .. add image?
 
 Troubleshooting the robot build
