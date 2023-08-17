@@ -69,42 +69,48 @@ Looks like we can just wrap these two steps in a while loop! Here's what the cod
         .. image:: media/forwardturnrepeat.png
             :width: 300
 
-Now What?
-~~~~~~~~~
+Step 3: Turing a random angle once an object is detected
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle. 
+Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle.
+Because the robot is turning 180 degrees, it is often turning back into the object that it just detected. To fix this, many
+robots like IRobot's Roomba use a simple algorithm known as "bump and run". If you bump into an object, instead of turning 180
+degrees, the robot should turn away from it at a random angle to increase the chance that it'll explore a new area.
 
-To fix this, many robots like IRobot's Roomba use a simple algorithm known as "bump and run".
+However, if the robot were to turn a completely random angle, there would be a chance the robot barely turns at all if the random
+number is small. So, we'd want to give a reasonable random range of angles for the robot to pick from.
 
-The idea behind bump and run is that if you bump into an object, you should turn away from it at a random angle and continue on your way.
+.. tab-set::
 
-The reason that we specify that the robot must turn at a random angle is because if we turn at the same angle every time, we will get stuck in a cycle again.
+    .. tab-item:: Python
 
-Also, we still want to be able to have some control over the range of angles that our robot turns. 
+        We can use :code:`random.randint(135, 225)` to generate a random number between 135 and 225, which we can turn that many degrees.
+        Though, note that we need to :code:`import random` at the top of our program to import the library that contains this function.
 
-In this case, let's say that after hitting an object, we want our robot to turn between 135 and 225 degrees. Look at the following diagram to see what this looks like:
+        .. code-block:: python
 
-.. error:: 
+            # the library that contains random.randint
+            import random
 
-    TODO add a graphic to show the range of angles
+            # Repeat these two steps over and over again
+            while True:
 
-To accomplish this, we will use the random library which allows python to randomly generate a decimal number from 0.0 to 1.0.
+                # Go forward until an object is detected
+                drivetrain.set_speed(10, 10)
+                while rangefinder.distance() > 10:
+                    time.sleep(0.1)
 
-We can then "scale" this number up by 90 which means that we will then get a random number from 0 to 90.
+                # Turn random amount between 135 and 225 degrees
+                turnDegrees = random.randint(135, 225)
+                drivetrain.turn(turnDegrees)
 
-Run this code block a couple of times to see what happens:
 
-.. error:: 
+    .. tab-item:: Blockly
 
-    TODO add code to show random number generation and scaling between 0-90
+        Blockly provides a handy block for generating a random number between lower and upper bounds, inclusive.
 
-If we then add this scaled number to 135, we will get a random number from 135 to 225 (which is the range of angles that we want to turn).
-
-The code for this is as follows:
-
-.. error:: 
-
-    TODO add code to complete this
+        .. image:: media/forwardturnrepeatrandom.png
+            :width: 300
 
 
 And voi la! We have now successfully created a program where our robot can avoid objects forever!
