@@ -5,8 +5,7 @@ course using the new XRP Robots. This course teaches the basics of robotics and 
 and switch to Python once you gain more familiarity with programming the robots.  
 
 The course has several modules you will work through, starting with an introduction 
-to robotics and later covering driving, sensors, the manipulator (robot arm) and more. 
-The course ends with a challenging final project that 
+to robotics and later covering driving, sensors, the manipulator (robot arm) and more. Each module contains many interactive challenges using the robot; we recommend that you attempt each one in order to get a better understanding of how to program your XRP. The course ends with a challenging final project that 
 brings together everything you have learned in all the previous modules.
 
 .. figure:: deliveryRobotImage.png
