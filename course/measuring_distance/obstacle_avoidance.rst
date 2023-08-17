@@ -5,24 +5,32 @@ One useful application of the ultrasonic sensor is obstacle avoidance.
 
 In this tutorial, we will learn how to use the ultrasonic sensor to first stop at a certain distance from an object, and then to avoid the object by turning a random angle away from an object. 
 
-The First Step
-~~~~~~~~~~~~~~
+Step 1: Going forward a certain distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step to avoiding objects is to ensure that we can properly sense and stop in front of them. 
+The first step in obstacle avoidance is being able to stop at a certain distance from an object.
+To do this, we want to continously read the rangefinder distance and check whether it is less than,
+let's say, 10 cm. Once it crosses this threshold, we want to stop the robot.
 
-Essentially, we want to be able to stop at a certain distance from an object.
+To accomplish this, we can use a while loop, with a condition that checks whether the
+rangefinder distance is less than 10 cm.
 
-To accomplish this, we will employ a while loop with a conditional statement. 
+.. tab-set::
 
-A conditional statement (often known as an "if" statement) is one that outputs either a "true" or "false". 
+    .. tab-item:: Python
 
-In this case, we want the robot to go straight until we get too close to an object. Then, we want the robot to stop.
+        .. code-block:: python
 
-The code for this is as follows:
+            drivetrain.set_speed(10, 10)
+            while rangefinder.distance() > 10:
+                time.sleep(0.1)
+            drivetrain.stop()
 
-.. error:: 
 
-    TODO add code that stops at a certain distance from an object
+    .. tab-item:: Blockly
+
+        .. image:: media/forwarduntildistance.png
+            :width: 300
 
 The Second Step
 ~~~~~~~~~~~~~~~
