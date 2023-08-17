@@ -1,7 +1,7 @@
 Welcome to Introduction to Robotics
 ===================================
 Welcome to the WPI Global STEM Education Initiative Introduction to Robotics 
-course using the new XRP Robots. This course teaches the basics of robotics and programming using two programming languages: Blockly and Python. For new programmers, we recommend that you start with Blockly 
+course using the new XRP Robots. This course teaches the basics of robotics and programming using two programming languages: Blockly and Python. For new programmers, we advise that you start with Blockly 
 and switch to Python once you gain more familiarity with programming the robots.  
 
 The course has several modules you will work through, starting with an introduction 
