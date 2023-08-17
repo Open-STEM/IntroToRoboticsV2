@@ -58,9 +58,18 @@ figure out yourselves before the answer is revealed.
 
 Implementation
 --------------
-.. code-block:: python
+.. tab-set::
 
-    error = reflectance.get_left() - reflectance.get_right()
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            error = reflectance.get_left() - reflectance.get_right()
+
+    .. tab-item:: Blockly
+
+        .. image:: media/error.png
+            :width: 300
 
 At the beginning this line of code may not make a lot of sense - but let's
 dissect it. Remember our previous convention of positive error meaning the robot
@@ -100,17 +109,26 @@ was completely off the line, this seems like a reasonable result.
 
 And so, our final code is as follows:
 
-.. code-block:: python
+.. tab-set::
 
-    from XRPLib.defaults import *
+    .. tab-item:: Python
 
-    # Try different values for KP and base_effort to get things working smoothly
-    KP = 1
-    base_effort = 0.5
+        .. code-block:: python
 
-    while True:
-        error = reflectance.get_left() - reflectance.get_right()
-        drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
+            from XRPLib.defaults import *
+
+            # Try different values for KP and base_effort to get things working smoothly
+            KP = 1
+            base_effort = 0.5
+
+            while True:
+                error = reflectance.get_left() - reflectance.get_right()
+                drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
+    
+    .. tab-item:: Blockly
+        
+        .. image:: media/set_effort_program.png
+            :width: 550
 
 Here's what that looks like. Note that KP used in this video was not equal to 1:
 

@@ -42,8 +42,7 @@ three times and turn 120 degrees in between each drive straight.
 
     .. tab-item:: Blockly
 
-        .. image:: media/triabgle-blockly.png
-
+        .. image:: media/triangle-blockly.png
             :width: 300
 
 
@@ -73,7 +72,6 @@ programming our robot to drive straight for 30 cm four times and turn 90 degrees
     .. tab-item:: Blockly
 
         .. image:: media/square-blockly.png
-
             :width: 300
 
 Polygons
@@ -112,8 +110,7 @@ can now write a function to trace any regular polygon!
     .. tab-item:: Blockly
 
         .. image:: media/polygon-blockly.png
-
-            :width: 300
+            :width: 450
 
 Pinwheel
 --------
@@ -146,5 +143,5 @@ Repeat this process as many times as there are polygons in the pinwheel, and you
 
     .. tab-item:: Blockly
 
-        .. image:: media/pinwheel-blockly.png
-            :width: 300
+        .. image:: media/pinwheel-blockly.png 
+            :width: 450

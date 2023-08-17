@@ -51,9 +51,18 @@ line and goes straight - and the motor output is how the robot should turn.
 
 So, we can obtain error value with the following code:
 
-.. code-block:: python
+.. tab-set::
 
-    error = reflectance.get_left() - 0.5
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            error = reflectance.get_left() - 0.5
+
+    .. tab-item:: Blockly
+
+        .. image:: media/set_error.png
+            :width: 300
 
 Above, we subtract 0.5 to *normalize* the reflectance value: the error is
 negative when the robot is too far left and needs to turn right, and positive
@@ -62,15 +71,24 @@ the test. We can put it in the loop, print out the error at each iteration, and
 move the robot around the line to see how the error changes. The code is as
 follows:
 
-.. code-block:: python
+.. tab-set::
 
-    from XRPLib.defaults import *
-    from time import sleep
+    .. tab-item:: Python
 
-    while True:
-        error = reflectance.get_left() - 0.5
-        print("Error: ", error)
-        sleep(0.1) # This sleep makes the loop run 10 times every second
+        .. code-block:: python
+
+            from XRPLib.defaults import *
+            from time import sleep
+
+            while True:
+                error = reflectance.get_left() - 0.5
+                print("Error: ", error)
+                sleep(0.1) # This sleep makes the loop run 10 times every second
+
+    .. tab-item:: Blockly
+
+        .. image:: media/print_error.png
+            :width: 300
 
 Implementing proportional control
 ---------------------------------
@@ -89,9 +107,18 @@ efforts. So, the solution is to set a base effort, say, 50% effort, that both
 motors move at when the error is at 0. Then, have the calculated error influence
 the difference in efforts between the two motors. As explained through code:
 
-.. code-block:: python
+.. tab-set::
 
-    drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
+
+    .. tab-item:: Blockly
+        
+        .. image:: media/set_effort_error.png
+            :width: 300
 
 This would be run inside the loop. The base_effort represents the average effort
 of the motors, no matter how much the robot turns. KP scales how much the robot
