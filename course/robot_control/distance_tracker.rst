@@ -23,9 +23,9 @@ For this activity, let's use a target distance of 30 cm.
             rangefinder = Rangefinder.get_default_rangefinder()
 
             while True:
-                if (rangefinder.distance()) < 30:
+                if rangefinder.distance() < 30:
                     drivetrain.set_speed(-20, -20)
-                elif (rangefinder.distance()) > 30:
+                elif rangefinder.distance() > 30:
                     drivetrain.set_speed(20, 20)
 
 
@@ -48,9 +48,9 @@ So what if we add a third case that tells the robot's motors to stop when sonar 
             rangefinder = Rangefinder.get_default_rangefinder()
 
             while True:
-                if (rangefinder.distance()) < 30:
+                if rangefinder.distance() < 30:
                     drivetrain.set_speed(-20, -20)
-                elif (rangefinder.distance()) > 30:
+                elif rangefinder.distance() > 30:
                     drivetrain.set_speed(20, 20)
                 else:
                     drivetrain.stop()
@@ -77,9 +77,9 @@ We can do this by creating a range in which our robot stops called a "deadband."
             rangefinder = Rangefinder.get_default_rangefinder()
 
             while True:
-                if (rangefinder.distance()) < 27.5:
-                    drivetrain.set_speed((-20), (-20))
-                elif (rangefinder.distance()) > 32.5:
+                if rangefinder.distance() < 27.5:
+                    drivetrain.set_speed(-20, -20)
+                elif rangefinder.distance() > 32.5:
                     drivetrain.set_speed(20, 20)
                 else:
                     drivetrain.stop()
