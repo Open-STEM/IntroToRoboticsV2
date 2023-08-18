@@ -31,26 +31,52 @@ A conditional is a statement in code where the program will only execute a certa
 
 In the context of on-off controllers, "if statements" are an important type of conditional and are shown in this example:
 
-.. code-block:: python
+.. tab-set::
 
-	if True:
-	    print("Hello World!")
+	.. tab-item:: Python
+
+		.. code-block:: python
+
+			if True:
+				print("Hello World!")
+
+	.. tab-item:: Blockly
+
+		.. image:: media/if_true.png
+			:width: 300
 
 The if statement above will print "Hello World!" because its condition is true.
 
-.. code-block:: python
+.. tab-set::
 
-	if False:
-	    print("Hello World!")
+	.. tab-item:: Python
 
+		.. code-block:: python
+
+			if False:
+				print("Hello World!")
+
+	.. tab-item:: Blockly
+
+		.. image:: media/if_false.png
+			:width: 300
 
 The if statement above will not print "Hello World!" because its condition is always false.
 
-.. code-block:: python
+.. tab-set::
 
-	int i = 3
-	if i < 5:
-	    print("Hello World!")
+	.. tab-item:: Python
+
+		.. code-block:: python
+
+			int i = 3
+			if i < 5:
+				print("Hello World!")
+
+	.. tab-item:: Blockly
+
+		.. image:: media/condition.png
+			:width: 300
 
 The if statement above will print "Hello World!" because the variable "i" is less than 5, satisfying the condition. 
 
