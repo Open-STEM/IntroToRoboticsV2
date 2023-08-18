@@ -13,7 +13,7 @@ drives smoothly and exactly to the right distance every time.
 
         .. code-block:: python
 
-            drivetrain.straight(distance, max_effort = 0.5, timeout = None)
+            drivetrain.straight(20, max_effort = 0.5, timeout = None)
 
     .. tab-item:: Blockly
 
@@ -48,7 +48,7 @@ up. Usually, you won't need to use this, but it is there if you need it.
 
         .. code-block:: python
 
-            drivetrain.turn(turn_degrees, max_effort = 0.5, timeout = None)
+            drivetrain.turn(90, max_effort = 0.5, timeout = None)
 
     .. tab-item:: Blockly
 
