@@ -8,11 +8,11 @@ In this tutorial, we will learn how to use the ultrasonic sensor to first stop a
 Step 1: Going forward a certain distance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step in obstacle avoidance is being able to stop at a certain distance from an object.
-To do this, we want to continously read the rangefinder distance and check whether it is less than,
+The first step in obstacle avoidance is stopping at a certain distance from an object.
+To do this, we want to continuously read the rangefinder distance and check whether it is less than,
 let's say, 10 cm. Once it crosses this threshold, we want to stop the robot.
 
-To accomplish this, we can use a while loop, with a condition that checks whether the
+To accomplish this, we can use a while loop with a condition that checks whether the
 rangefinder distance is less than 10 cm.
 
 .. tab-set::
@@ -33,7 +33,7 @@ rangefinder distance is less than 10 cm.
             :width: 300
 
 Step 2: Turing 180 degrees once an object is detected
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead of simply stopping, we'd like to turn around 180 degrees, go forward, and repeat,
 turning 180 whenever we detect an object.
@@ -44,7 +44,7 @@ notice that we're just trying to run these two steps over and over:
     1. Go forward until an object is detected
     2. Turn 180 degrees
 
-Looks like we can just wrap these two steps in a while loop! Here's what the code looks like:
+It looks like we can wrap these two steps in a while loop! Here's what the code looks like:
 
 .. tab-set::
 
@@ -73,12 +73,12 @@ Step 3: Turing a random angle once an object is detected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle.
-Because the robot is turning 180 degrees, it is often turning back into the object that it just detected. To fix this, many
-robots like IRobot's Roomba use a simple algorithm known as "bump and run". If you bump into an object, instead of turning 180
-degrees, the robot should turn away from it at a random angle to increase the chance that it'll explore a new area.
+Because the robot is turning 180 degrees, it often turns back into the object it just detected. To fix this, many
+robots like iRobot's Roomba use a simple algorithm known as "bump and run." If you bump into an object, instead of turning 180
+degrees, the robot should turn away from it at a random angle to increase the chance it'll explore a new area.
 
-However, if the robot were to turn a completely random angle, there would be a chance the robot barely turns at all if the random
-number is small. So, we'd want to give a reasonable random range of angles for the robot to pick from.
+However, if the robot were to turn to a completely random angle, there would be a chance the robot barely turns at all if the random
+number is small. So, we'd want to give the robot a reasonable random range of angles to pick from.
 
 .. tab-set::
 
@@ -113,4 +113,4 @@ number is small. So, we'd want to give a reasonable random range of angles for t
             :width: 400
 
 
-And voi la! We have now successfully created a program where our robot can avoid objects forever!
+And voi la! We have successfully created a program where our robot can avoid objects forever!
