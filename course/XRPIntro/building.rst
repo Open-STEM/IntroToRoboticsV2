@@ -206,23 +206,19 @@ battery cover into place.
     .. image:: media/Assembly/battery_cover_pegs.jpeg
         :width: 200
         :alt: Battery cover tabs inserting into the chassis slots
-    
-    .. change image (no motors)
 
-    .. image:: media/Assembly/battery_cover_all.jpeg
+    .. image:: media/Assembly/battery_cover_all.jpg
         :width: 200
         :alt: Battery cover fully seated waiting to be snapped into place
 
 Inserting the casters into the chassis (3:06)
 ---------------------------------------------
-    .. change picture (add battery)
-
-    .. image:: media/Assembly/installing_casters.jpeg
-        :width: 300
-        :alt: Nylon casters inserted into the chassis
-
 Install the white front casters (balls) into the chassis by pushing them into place.
 Once they are installed, the casters should rotate freely.
+
+    .. image:: media/Assembly/installing_casters.jpg
+        :width: 300
+        :alt: Nylon casters inserted into the chassis
 
 Adding the motors
 -----------------
@@ -282,11 +278,11 @@ Ideally you should push the wires from the motor through the opening in the chas
 chassis so they can be attached to the robot controller. Then seat the end of the motor opposite the
 cable end, then snap the wheel side of the motor into place. Repeat for both motors.
 
-    .. image:: media/Assembly/motor_half_installed.jpeg
+    .. image:: media/Assembly/motor_half_installed.jpg
         :width: 200
         :alt: Motor is inserted from the cable end first
 
-    .. image:: media/Assembly/motor_fully_installed.jpeg
+    .. image:: media/Assembly/motor_fully_installed.jpg
         :width: 200
         :alt: Motor is fully seated in the chassis
 
@@ -340,27 +336,23 @@ to ensure a good connection.
 The rangefinder is wired by attaching the four wires from the sensor cable to the pins on the rangefinder
 as shown in the picture below. Be sure to connect the wires to the pins in the right order.
 
-.. image:: media/Assembly/reflectance_with_wires.jpeg
-    :width: 200
-    :alt: Reflectance sensor with wires attached
+    .. image:: media/Assembly/reflectance_with_wires.jpeg
+        :width: 200
+        :alt: Reflectance sensor with wires attached
 
 Attaching the brackets to the chassis (5:44)
 ------------------------------------------------------
 The rangefinder bracket is attached to the front of the chassis just above the reflectance sensor
 as shown in the picture below.
 
-    .. change image
-
-    .. image:: media/Assembly/rangefinder_bracket_on_chassis.jpeg
+    .. image:: media/Assembly/rangefinder_bracket_on_chassis.jpg
         :width: 200
         :alt: Rangefinder bracket attached to the chassis
     
-The reflectance sensor is installed on the chassis as shown in the picture below. The ball end of the
+The reflectance sensor bracket is installed on the chassis as shown in the picture below. The ball end of the
 bracket is inserted into the slot in the front rail.
 
-    .. change image
-
-    .. image:: media/Assembly/reflectance_sensor_on_chassis.jpeg
+    .. image:: media/Assembly/reflectance_sensor_on_chassis.jpg
         :width: 200
         :alt: The reflectance sensor attached to the chassis
 
@@ -369,11 +361,11 @@ Inserting the line follower into the bracket (6:19)
 The reflectance sensor is inserted into the bracket as shown in the picture below. Also look at the side
 view of the assembly to see how the sensor is correctly positioned in the bracket.
 
-    .. image:: media/Assembly/reflectance_in_bracket.jpeg
+    .. image:: media/Assembly/reflectance_in_bracket.jpg
         :width: 200
         :alt: Reflectance sensor inserted into the bracket
     
-    .. image:: media/Assembly/reflectance_side_view.jpeg
+    .. image:: media/Assembly/reflectance_side_view.jpg
         :width: 200
         :alt: Side view of reflectance sensor showing how it fits into the bracket
 
@@ -473,6 +465,14 @@ the arm will never travel below the level of the servo body. You can see how thi
 at the video at the indicated time stamp.
 
 .. add image?
+
+Initializing and testing your XRP (10:21)
+=========================================
+Refer to SparkFun's video at the top of this page to set up your XRP and ensure
+that it's working correctly!
+
+Once your XRP is connected, skip to (12:44) in the video and follow along with the built-in test
+to ensure that the sensors and motors are working properly. 
 
 Troubleshooting the robot build
 ===============================
