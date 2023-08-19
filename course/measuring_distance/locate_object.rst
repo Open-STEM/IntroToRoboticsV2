@@ -11,19 +11,64 @@ Turn and Detect
 ~~~~~~~~~~~~~~~
 
 To first detect an object, the robot can slowly spin in a circle while continuously polling the rangefinder.
-Then, when an object is detected to be within a certain distance, the robot can assume it has found an object,
-stop spinning, and head towards the object.
+Then, when an object is detected, it can stop spinning, and head towards the object.
+
+How can we tell when an object is detected? Imagine that the robot is in the center of an empty room, and a
+random object is placed somewhere near the robot. The rangefinder would be giving large distance readings, until
+it reaches the object, at which point the distance reading would drop. It's the *change* in distance readings that
+hints that an object has been detected.
+
+How can we find the change in distance readings over each iteration of the loop? We can store the previous distance
+reading in a variable, and compare it to the current distance reading. If this change is greater than some threshold,
+then we can assume that an object has been detected.
+
+But, it's possible that there are some objects super far away that still result in a large change in distance readings.
+To avoid this, we can set a maximum distance threshold, and only consider an object to be detected if it's within some
+maximum distance.
 
 To code this, we can start by setting the drive motor speeds to spin in opposite directions to start spinning
 the robot in place. Then, we can utilize a while loop to keep spinning while the distance reading is greater than
-some threshold, meaning that the robot has not yet found an object. Once the distance reading is less than the
-threshold, the robot can stop spinning and head towards the object.
+some threshold, meaning that the robot has not yet found an object. Once the change distance reading is greater than
+the threshold, the robot can stop spinning and head towards the object.
 
-In the following example code, we use a variable to store our "distance threshold" of 20 cm.
+In the following example code, we use a change threshold of 15cm, and a maximum distance threshold of 40cm.
 
-.. error:: 
+.. tab-set::
 
-    TODO insert a video and code of a working example
+    .. tab-item:: Python
+
+        We can use :code:`random.randint(135, 225)` to generate a random number between 135 and 225, which we can turn that many degrees.
+        Though, note that we need to :code:`import random` at the top of our program to import the library that contains this function.
+
+        .. code-block:: python
+
+            changeThreshold = 15 # distance change in cm needed to trigger detection
+            maximumDistance = 40 # maximum distance in cm to consider an object detected
+
+            # store initial values for current and previous distance
+            currentDistance = rangefinder.distance()
+            previousDistance = currentDistance
+
+            # start spinning in place until an object is detected
+            differentialDrive.set_speed(5, -5)
+
+            # repeat until change in distance is greater than threshold, and current distance is less than maximum
+            while not (previousDistance - currentDistance > changeThreshold and currentDistance < maximumDistance):
+                
+                time.sleep(0.1)
+
+                # update previous and current distance
+                previousDistance = currentDistance
+                currentDistance = rangefinder.distance()
+
+            # stop spinning
+            differentialDrive.stop()
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/detection.png
+            :width: 400
 
 Improving Accuracy
 ~~~~~~~~~~~~~~~~~~
