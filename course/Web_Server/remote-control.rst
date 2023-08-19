@@ -10,10 +10,10 @@ All you need to do is add whatever command you want into that button, so when pr
 here is an example:
 
 .. image:: 
-    rc-blockly.png
+    media/rc-blockly.png
 
 .. image:: 
-    rc-python.png
+    media/rc-python.png
 
 
 with this code, you can wirelessly drive your XRP!
