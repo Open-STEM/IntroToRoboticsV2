@@ -22,16 +22,11 @@ How can we find the change in distance readings over each iteration of the loop?
 reading in a variable, and compare it to the current distance reading. If this change is greater than some threshold,
 then we can assume that an object has been detected.
 
-But, it's possible that there are some objects super far away that still result in a large change in distance readings.
-To avoid this, we can set a maximum distance threshold, and only consider an object to be detected if it's within some
-maximum distance.
-
 To code this, we can start by setting the drive motor speeds to spin in opposite directions to start spinning
-the robot in place. Then, we can utilize a while loop to keep spinning while the distance reading is greater than
-some threshold, meaning that the robot has not yet found an object. Once the change distance reading is greater than
+the robot in place. Then, once the change in distance reading is greater than
 the threshold, the robot can stop spinning and head towards the object.
 
-In the following example code, we use a change threshold of 15cm, and a maximum distance threshold of 40cm.
+In the following example code, we use a change threshold of 30 cm.
 
 .. tab-set::
 
@@ -39,8 +34,7 @@ In the following example code, we use a change threshold of 15cm, and a maximum 
 
         .. code-block:: python
 
-            changeThreshold = 15 # distance change in cm needed to trigger detection
-            maximumDistance = 40 # maximum distance in cm to consider an object detected
+            changeThreshold = 30 # distance change in cm needed to trigger detection
 
             # store initial value for current distance
             currentDistance = rangefinder.distance()
@@ -54,11 +48,9 @@ In the following example code, we use a change threshold of 15cm, and a maximum 
                 previousDistance = currentDistance
                 currentDistance = rangefinder.distance()
 
-                if currentDistance < maximumDistance: # only consider an object detected if it's within the maximum distance
-
-                    # if sudden decrease in distance, then an object has been detected
-                    if previousDistance - currentDistance > changeThreshold:
-                        break # break out of the while loop
+                # if sudden decrease in distance, then an object has been detected
+                if previousDistance - currentDistance > changeThreshold:
+                    break # break out of the while loop
 
                 time.sleep(0.1)
 
@@ -94,7 +86,7 @@ If :code:`increase` is :code:`True`, then we want to detect an increase in dista
 
 If :code:`increase` is :code:`False`, then we want to detect a decrease in distance, which is when :code:`previousDistance - currentDistance > changeThreshold`.
 
-For more flexibility, let's also have a parameter for the maximum distance, and a parameter for the change threshold.
+For more flexibility, let's add a parameter for the change threshold.
 
 Here's the function definition:
 
@@ -104,7 +96,7 @@ Here's the function definition:
 
         .. code-block:: python
 
-            def turnUntilEdge(isIncrease, maximumDistance, changeThreshold):
+            def turnUntilEdge(isIncrease, changeThreshold):
 
                 # store initial value for current distance
                 currentDistance = rangefinder.distance()
@@ -118,14 +110,12 @@ Here's the function definition:
                     previousDistance = currentDistance
                     currentDistance = rangefinder.distance()
 
-                    if currentDistance < maximumDistance: # only consider an object detected if it's within the maximum distance
-
-                        if isIncrease and currentDistance - previousDistance > changeThreshold:
-                            # if sudden increase in distance, then an object has been detected
-                            break
-                        elif not isIncrease and previousDistance - currentDistance > changeThreshold:
-                            # if sudden decrease in distance, then an object has been detected
-                            break
+                    if isIncrease and currentDistance - previousDistance > changeThreshold:
+                        # if sudden increase in distance, then an object has been detected
+                        break
+                    elif not isIncrease and previousDistance - currentDistance > changeThreshold:
+                        # if sudden decrease in distance, then an object has been detected
+                        break
 
                     time.sleep(0.1)
 
@@ -151,17 +141,44 @@ Here's the equivalent function call to the turn and detection code in the previo
     .. tab-item:: Blockly
 
         .. image:: media/detectioncall.png
-            :width: 900
+            :width: 200
 
-Let's walk through the code step by step.
+Now, it's time to write the full program to detect both edges and turn to the center.
 
-First, the robot should spin in place until it detects the first edge, then stop. The code should be similar as before.
+Implementing Dual Edge Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[code]
+Let's walk through each step of the process in code.
+
+First, the robot should spin in place until it detects the first edge, then stop. This is simply the function call we saw earlier.
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            turnUntilEdge(False, 40, 15)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/detectioncall.png
+            :width: 200
 
 Next, we want to record the robot's heading for this first edge, and store it to :code:`firstAngle`.
 
-[code]
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            turnUntilEdge(False, 40, 15)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/detectioncall.png
+            :width: 200
 
 Then, the robot should spin in place again until it detects the second edge, then stop. The whole time while the robot is spinning
 from the first to second edge, it should be detecting the object in close proximity, so the robot should know its hit the second
