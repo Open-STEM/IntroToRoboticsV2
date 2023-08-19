@@ -15,9 +15,6 @@ If you are using python, the beginning of your program must include these two li
 .. code-block:: python
 
     from XRPLib.webserver import Webserver
-
-.. code-block:: python
-
     webserver = Webserver.get_default_webserver()
 
 Next, you can add buttons and text output. This is covered in the later sections, so this is a good time to read about those and return to this page when you have your inputs and outputs written.
