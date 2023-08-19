@@ -40,7 +40,7 @@ In the following example code, we use a change threshold of 30 cm.
             currentDistance = rangefinder.distance()
 
             # start spinning in place until an object is detected
-            differentialDrive.set_speed(5, -5)
+            drivetrain.set_speed(5, -5)
 
             while True: # doesn't actually repeat forever. loop will be broken if an object is detected
                 
@@ -55,7 +55,7 @@ In the following example code, we use a change threshold of 30 cm.
                 time.sleep(0.1)
 
             # stop spinning drive motors
-            differentialDrive.stop()
+            drivetrain.stop()
 
 
     .. tab-item:: Blockly
@@ -102,7 +102,7 @@ Here's the function definition:
                 currentDistance = rangefinder.distance()
 
                 # start spinning in place until an object is detected
-                differentialDrive.set_speed(5, -5)
+                drivetrain.set_speed(5, -5)
 
                 while True: # doesn't actually repeat forever. loop will be broken if an object is detected
                     
@@ -120,7 +120,7 @@ Here's the function definition:
                     time.sleep(0.1)
 
                 # stop spinning drive motors
-                differentialDrive.stop()
+                drivetrain.stop()
 
 
     .. tab-item:: Blockly
@@ -136,7 +136,7 @@ Here's the equivalent function call to the turn and detection code in the previo
 
         .. code-block:: python
 
-            turnUntilEdge(False, 40, 15)
+            turnUntilEdge(False, 30)
 
     .. tab-item:: Blockly
 
@@ -158,7 +158,7 @@ First, the robot should spin in place until it detects the first edge, then stop
 
         .. code-block:: python
 
-            turnUntilEdge(False, 40, 15)
+            turnUntilEdge(False, 30)
 
     .. tab-item:: Blockly
 
@@ -173,28 +173,78 @@ Next, we want to record the robot's heading for this first edge, and store it to
 
         .. code-block:: python
 
-            turnUntilEdge(False, 40, 15)
+            firstAngle = imu.get_yaw()
 
     .. tab-item:: Blockly
 
-        .. image:: media/detectioncall.png
+        .. image:: media/firstangle.png
             :width: 200
 
-Then, the robot should spin in place again until it detects the second edge, then stop. The whole time while the robot is spinning
-from the first to second edge, it should be detecting the object in close proximity, so the robot should know its hit the second
-edge when the distance reading is greater than the threshold again, plus a few cm, in case the object is slightly concave.
+Then, the robot should spin in place again until it detects the second edge, which is when there is a sudden increase in distance.
 
-[code]
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            turnUntilEdge(True, 30)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/turntoedgetrue.png
+            :width: 200
 
 Once the robot has detected the second edge, it should record its heading and store it to :code:`secondAngle`. Now, need to figure
 out how much the robot needs to backtrack to aim for the center of the object. We can do this by finding the difference between
 the two angles, and dividing by two. This is half the angle between the two edges, and if the robot backtracks by this amount,
 it will be facing the center of the object. Let's store this in a variable called :code:`angleToTurn`.
 
-[code]
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            secondAngle = imu.get_yaw()
+            angleToTurn = (firstAngle - secondAngle) / 2
+
+    .. tab-item:: Blockly
+
+        .. image:: media/angletoturn.png
+            :width: 400
 
 Finally, the robot can turn this much to face the center of the object, and head towards it.
 
-Here's the full code:
+Here's the full code. Note that half-second pauses are added to make the robot's actions more visible:
 
-[code]
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            # turn to first edge
+            turnUntilEdge(False, 30)
+
+            # store angle at first edge
+            firstAngle = imu.get_yaw()
+
+            time.sleep(0.5)
+
+            # turn to second edge
+            turnUntilEdge(True, 30)
+
+            # store angle at second edge and calculate angle to turn
+            secondAngle = imu.get_yaw()
+            angleToTurn = (firstAngle - secondAngle) / 2
+
+            time.sleep(0.5)
+
+            # turn to center of object
+            drivetrain.turn(angleToTurn)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/fulldualedge.png
+            :width: 400
