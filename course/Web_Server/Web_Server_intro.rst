@@ -40,4 +40,8 @@ or if you are using blobkly:
 Finally, search for wifi networks on your phone or computer, and join the wifi network with the 
 name and password you chose, and open a new page on your browser. You should see your new custom dashboard!
 
+.. note:: 
+    Once you start the server, the xrp program will finish and the only way to control the robot will be 
+    through the web server. Make sure that you start the server at the very end of your program.
+
 Now you know how to start your web server. Next, you will learn how to use its full functionality. 
