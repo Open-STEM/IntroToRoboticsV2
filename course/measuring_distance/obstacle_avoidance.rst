@@ -5,77 +5,112 @@ One useful application of the ultrasonic sensor is obstacle avoidance.
 
 In this tutorial, we will learn how to use the ultrasonic sensor to first stop at a certain distance from an object, and then to avoid the object by turning a random angle away from an object. 
 
-The First Step
-~~~~~~~~~~~~~~
+Step 1: Going forward a certain distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step to avoiding objects is to ensure that we can properly sense and stop in front of them. 
+The first step in obstacle avoidance is stopping at a certain distance from an object.
+To do this, we want to continuously read the rangefinder distance and check whether it is less than,
+let's say, 10 cm. Once it crosses this threshold, we want to stop the robot.
 
-Essentially, we want to be able to stop at a certain distance from an object.
+To accomplish this, we can use a while loop with a condition that checks whether the
+rangefinder distance is less than 10 cm.
 
-To accomplish this, we will employ a while loop with a conditional statement. 
+.. tab-set::
 
-A conditional statement (often known as an "if" statement) is one that outputs either a "true" or "false". 
+    .. tab-item:: Python
 
-In this case, we want the robot to go straight until we get too close to an object. Then, we want the robot to stop.
+        .. code-block:: python
 
-The code for this is as follows:
-
-.. error:: 
-
-    TODO add code that stops at a certain distance from an object
-
-The Second Step
-~~~~~~~~~~~~~~~
-
-Now that we can stop at a certain distance from an object, let's turn around at 180 degrees and then carry on our way.
-
-All you need to do now is include your previous code in a while loop that runs forever.
-
-Then, when an object is detected, you can turn around and continue on your way.
-
-The code for this is as follows:
-
-.. error:: 
-
-    TODO add code that stops at a certain distance from an object and turns around 
+            drivetrain.set_speed(10, 10)
+            while rangefinder.distance() > 10:
+                time.sleep(0.1)
+            drivetrain.stop()
 
 
-Now What?
-~~~~~~~~~
+    .. tab-item:: Blockly
 
-Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle. 
+        .. image:: media/forwarduntildistance.png
+            :width: 300
 
-To fix this, many robots like IRobot's Roomba use a simple algorithm known as "bump and run".
+Step 2: Turing 180 degrees once an object is detected
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The idea behind bump and run is that if you bump into an object, you should turn away from it at a random angle and continue on your way.
+Instead of simply stopping, we'd like to turn around 180 degrees, go forward, and repeat,
+turning 180 whenever we detect an object.
 
-The reason that we specify that the robot must turn at a random angle is because if we turn at the same angle every time, we will get stuck in a cycle again.
+To turn 180 degrees, we'd want to replace :code:`drivetrain.stop()` with :code:`drivetrain.turn(180)`.
+After this, we'd want to go forward again. But instead of writing :code:`drivetrain.set_speed(10, 10)` again,
+notice that we're just trying to run these two steps over and over:
+    1. Go forward until an object is detected
+    2. Turn 180 degrees
 
-Also, we still want to be able to have some control over the range of angles that our robot turns. 
+It looks like we can wrap these two steps in a while loop! Here's what the code looks like:
 
-In this case, let's say that after hitting an object, we want our robot to turn between 135 and 225 degrees. Look at the following diagram to see what this looks like:
+.. tab-set::
 
-.. error:: 
+    .. tab-item:: Python
 
-    TODO add a graphic to show the range of angles
+        .. code-block:: python
 
-To accomplish this, we will use the random library which allows python to randomly generate a decimal number from 0.0 to 1.0.
+            # Repeat these two steps over and over again
+            while True:
 
-We can then "scale" this number up by 90 which means that we will then get a random number from 0 to 90.
+                # Go forward until an object is detected
+                drivetrain.set_speed(10, 10)
+                while rangefinder.distance() > 10:
+                    time.sleep(0.1)
 
-Run this code block a couple of times to see what happens:
-
-.. error:: 
-
-    TODO add code to show random number generation and scaling between 0-90
-
-If we then add this scaled number to 135, we will get a random number from 135 to 225 (which is the range of angles that we want to turn).
-
-The code for this is as follows:
-
-.. error:: 
-
-    TODO add code to complete this
+                # Turn 180 degrees
+                drivetrain.turn(180)
 
 
-And voi la! We have now successfully created a program where our robot can avoid objects forever!
+    .. tab-item:: Blockly
+
+        .. image:: media/forwardturnrepeat.png
+            :width: 300
+
+Step 3: Turing a random angle once an object is detected
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Even though we're turning around after detecting an object, you should notice that your robot is getting stuck in a cycle.
+Because the robot is turning 180 degrees, it often turns back into the object it just detected. To fix this, many
+robots like iRobot's Roomba use a simple algorithm known as "bump and run." If you bump into an object, instead of turning 180
+degrees, the robot should turn away from it at a random angle to increase the chance it'll explore a new area.
+
+However, if the robot were to turn to a completely random angle, there would be a chance the robot barely turns at all if the random
+number is small. So, we'd want to give the robot a reasonable random range of angles to pick from.
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        We can use :code:`random.randint(135, 225)` to generate a random number between 135 and 225, which we can turn that many degrees.
+        Though, note that we need to :code:`import random` at the top of our program to import the library that contains this function.
+
+        .. code-block:: python
+
+            # the library that contains random.randint
+            import random
+
+            # Repeat these two steps over and over again
+            while True:
+
+                # Go forward until an object is detected
+                drivetrain.set_speed(10, 10)
+                while rangefinder.distance() > 10:
+                    time.sleep(0.1)
+
+                # Turn random amount between 135 and 225 degrees
+                turnDegrees = random.randint(135, 225)
+                drivetrain.turn(turnDegrees)
+
+
+    .. tab-item:: Blockly
+
+        Blockly provides a handy block for generating a random number between lower and upper bounds, inclusive.
+
+        .. image:: media/forwardturnrepeatrandom.png
+            :width: 400
+
+
+And voi la! We have successfully created a program where our robot can avoid objects forever!

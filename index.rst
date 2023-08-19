@@ -28,8 +28,7 @@ ways that make it available to all.
    :caption: Course information
 
    course/course_info/index
-   course/course_info/course_overview
-   course/course_info/joining_platforms
+   course/course_info/getting_help
 
 .. toctree:: 
    :maxdepth: 1
