@@ -26,6 +26,9 @@ label you want
 
             webserver.log_data("distance", (rangefinder.distance()))
 
+            webserver.start_network(ssid="xrp_1", password="")
+            webserver.start_server()
+
     .. tab-item:: Blockly
 
         .. image:: media/dashboard.png

@@ -22,6 +22,9 @@ in addition to those, you can also create custom buttons that can run any code y
 
             webserver.add_button("raiseArm", func1)
 
+            webserver.start_network(ssid="xrp_1", password="")
+            webserver.start_server()
+
     .. tab-item:: Blockly
 
         .. image:: 
