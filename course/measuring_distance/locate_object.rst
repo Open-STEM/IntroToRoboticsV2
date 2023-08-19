@@ -42,23 +42,27 @@ In the following example code, we use a change threshold of 15cm, and a maximum 
             changeThreshold = 15 # distance change in cm needed to trigger detection
             maximumDistance = 40 # maximum distance in cm to consider an object detected
 
-            # store initial values for current and previous distance
+            # store initial value for current distance
             currentDistance = rangefinder.distance()
-            previousDistance = currentDistance
 
             # start spinning in place until an object is detected
             differentialDrive.set_speed(5, -5)
 
-            # repeat until change in distance is greater than threshold, and current distance is less than maximum
-            while not (previousDistance - currentDistance > changeThreshold and currentDistance < maximumDistance):
+            while True: # doesn't actually repeat forever. loop will be broken if an object is detected
                 
-                time.sleep(0.1)
-
                 # update previous and current distance
                 previousDistance = currentDistance
                 currentDistance = rangefinder.distance()
 
-            # stop spinning
+                if currentDistance < maximumDistance: # only consider an object detected if it's within the maximum distance
+
+                    # if sudden decrease in distance, then an object has been detected
+                    if previousDistance - currentDistance > changeThreshold:
+                        break # break out of the while loop
+
+                time.sleep(0.1)
+
+            # stop spinning drive motors
             differentialDrive.stop()
 
 
