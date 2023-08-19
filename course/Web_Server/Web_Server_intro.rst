@@ -24,18 +24,19 @@ Next, you can add buttons and text output. This is covered in the later sections
 
 Once you have the code for your buttons and text output, end the program with 
 
-.. code-block:: python
+.. tab-set::
 
-    webserver.start_network(ssid="xrp", password="password")
-    
-.. code-block:: python
-    
-    webserver.start_server()
+    .. tab-item:: Python
 
-or if you are using blobkly:
+        .. code-block:: python
 
-.. image:: 
-    media/start-server.png
+            webserver.start_network(ssid="xrp", password="password")    
+            webserver.start_server()
+
+    .. tab-item:: Blockly
+
+        .. image:: media/start-server.png
+            :width: 600
 
 Finally, search for wifi networks on your phone or computer, and join the wifi network with the 
 name and password you chose, and open a new page on your browser. You should see your new custom dashboard!
