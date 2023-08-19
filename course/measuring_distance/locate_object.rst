@@ -37,9 +37,6 @@ In the following example code, we use a change threshold of 15cm, and a maximum 
 
     .. tab-item:: Python
 
-        We can use :code:`random.randint(135, 225)` to generate a random number between 135 and 225, which we can turn that many degrees.
-        Though, note that we need to :code:`import random` at the top of our program to import the library that contains this function.
-
         .. code-block:: python
 
             changeThreshold = 15 # distance change in cm needed to trigger detection
@@ -68,7 +65,7 @@ In the following example code, we use a change threshold of 15cm, and a maximum 
     .. tab-item:: Blockly
 
         .. image:: media/detection.png
-            :width: 400
+            :width: 900
 
 Improving Accuracy
 ~~~~~~~~~~~~~~~~~~
