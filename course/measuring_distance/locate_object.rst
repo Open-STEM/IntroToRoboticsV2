@@ -83,6 +83,76 @@ Instead, the robot should remember the heading it faces when detecting *both* ed
 between those edges, and thus the center of the object. We can store each edge angle in variables, naming them :code:`firstAngle`
 and :code:`secondAngle`.
 
+We're already quite familiar with turning until an edge is detected. Now, we'll need to detect *both* edges. However, it would be
+quite unwieldy and error-prone to just copy the edge detection code, so let's make a function to generalize this. Note that the existing
+code detects a sudden *decrease* in distance, but we want to handle sudden *increases* in distances too.
+
+How can we support both behaviors in a single function? We can pass in a parameter to specify whether we want to detect an increase
+or decrease in distance! We can call this parameter :code:`isIncrease` and pass in a boolean (true or false) value.
+
+If :code:`increase` is :code:`True`, then we want to detect an increase in distance, which is when :code:`currentDistance - previousDistance > changeThreshold`.
+
+If :code:`increase` is :code:`False`, then we want to detect a decrease in distance, which is when :code:`previousDistance - currentDistance > changeThreshold`.
+
+For more flexibility, let's also have a parameter for the maximum distance, and a parameter for the change threshold.
+
+Here's the function definition:
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            def turnUntilEdge(isIncrease, maximumDistance, changeThreshold):
+
+                # store initial value for current distance
+                currentDistance = rangefinder.distance()
+
+                # start spinning in place until an object is detected
+                differentialDrive.set_speed(5, -5)
+
+                while True: # doesn't actually repeat forever. loop will be broken if an object is detected
+                    
+                    # update previous and current distance
+                    previousDistance = currentDistance
+                    currentDistance = rangefinder.distance()
+
+                    if currentDistance < maximumDistance: # only consider an object detected if it's within the maximum distance
+
+                        if isIncrease and currentDistance - previousDistance > changeThreshold:
+                            # if sudden increase in distance, then an object has been detected
+                            break
+                        elif not isIncrease and previousDistance - currentDistance > changeThreshold:
+                            # if sudden decrease in distance, then an object has been detected
+                            break
+
+                    time.sleep(0.1)
+
+                # stop spinning drive motors
+                differentialDrive.stop()
+
+
+    .. tab-item:: Blockly
+
+        .. image:: media/detectiondefinition.png
+            :width: 900
+
+Here's the equivalent function call to the turn and detection code in the previous section:
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            turnUntilEdge(False, 40, 15)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/detectioncall.png
+            :width: 900
+
 Let's walk through the code step by step.
 
 First, the robot should spin in place until it detects the first edge, then stop. The code should be similar as before.
