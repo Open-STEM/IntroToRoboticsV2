@@ -63,6 +63,18 @@ ways that make it available to all.
 .. toctree:: 
    :maxdepth: 1
    :hidden:
+   :caption: Using the XRP Web Server
+
+   course/web_server/index
+   course/web_server/Web_Server_intro
+   course/web_server/dashboard
+   course/web_server/buttons
+   course/web_server/remote-control
+   
+
+.. toctree:: 
+   :maxdepth: 1
+   :hidden:
    :caption: Measuring Distances
 
    course/measuring_distance/index
