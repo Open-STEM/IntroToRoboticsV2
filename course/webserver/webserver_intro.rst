@@ -83,7 +83,8 @@ Similarly, if you didn't configure the :code:`secrets.json` file, you will need 
 
         OR
 
-        [TODO: add image of connect to network block]
+        .. image:: media/connect_to_network.png
+            :width: 700
 
 
 If you are using access point mode, search for wifi networks on your phone or computer, and join the wifi network with the 

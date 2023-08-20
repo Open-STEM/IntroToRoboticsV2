@@ -46,7 +46,7 @@ along with a helpful label that describes what your function does!
     .. tab-item:: Blockly
 
         .. image:: 
-            media/raise-servo.png
+            media/custom-buttons.png
 
 
 After running this code, you should see your new button(s) appear under the Custom Buttons section of the web page!
