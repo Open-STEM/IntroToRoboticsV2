@@ -24,7 +24,7 @@ the formula:
 
 .. code-block:: python
 
-    error = setpoint - process variable
+    error = setpoint - process_variable
 
 Knowing the error isn't enough. How should you, the driver, react to it? This is where the concept of Proportional
 control comes into play.
@@ -36,7 +36,7 @@ A measure called **control output** tells you much to adjust. It's calculated as
 
 .. code-block:: python
 
-    control output = Kp * error
+    control_output = Kp * error
 
 where Kp is a constant called the **proportional gain** and acts as a scaling factor for the error.
 
