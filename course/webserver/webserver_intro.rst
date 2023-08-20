@@ -83,7 +83,7 @@ Similarly, if you didn't configure the :code:`secrets.json` file, you will need 
 
         OR
 
-        .. image:: media/connect_to_network.png
+        .. image:: media/connect-to-network.png
             :width: 700
 
 
