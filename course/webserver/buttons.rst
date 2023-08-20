@@ -1,8 +1,12 @@
 Creating Custom Buttons for the Web Server
 ==========================================
 
-In the last section, you learned how to remotely control your XRP using the built-in directional buttons. 
-In addition to those, you can also create custom buttons that can run any code you want!
+Last lesson, you learned how to bind simple drive commands to the arrow buttons.
+But, what if you want to perform more complicated code tasks? or what if you have more than 5 commands you want to run from the webserver?
+
+Well, XRPLib provides the tools to do that! 
+With the :code:`webserver.add_button(label, func)` method, you can add any function you want to the webserver,
+along with a helpful label that describes what your function does!
 
 .. tab-set::
 
@@ -10,19 +14,33 @@ In addition to those, you can also create custom buttons that can run any code y
 
         .. code-block:: python
 
-            from XRPLib.webserver import Webserver
-            from XRPLib.servo import Servo
+            from XRPLib.defaults import *
 
-            webserver = Webserver.get_default_webserver()
+            def raiseArm():
+                servo_one.set_angle(100)
 
-            servo1 = Servo.get_default_servo()
+            def lowerArm():
+                servo_one.set_angle(0)
 
-            def func1():
-            servo1.set_angle(90)
+            def led_blink():
+                board.led_blink(5)
 
-            webserver.add_button("raiseArm", func1)
+            def led_stop():
+                board.led_off()
+            
+            def square():
+                # Drives in a square with 20cm sides
+                for side in range(4):
+                    drivetrain.straight(20)
+                    drivetrain.turn(90)
 
-            webserver.start_network(ssid="xrp_1", password="")
+            webserver.add_button("Raise Arm", raiseArm)
+            webserver.add_button("Lower Arm", lowerArm)
+            webserver.add_button("Blink LED", led_blink)
+            webserver.add_button("Stop LED", led_stop)
+            webserver.add_button("20cm Square", square)
+
+            webserver.start_network()
             webserver.start_server()
 
     .. tab-item:: Blockly
@@ -31,4 +49,8 @@ In addition to those, you can also create custom buttons that can run any code y
             media/raise-servo.png
 
 
-you can make a button run any function you can write, so get creative!
+After running this code, you should see your new button(s) appear under the Custom Buttons section of the web page!
+Note: We recommend leaving your robot plugged in the first time you run a new function on the webserver, 
+just to make sure that it doesn't have any errors.
+
+And there you go! That's all the basics of how to use the webserver!
