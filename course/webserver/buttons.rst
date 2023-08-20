@@ -1,4 +1,4 @@
-Creating Custom Buttons for the Web Server
+Creating Custom Webserver Buttons
 ==========================================
 
 Last lesson, you learned how to bind simple drive commands to the arrow buttons.

@@ -128,8 +128,8 @@ ways that make it available to all.
 
    course/webserver/webserver_intro
    course/webserver/dashboard
-   course/webserver/buttons
    course/webserver/remote-control
+   course/webserver/buttons
 
 
 .. toctree:: 
