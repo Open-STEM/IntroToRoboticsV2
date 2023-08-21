@@ -132,10 +132,11 @@ And so, our final code is as follows:
 
 Here's what that looks like. Note that KP used in this video was not equal to 1:
 
-.. error:: 
-    
-    TODO add video
+.. figure:: media/proportional_line_following.gif
+    :align: center
 
+    XRP following a line with proportional control. The robot would not be able 
+    to follow a curved line this quickly using on-off control!
 
 .. admonition:: Try it out
 

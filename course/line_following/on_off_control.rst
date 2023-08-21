@@ -86,12 +86,14 @@ of the sensor.
                 .. code-block:: python
 
                     from XRPLib.defaults import *
+                    import time
 
                     while True:
                         if drivetrain.get_left_encoder_position() > 20:
                             print("Left encoder is greater than 20 cm")
                         else:
                             print("Left encoder is less than 20 cm")
+                        time.sleep(0.1)
 
             .. tab-item:: Blockly
 
@@ -99,8 +101,5 @@ of the sensor.
                     :width: 300
 
             
-        In this example code we just show different messages on the computer based
-        on the value of the left encoder, but you could put whatever code you want
-        in the blocks instead. For example, you could have the robot turn clockwise
-        or counterclockwise depending on a condition using an :code:`if` /
-        :code:`else` statement.
+        In this example code we print different things based on the left motor's encoder position.
+        You can use a similar structure to set different speeds based on the reading from the reflectance sensor.

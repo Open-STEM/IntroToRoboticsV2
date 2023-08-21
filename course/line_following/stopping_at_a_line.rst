@@ -86,9 +86,9 @@ Start by breaking down the problem into smaller steps
 
     .. tab-item:: Hide
 
-        Press the other tab to see the solution.
+        Press the other tab to see a hint.
 
-    .. tab-item:: Solution
+    .. tab-item:: Hint
 
         #. Drive forward until a line is seen (the edge of the circle)
         #. Stop driving so that the robot doesn't leave the circle
