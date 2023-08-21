@@ -10,7 +10,7 @@ crosses over the center of the line, it's game over.
 
     Desired steering actions based on what the sensor sees.
 
-The issue is - the robot has no way of knowing which side of the line it is
+The issue is - the robot still has no way of knowing which side of the line it is
 following at all! If it sees the right edge of the line, it will assume it still
 is detecting the left edge, and thus keep turning right past the point of no
 return!
@@ -49,27 +49,33 @@ Sensors read ~0 and ~1. Robot knows it is on the left side and turns right.
 
 Sensors read ~0.5 and ~0.5. Robot knows it is on the center and goes straight.
 
-The other two major categories you can extrapolate for yourself.
+The other two cases you can extrapolate for yourself.
 
 So, how can we effectively combine the readings of the left and right
 reflectance sensors using proportional control to have the robot follow the
-line? There's quite an elegant solution that I encourage for you to try to
-figure out yourselves before the answer is revealed.
+line?
 
-Implementation
---------------
 .. tab-set::
 
-    .. tab-item:: Python
+    .. tab-item:: Hide
 
-        .. code-block:: python
+        There's a few ways to do this, but there's a really elegant solution that
+        we'll use here. Try to figure it out yourself before reading on!
 
-            error = reflectance.get_left() - reflectance.get_right()
+    .. tab-item:: Solution
 
-    .. tab-item:: Blockly
+        .. tab-set::
 
-        .. image:: media/error.png
-            :width: 300
+            .. tab-item:: Python
+
+                .. code-block:: python
+
+                    error = reflectance.get_left() - reflectance.get_right()
+
+            .. tab-item:: Blockly
+
+                .. image:: media/error.png
+                    :width: 300
 
 At the beginning this line of code may not make a lot of sense - but let's
 dissect it. Remember our previous convention of positive error meaning the robot
@@ -107,28 +113,36 @@ case, both sensors read white, leaving an error of 0, and so the robot just goes
 straight. Given that the robot wouldn't know which direction to compensate if it
 was completely off the line, this seems like a reasonable result.
 
-And so, our final code is as follows:
+Let's try it out!
 
 .. tab-set::
 
-    .. tab-item:: Python
+    .. tab-item:: Hide
+            
+        Try to figure out how to use this error to line follow before reading on!
 
-        .. code-block:: python
+    .. tab-item:: Solution
 
-            from XRPLib.defaults import *
+        .. tab-set::
 
-            # Try different values for KP and base_effort to get things working smoothly
-            KP = 1
-            base_effort = 0.5
+            .. tab-item:: Python
 
-            while True:
-                error = reflectance.get_left() - reflectance.get_right()
-                drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
-    
-    .. tab-item:: Blockly
-        
-        .. image:: media/set_effort_program.png
-            :width: 550
+                .. code-block:: python
+
+                    from XRPLib.defaults import *
+
+                    # Try different values for KP and base_effort to get things working smoothly
+                    KP = 1
+                    base_effort = 0.5
+
+                    while True:
+                        error = reflectance.get_left() - reflectance.get_right()
+                        drivetrain.set_effort(base_effort - KP * error, base_effort + KP * error)
+            
+            .. tab-item:: Blockly
+                
+                .. image:: media/set_effort_program.png
+                    :width: 550
 
 Here's what that looks like. Note that KP used in this video was not equal to 1:
 
