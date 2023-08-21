@@ -22,7 +22,7 @@ is also "correct". The distinction in sign is simply whichever makes more sense 
 we would want to drive forward 10cm, so we would want a positive error to make our motors spin forward.
 
 **Control Output**: In this case, this is our motor effort. This is because we want to drive with a speed proportional
-to the distance error. As a reminder for P control, this will be calculated as :code:`motor_effort = Kp * error`.
+to the distance error. As a reminder for P control, this will be calculated as :code:`motorEffort = Kp * error`.
 
 **Kp**: This is our proportional gain. Though we will need to tune this value, we can guess a somewhat reasonable value
 by considering the range of values our error can take, and the domain of our control output. In this case, if we're 30cm away
@@ -52,3 +52,36 @@ Let's start by defining our proportional gain and our set point:
             :width: 300
 
 Next, we want to enter some sort of loop to continuously poll our rangefinder and  update our motor effort from our controller output.
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            Kp = 0.1
+            desiredDistance = 20
+            while True:
+                error = rangefinder.distance() - desiredDistance
+                motorEffort = Kp * error
+                drivetrain.set_effort(motorEffort, motorEffort)
+                time.sleep(0.05)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/pcode.png
+            :width: 500
+
+Each iteration of the loop consists of the following steps:
+    #. Poll the rangefinder to get the current distance
+    #. Calculate the error
+    #. Calculate the control output through Kp * error
+    #. Set the drivetrain motor efforts to the control output
+    #. Wait for a short period of time
+
+This code should give us a working solution to maintain a set distance from the object in front of the robot!
+
+.. admonition:: Try it out
+
+    Try moving the object in front of the robot and watch the robot attempt to maintain the set distance! What
+    happens when you increase Kp? Decrease it? What value of Kp works best for your robot?
