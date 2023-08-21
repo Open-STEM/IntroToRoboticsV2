@@ -12,7 +12,7 @@ Let's identify the terms we'll need to use in our code:
 **Set Point** or desired value: In this example, this is some set distance from the rangefinder we want the robot to be at. 
 For this example, let's say 20cm.
 
-**Process Variable** or current value: We obtain our measured value from polling the rangerfinder. This is
+**Process Variable** or current value: We obtain our measured value from reading the rangerfinder value. This is
 :code:`rangefinder.distance()`.
 
 Our goal is for our process variable (the rangefinder distance) to approach the set point (20 cm).
@@ -22,7 +22,7 @@ is also "correct". The distinction in sign is simply whichever makes more sense 
 we would want to drive forward 10cm, so we would want a positive error to make our motors spin forward.
 
 **Control Output**: In this case, this is our motor effort. This is because we want to drive with a speed proportional
-to the distance error. As a reminder for P control, this will be calculated as :code:`motorEffort = Kp * error`.
+to the distance error. As a reminder for P control, this will be calculated as :code:`motor_effort = Kp * error`.
 
 **Kp**: This is our proportional gain. Though we will need to tune this value, we can guess a somewhat reasonable value
 by considering the range of values our error can take, and the domain of our control output. In this case, if we're 30cm away
@@ -44,14 +44,14 @@ Let's start by defining our proportional gain and our set point:
         .. code-block:: python
 
             Kp = 0.1
-            desiredDistance = 20
+            desired_distance = 20
 
     .. tab-item:: Blockly
 
         .. image:: media/variables.png
             :width: 300
 
-Next, we want to enter some sort of loop to continuously poll our rangefinder and  update our motor effort from our controller output.
+Next, we want to enter some sort of loop to continuously read our rangefinder value and update our motor effort from our controller output.
 
 .. tab-set::
 
@@ -60,11 +60,11 @@ Next, we want to enter some sort of loop to continuously poll our rangefinder an
         .. code-block:: python
 
             Kp = 0.1
-            desiredDistance = 20
+            desired_distance = 20
             while True:
-                error = rangefinder.distance() - desiredDistance
-                motorEffort = Kp * error
-                drivetrain.set_effort(motorEffort, motorEffort)
+                error = rangefinder.distance() - desired_distance
+                motor_effort = Kp * error
+                drivetrain.set_effort(motor_effort, motor_effort)
                 time.sleep(0.05)
 
     .. tab-item:: Blockly
@@ -73,7 +73,7 @@ Next, we want to enter some sort of loop to continuously poll our rangefinder an
             :width: 500
 
 Each iteration of the loop consists of the following steps:
-    #. Poll the rangefinder to get the current distance
+    #. Read the rangefinder value to get the current distance
     #. Calculate the error
     #. Calculate the control output through Kp * error
     #. Set the drivetrain motor efforts to the control output
