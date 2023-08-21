@@ -13,8 +13,7 @@ Blockly
 
 This is a drag-and-drop graphical programming system similar to Scratch. Blockly is a
 good choice for programming the robot, especially for learners with little to no
-programming experience.  Does not easily scale for larger programs and is only
-usable within the Blockly programming environment.
+programming experience.  
 
 
 
@@ -23,7 +22,7 @@ Python
 
 A more widely-used language that scales well for larger programs and works with professional
 programming tools such as Visual Studio Code and many others. The tool that will be used
-throughout this course for python programming is Mu Editor, although a more professional
+throughout this course for Python programming is XRPCode, although a more professional
 tool such as Visual Studio Code can also be used for writing CircuitPython code that is
 used by the XPR Robot.
 
