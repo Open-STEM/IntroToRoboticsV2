@@ -1,45 +1,87 @@
 Implementing a Proportional Controller
 ======================================
 
-Now that you've learned about proportional controllers, let's implement one on the distance tracking activity
+Now that you've learned about how proportional controllers, let's implement one for our distance tracking activity,
+where we want to keep the robot some distance from the object in front of it using the rangefinder!
 
-Steps
------
+Defining Terminology
+--------------------
 
-The first step when creating a proportional controller is to define your target and error terms. 
+Let's identify the terms we'll need to use in our code:
 
-For our target, let's set it to 20 cm. 
+**Set Point** or desired value: In this example, this is some set distance from the rangefinder we want the robot to be at. 
+For this example, let's say 20cm.
 
-In this case, the error is the difference between the target and the current distance from the object in front of the XRP. 
+**Process Variable** or current value: We obtain our measured value from reading the rangerfinder value. This is
+:code:`rangefinder.distance()`.
 
-Now, we need to define our proportional gain. 
+Our goal is for our process variable (the rangefinder distance) to approach the set point (20 cm).
 
-    The first step of this is understanding the range of values that the error can take.
+Thus, our **error** is calculated as :code:`error = rangefinder.distance() - 20`. Note that :code:`error = 20 - rangefinder.distance()`
+is also "correct". The distinction in sign is simply whichever makes more sense for your application. Here, if we had an error of 30cm,
+we would want to drive forward 10cm, so we would want a positive error to make our motors spin forward.
 
-    The error can be any value between -20 and 20, meaning we're really close or really far. 
+**Control Output**: In this case, this is our motor effort. This is because we want to drive with a speed proportional
+to the distance error. As a reminder for P control, this will be calculated as :code:`motor_effort = Kp * error`.
 
-    Then, the error would need to be scaled for an appropriate control signal (something from -1 to 1)
+**Kp**: This is our proportional gain. Though we will need to tune this value, we can guess a somewhat reasonable value
+by considering the range of values our error can take, and the domain of our control output. In this case, if we're 30cm away
+from the object, our error will be 10. We can guess that at this sufficient distance we will want to drive forward at a maximum
+effort of 1, as effort is restricted to the domain :math:`[-1, 1]`. Thus, we can guess that :code:`Kp = 1/10 = 0.1`. Of course,
+this isn't likely the final value that works best for your robot, but it's a good starting point.
 
-    Therefore, a good starting kp value would be 0.05. 
+Implementing the Controller
+---------------------------
 
+Now that we've defined our terms, let's write the code!
 
-Finally, we need to set the speed of the XRP to our error times kp.
+Let's start by defining our proportional gain and our set point:
 
-This is an example program that implements a proportional controller. 
+.. tab-set::
 
-.. error:: 
+    .. tab-item:: Python
 
-    TODO add code to complete this
-    
+        .. code-block:: python
+
+            Kp = 0.1
+            desired_distance = 20
+
+    .. tab-item:: Blockly
+
+        .. image:: media/variables.png
+            :width: 300
+
+Next, we want to enter some sort of loop to continuously read our rangefinder value and update our motor effort from our controller output.
+
+.. tab-set::
+
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            Kp = 0.1
+            desired_distance = 20
+            while True:
+                error = rangefinder.distance() - desired_distance
+                motor_effort = Kp * error
+                drivetrain.set_effort(motor_effort, motor_effort)
+                time.sleep(0.05)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/pcode.png
+            :width: 500
+
+Each iteration of the loop consists of the following steps:
+    #. Read the rangefinder value to get the current distance
+    #. Calculate the error
+    #. Calculate the control output through Kp * error
+    #. Set the drivetrain motor efforts to the control output
+    #. Wait for a short period of time
+
+This code should give us a working solution to maintain a set distance from the object in front of the robot!
+
 .. admonition:: Try it out
-    
-    Now that you've designed a successful proportional controller, let's try some other values for kp.
 
-    First, let's try making kp too small (0.01). What happens?
-
-    When kp is too small, the XRP doesn't react fast enough to the error, and it takes a long time to get to the target. 
-
-    Next, let's try making kp too big (1). What happens?
-
-    The behavior you're seeing is called oscillation and happens when kp is too high. 
-
+    Try moving the object in front of the robot and watch the robot attempt to maintain the set distance! What
+    happens when you increase Kp? Decrease it? What value of Kp works best for your robot?
