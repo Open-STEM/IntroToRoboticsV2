@@ -59,6 +59,7 @@ ways that make it available to all.
    course/driving/parking
    course/driving/differential_steering
 
+
 .. toctree:: 
    :maxdepth: 1
    :hidden:
@@ -118,6 +119,18 @@ ways that make it available to all.
    :hidden:
 
    course/delivery_challenge/index
+
+
+.. toctree:: 
+   :maxdepth: 1
+   :hidden:
+   :caption: Appendix 1: Using the XRP Web Server
+
+   course/webserver/webserver_intro
+   course/webserver/dashboard
+   course/webserver/remote-control
+   course/webserver/buttons
+
 
 .. toctree:: 
    :maxdepth: 1
