@@ -89,7 +89,8 @@ and use the error to adjust it as needed.
 
     .. tab-item:: Hide
 
-        Click the next tab to view the hint.
+        Now it's your turn. Try and implement proportional control for line following using the error.
+        If you need a hint or want to view the solution, take a look at the next tabs.
 
     .. tab-item:: Hint
 
@@ -135,6 +136,49 @@ and use the error to adjust it as needed.
 
         Motor efforts of 0.75 and 0.25 would indicate a turn to the right, and the code
         does as desired.
+
+    .. tab-item:: Solution
+
+        .. tab-set::
+
+            .. tab-item:: Python
+
+                .. code-block:: python
+
+                    # Input your threshold value here:
+                    threshold = 0.5 
+                    base_effort = 0.5
+                    KP = 1
+                    while True:
+                        error = reflectance.get_right() - threshold
+                        drivetrain.set_effort(base_effort + KP * error, base_effort - KP * error)
+                        time.sleep(0.01)
+
+            .. tab-item:: Blockly
+
+                .. image:: media/one_edge_line_follow.png
+                    :width: 1000
+
+        Just to review, let's take this code line-by-line and make sure we understand what's going on.
+
+        :code:`threshold = 0.5` sets the threshold value to 0.5. 
+        This is the value that the reflectance sensor will use to determine whether the robot is on or off the line.
+
+        :code:`base_effort = 0.5` sets the base effort to 0.5.
+        This is the average effort of the motors, which controls how fast we want the robot to follow the line. 
+        A higher base effort means the robot will follow the line faster, but also means the robot will be less able to recover from errors.
+
+        :code:`KP = 1` sets the KP value to 1.
+        This is the proportional constant, which controls how much the robot reacts to the error.
+        This is our main tuning value, and you'll have to try different values to see what works best for your robot.
+
+        :code:`error = reflectance.get_right() - threshold` calculates the error.
+        As we discussed earlier, the error basically is our measurement of how far the robot is from the line.
+
+        :code:`drivetrain.set_effort(base_effort + KP * error, base_effort - KP * error)` sets the motor efforts.
+        This is where we actually use the error to determine how much the robot turns. 
+        A positive error means we are too far left, and need the left power to be higher than the right power,
+        and a negative error means we are too far right, and need the right power to be higher than the left power.
 
 This is a video illustrating line following with one-sensor control. Notice the
 smoother tracking compared to on/off control, yet the robot is still unable to
