@@ -62,7 +62,7 @@ line?
         There's a few ways to do this, but there's a really elegant solution that
         we'll use here. Try to figure it out yourself before reading on!
 
-    .. tab-item:: Solution
+    .. tab-item:: Solution:
 
         .. tab-set::
 
@@ -108,10 +108,25 @@ sensor values are the same and so the error is 0, and as the robot starts
 drifting towards either direction, the magnitude of the error increases and thus
 the robot compensates accordingly.
 
-The most interesting case is when the robot is completely off the line - in this
+When the robot is completely off the line - in this
 case, both sensors read white, leaving an error of 0, and so the robot just goes
 straight. Given that the robot wouldn't know which direction to compensate if it
-was completely off the line, this seems like a reasonable result.
+was completely off the line, this seems like a reasonable result. 
+The same behavior occurs if the robot is completely on the line.
+
+There is one last case to cover. What happens if the robot is only slightly off the line?
+
+.. math:: 
+
+    \begin{align}
+    \text{error} & = 1 - 0.5 \\
+    & = 0.5
+    \end{align}
+
+Well in this case, the error will be smaller, which means that a smaller correction is needed. 
+This is an important property of proportional control - the further the robot is
+from the desired state, the more it will try to correct itself, 
+but will only slightly correct itself for small errors, which minimuxes the chanse of overshooting the target.
 
 Let's try it out!
 
