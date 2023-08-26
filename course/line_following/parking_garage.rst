@@ -42,8 +42,5 @@ Finally, to turn back to straight, we can turn the XRP clockwise until the left 
 
 By breaking this complicated problem down into a series of smaller steps, we can easily program our XRP to park itself!
 
-.. error:: 
-
-    TODO a graphic would be super useful throughout this section
-
-    also include code and a video of the robot parking itself
+.. TODO a graphic would be super useful throughout this section 
+.. also include code and a video of the robot parking itself
