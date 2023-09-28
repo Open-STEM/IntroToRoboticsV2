@@ -21,6 +21,8 @@ Project specifications
 .. image:: media/labyrinth.png
     :width: 300
 
+Carnegie Mellon Robotics Academy, Labyrinth Challenge 
+
 The robot should do the following:
 
 * Begin fully contained in position 1 and then maneuver to goal area.
