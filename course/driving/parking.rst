@@ -18,10 +18,11 @@ Materials needed
 Project specifications
 ----------------------
 
-.. image:: media/labyrinth.png
+.. figure:: media/labyrinth.png
     :width: 300
-
-Carnegie Mellon Robotics Academy, Labyrinth Challenge 
+    :align: center
+    
+    Carnegie Mellon Robotics Academy, Labyrinth Challenge 
 
 The robot should do the following:
 
