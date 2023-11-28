@@ -91,8 +91,6 @@ ways that make it available to all.
    course/line_following/index
    course/line_following/understanding_the_sensor
    course/line_following/stopping_at_a_line
-   course/line_following/staying_in_the_circle
-   course/line_following/sumo
    course/line_following/on_off_control
    course/line_following/proportional_control
    course/line_following/proportional_control_with_two_sensors
