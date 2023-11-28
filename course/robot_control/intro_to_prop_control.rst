@@ -22,9 +22,18 @@ Naturally, you recognize there's a difference between where you want to be (70 m
 (65 mph). This difference is the called the **error**, and in this case, it's 5 mph. It's easily calculated by
 the formula:
 
-.. code-block:: python
+.. tab-set::
 
-    error = setpoint - process_variable
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            error = setpoint - process_variable
+    
+    .. tab-item:: Blockly
+
+        .. image:: media/set_error.png
+            :width: 300
 
 Knowing the error isn't enough. How should you, the driver, react to it? This is where the concept of Proportional
 control comes into play.
@@ -34,9 +43,18 @@ brakes, you adjust your speed based on your error: how far you are from your des
 
 A measure called **control output** tells you much to adjust. It's calculated as:
 
-.. code-block:: python
+.. tab-set::
 
-    control_output = Kp * error
+    .. tab-item:: Python
+
+        .. code-block:: python
+
+            control_output = Kp * error
+
+    .. tab-item:: Blockly
+
+        .. image:: media/control_output.png
+            :width: 300
 
 where Kp is a constant called the **proportional gain** and acts as a scaling factor for the error.
 

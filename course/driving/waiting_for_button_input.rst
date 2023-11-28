@@ -10,14 +10,23 @@ buttons to tell the code when to run.
 The XRP has a button which you can read from code. To make it easy, **XRPLib**
 has a built in function which will wait for the button to be pressed for you.
 
-.. code-block:: python
-    
-    from XRPLib.defaults import *
-    from time import sleep
+.. tab-set::
 
-    board.wait_for_button()
-    sleep(1)
-    drivetrain.straight(20)
+    .. tab-item:: Python
+
+        .. code-block:: python
+            
+            from XRPLib.defaults import *
+            from time import sleep
+
+            board.wait_for_button()
+            sleep(1)
+            drivetrain.straight(20)
+
+    .. tab-item:: Blockly
+
+        .. image:: media/waitForButton.png
+            :width: 300
 
 This function is part of :code:`board` since the button is on the XRP's main 
 controller board.
