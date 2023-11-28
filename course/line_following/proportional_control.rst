@@ -163,6 +163,7 @@ and use the error to adjust it as needed.
 
         :code:`threshold = 0.5` sets the threshold value to 0.5. 
         This is the value that the reflectance sensor will use to determine whether the robot is on or off the line.
+        This is a tuned value that may differ depending on your line, sensor, and lighting.
 
         :code:`base_effort = 0.5` sets the base effort to 0.5.
         This is the average effort of the motors, which controls how fast we want the robot to follow the line. 
