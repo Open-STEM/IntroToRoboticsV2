@@ -94,6 +94,34 @@ Start by breaking down the problem into smaller steps
         #. Stop driving so that the robot doesn't leave the circle
         #. Turn around
         #. Repeat
+    
+    .. tab-item:: Solution
+
+        .. tab-set::
+
+            .. tab-item:: Python
+                .. code-block:: python
+
+                    def is_over_line():
+                            # This a slightly modified version of the example from the previous section!
+                            # We now are checking that the average of the two sensors is above the threshold.
+                            line_threshold = 0.75
+                            return (reflectance.get_right() + reflectance.get_left())/2 > line_threshold
+                    
+                    while True:
+                        # Drive forward until a line is seen
+                        drivetrain.set_effort(0.5, 0.5)
+                        # Check if robot is over a line
+                        if is_over_line():
+                            # Stop and turn around
+                            drivetrain.turn(180)
+                            
+                .. tab-item:: Blockly
+
+                    TODO: Add blockly code
+                    .. .. image:: media/error.png
+                    ..     :width: 300
+                
 
 You already have code which does steps 1 and 2 (``drive_until_line()``), and you
 learned back in the robot driving module how to do step 3
