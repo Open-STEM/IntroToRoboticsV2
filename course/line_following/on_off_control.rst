@@ -103,3 +103,33 @@ of the sensor.
             
         In this example code we print different things based on the left motor's encoder position.
         You can use a similar structure to set different speeds based on the reading from the reflectance sensor.
+
+    .. tab-item:: Solution
+
+        .. tab-set::
+
+            .. tab-item:: Python
+
+                .. code-block:: python
+
+                    from XRPLib.defaults import *
+                    import time
+
+                    # This is a tuning value! Based on your line, sensors, and lighting,
+                    # the exact value for this variable may vary.
+                    line_threshold = 0.5
+
+                    while True:
+                        if reflectance.get_right() > line_threshold:
+                            # if the right sensor is on the line, turn slightly left
+                            drivetrain.set_effort(0.5,0.35)
+                        else:
+                            # if the right sensor is on the line, turn slightly left
+                            drivetrain.set_effort(0.35,0.5)
+                        time.sleep(0.1)
+
+            .. tab-item:: Blockly
+
+                TODO: Add blockly code
+                .. .. image:: media/if-else.png
+                ..     :width: 300
