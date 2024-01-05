@@ -193,8 +193,11 @@ Now that we have the number of wheel rotations, the rest of the program is easy.
 the number of rotations has exceeded the calculated rotation goal.
 
 .. tab-set::
+
     .. tab-item:: Python
+
         .. code-block:: python
+
             def turn(target):
                 global rotations
                 differentialDrive.reset_encoder_position()
@@ -208,5 +211,6 @@ the number of rotations has exceeded the calculated rotation goal.
                 differentialDrive.stop()
 
     .. tab-item:: Blockly
+
         .. image:: media/encoder-turn-blockly.png
             :width: 300
