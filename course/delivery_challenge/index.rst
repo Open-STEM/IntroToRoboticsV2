@@ -137,3 +137,26 @@ your score would be 3 * (5+5+5) = 45 points
 No points will be received for a delivery where the robot hits the road construction sign.
 You will lose 2 points for each time you have to touch your robot (e.g., to put it back
 on the line), other than to specify the delivery zone at the start of each delivery. 
+
+
+Covered Standards (NGSS and CSTA):
+-----------------
+
+**HS-ETS1-2** Break a complex real-world problem into smaller, more manageable problems that each can be solved using scientific and engineering principles.
+
+**HS-ETS1-3** Evaluate a solution to a complex real-world problem based on prioritized criteria and tradeoffs that account for a range of constraints, including cost, safety, reliability, aesthetics, and maintenance, as well as social, cultural, and environmental impacts.
+
+**3A-AP-16** Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue by using events to initiate instructions.
+
+**3A-AP-17** Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.
+
+**3B-CS-02** Illustrate ways computing systems implement logic, input, and output through hardware components.
+
+**3B-AP-10** Use and adapt classic algorithms to solve computational problems.
+
+**3B-AP-11** Evaluate algorithms in terms of their efficiency, correctness, and clarity.
+
+**3B-AP-15** Analyze a large-scale computational problem and identify generalizable patterns that can be applied to a solution.
+
+**3B-AP-16** Demonstrate code reuse by creating programming solutions using libraries and APIs. 
+
