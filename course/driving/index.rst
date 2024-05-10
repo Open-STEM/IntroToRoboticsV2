@@ -16,3 +16,12 @@ At the end of this module, students will be able to...
 * Use different types of loops in Python
 * Break down a large, repetitive movement sequence into components and then convert into code
 
+Covered Standards (NGSS and CSTA):
+-----------------------------------
+
+**3A-AP-16** Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue by using events to initiate instructions.
+
+**3A-AP-17** Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.
+
+**3B-AP-16** Demonstrate code reuse by creating programming solutions using libraries and APIs. 
+
