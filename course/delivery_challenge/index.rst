@@ -140,7 +140,7 @@ on the line), other than to specify the delivery zone at the start of each deliv
 
 
 Covered Standards (NGSS and CSTA):
------------------
+-----------------------------------
 
 **HS-ETS1-2** Break a complex real-world problem into smaller, more manageable problems that each can be solved using scientific and engineering principles.
 

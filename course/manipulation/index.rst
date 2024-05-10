@@ -15,7 +15,7 @@ At the end of this module, students will be able to:
 
 
 Covered Standards (NGSS and CSTA):
------------------
+-----------------------------------
 
 **HS-ETS1-2** Break a complex real-world problem into smaller, more manageable problems that each can be solved using scientific and engineering principles.
 

@@ -9,7 +9,7 @@ In this module students will:
 * Locate and align to objects using the distance sensor
 
 Covered Standards (NGSS and CSTA):
------------------
+-----------------------------------
 
 **HS-ETS1-2** Break a complex real-world problem into smaller, more manageable problems that each can be solved using scientific and engineering principles.
 
