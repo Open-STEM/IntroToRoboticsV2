@@ -20,7 +20,7 @@ information, and office hours here.
 
 Please follow these steps to join the Discourse server:
 
-#. You will want to create your account, go to https://https://xrp.discourse.group
+#. You will want to create your account, go to https://xrp.discourse.group
 
 #. You can browse through all the resources on the Discourse server, if you want to post
    questions and participate, you need to sign up for an account. To do that, click on the
