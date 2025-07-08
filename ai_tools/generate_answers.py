@@ -1,15 +1,19 @@
 import os
 import re
 import sys
+import pickle # Import the pickle module
+import gzip
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from XRPTutor import XRPTutor
 
-# Path to the generated FAQs directory
-FAQ_DIR = "../generated_faqs"
+# Path to the combined FAQ file
+FAQ_FILE = "faq.txt"
 
-# Helper to extract questions from a FAQ markdown file
-def extract_questions_from_faq(faq_path, max_questions=2):
+# Helper to extract questions from the faq.txt file
+def extract_questions_from_faq_txt(faq_path):
     questions = []
+    # Regex to match numbered questions (e.g., "1. What's...")
     numbered_q_pattern = re.compile(r"^\d+\.\s+(.*)")
     with open(faq_path, 'r', encoding='utf-8') as f:
         for line in f:
@@ -18,27 +22,31 @@ def extract_questions_from_faq(faq_path, max_questions=2):
             if match:
                 q = match.group(1).strip()
                 questions.append(q)
-                if len(questions) >= max_questions:
-                    break
     return questions
 
 def main():
     tutor = XRPTutor()
-    # Get the list of FAQ files in the directory
-    faq_files = sorted([f for f in os.listdir(FAQ_DIR) if f.endswith('.md')])
-    if not faq_files:
-        print("No FAQ files found.")
+    # Path to faq.txt relative to the script's location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    faq_file_path = os.path.join(script_dir, FAQ_FILE)
+
+    questions = extract_questions_from_faq_txt(faq_file_path) # Get all questions
+    if not questions:
+        print(f"No questions found in {FAQ_FILE}")
         return
-    for faq_file in faq_files:
-        faq_path = os.path.join(FAQ_DIR, faq_file)
-        questions = extract_questions_from_faq(faq_path, max_questions=2)
-        print(f"\n==============================\nPrompts for file: {faq_file}\n==============================")
-        if not questions:
-            print(f"No questions found in {faq_file}")
-            continue
-        for i, question in enumerate(questions, 1):
-            print(f"\n---\nPrompt for FAQ Question {i}:")
-            prompt = tutor.generate_response_prompt(question)
+
+    expert_answers = {}
+    for i, question in enumerate(questions, 1):
+        print(f"\n==============================\nProcessing question {i}/{len(questions)}:\n{question}\n==============================")
+        expert_answer = tutor.answer_question(question)
+        print(f"Expert Answer:\n{expert_answer}\n")
+        expert_answers[question] = expert_answer
+
+    # Save all question-answer pairs as a dictionary to a compressed file using gzip
+    compressed_pickle_file_path = os.path.join(script_dir, "answers.pkl.gz")
+    with gzip.open(compressed_pickle_file_path, 'wb') as pkl_file:
+        pickle.dump(expert_answers, pkl_file)
+    print(f"All expert answers saved to {compressed_pickle_file_path}")
 
 if __name__ == "__main__":
     main() 

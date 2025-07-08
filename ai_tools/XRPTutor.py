@@ -7,6 +7,10 @@ with complete code solutions and documentation references.
 
 import os
 from typing import Optional
+import pathlib
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
 
 class XRPTutor:
     """
@@ -179,3 +183,67 @@ For each response, provide:
     def get_documentation_content(self) -> str:
         """Get the full documentation content."""
         return self.documentation 
+
+    def setup_gemini_client(self):
+        """Setup and return a Gemini AI client using the GOOGLE_AI_API_KEY environment variable."""
+        load_dotenv()
+        api_key = os.getenv('GOOGLE_AI_API_KEY')
+        if not api_key:
+            print("GOOGLE_AI_API_KEY not found in environment variables!")
+            print("Make sure you have set up your API key in the .env file")
+            return None
+        try:
+            client = genai.Client(api_key=api_key)
+            return client
+        except Exception as e:
+            print(f"Error setting up Gemini client: {e}")
+            return None
+
+    def load_documentation_part(self, documentation_path: Optional[str] = None):
+        """Load the combined documentation as a Gemini Part object for context."""
+        if documentation_path is None:
+            documentation_path = "combined_documentation.md"
+        doc_path = pathlib.Path(os.path.join(os.path.dirname(os.path.abspath(__file__)), documentation_path))
+        if not doc_path.exists():
+            print(f"Combined documentation file not found at {doc_path}")
+            return None
+        try:
+            doc_part = types.Part.from_bytes(
+                data=doc_path.read_bytes(),
+                mime_type='text/markdown'
+            )
+            return doc_part
+        except Exception as e:
+            print(f"Error loading documentation: {e}")
+            return None
+
+    def answer_question(self, question: str, documentation_path: Optional[str] = None, model: str = "gemini-2.5-flash") -> Optional[str]:
+        """
+        Answer a user question using Gemini AI, with XRP documentation as context.
+        Args:
+            question: The user's question about XRP robotics
+            documentation_path: Path to the combined documentation markdown file (optional)
+            model: Gemini model to use (default: gemini-2.5-flash)
+        Returns:
+            The expert answer as a string, or None if there was an error.
+        """
+        client = self.setup_gemini_client()
+        if client is None:
+            return None
+        doc_part = self.load_documentation_part(documentation_path)
+        if doc_part is None:
+            return None
+        system_instruction = """You are XRPCode Buddy, an expert XRP robotics tutor. Answer the user's question with complete, accurate, and detailed explanations, code, and documentation references. Always cite specific sections and provide runnable code when possible."""
+        prompt = self.generate_response_prompt(question)
+        try:
+            response = client.models.generate_content(
+                model=model,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction
+                ),
+                contents=[doc_part, prompt]
+            )
+            return response.text
+        except Exception as e:
+            print(f"Error generating answer: {e}")
+            return None 
