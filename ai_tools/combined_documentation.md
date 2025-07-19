@@ -45,10 +45,7 @@ This document contains all the XRP robotics documentation compiled from individu
 <a name="imu"></a>
 
 # Imu
-
 *Source: [IMU.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/IMU.html)*
-  - [Introduction](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/IMU.html#introduction)
-  - [Turning With The IMU](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/IMU.html#turning-with-the-imu)
 
 
 # Proportional Control With The IMU
@@ -151,8 +148,7 @@ turn(90)
 <a name="api-reference"></a>
 
 # Api Reference
-
-*Source: [API Reference Documentation](https://introtoroboticsv2.readthedocs.io/en/latest/)*
+*Source: [API Reference Documentation](https://open-stem.github.io/XRP_MicroPython/api.html)*
 
 
 .. If you created a package, create one automodule per module in the package.
@@ -239,9 +235,7 @@ turn(90)
 <a name="basic-robot-driving"></a>
 
 # Basic Robot Driving
-
 *Source: [basic_robot_driving.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/basic_robot_driving.html)*
-  - [Basic driving](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/basic_robot_driving.html#basic-driving)
 
 
 # Getting the Robot Moving
@@ -298,7 +292,6 @@ to solve this problem so your robot goes straight every time.
 <a name="custom-functions"></a>
 
 # Custom Functions
-
 *Source: [custom_functions.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/manipulation/custom_functions.html)*
 
 
@@ -341,7 +334,6 @@ To do this, you will re-use the code that you have written to how execute the pi
 <a name="differential-steering"></a>
 
 # Differential Steering
-
 *Source: [differential_steering.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/differential_steering.html)*
 
 
@@ -440,7 +432,6 @@ Try making the robot drive backwards in an arc
 <a name="distance-tracker"></a>
 
 # Distance Tracker
-
 *Source: [distance_tracker.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/distance_tracker.html)*
 
 
@@ -535,10 +526,7 @@ there is a potential error of 2.5 cm from our desired following distance. Luckil
 <a name="driving-a-distance"></a>
 
 # Driving A Distance
-
 *Source: [driving_a_distance.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_a_distance.html)*
-  - [Controlling your speed](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_a_distance.html#controlling-your-speed)
-  - [Driving a distance](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_a_distance.html#driving-a-distance)
 
 
 # Driving a Distance
@@ -751,12 +739,7 @@ def function_name(parameter1, parameter2, parameter3):
 <a name="driving-with-geometry"></a>
 
 # Driving With Geometry
-
 *Source: [driving_with_geometry.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_with_geometry.html)*
-  - [Triangle](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_with_geometry.html#triangle)
-  - [Square](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_with_geometry.html#square)
-  - [Polygons](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_with_geometry.html#polygons)
-  - [Pinwheel](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/driving_with_geometry.html#pinwheel)
 
 
 # Driving With Geometry
@@ -882,11 +865,7 @@ def pinwheel(sideLength, numSides, numShapes):
 <a name="encoders"></a>
 
 # Encoders
-
 *Source: [encoders.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/encoders.html)*
-  - [Calculating distance](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/encoders.html#calculating-distance)
-  - [Driving a distance (again)](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/encoders.html#driving-a-distance-again)
-  - [Turning to a heading](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/encoders.html#turning-to-a-heading)
 
 
 # The Encoders
@@ -1089,7 +1068,6 @@ def turn(target):
 <a name="helpful-drivetrain-functions"></a>
 
 # Helpful Drivetrain Functions
-
 *Source: [helpful_drivetrain_functions.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/helpful_drivetrain_functions.html)*
 
 
@@ -1159,13 +1137,7 @@ clockwise.
 <a name="intro"></a>
 
 # Intro
-
 *Source: [intro.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html)*
-  - [Animal Echolocation](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html#animal-echolocation)
-  - [Robotic Echolocation](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html#robotic-echolocation)
-  - [Reflective Sensors](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html#reflective-sensors)
-  - [Mechanical Sensors](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html#mechanical-sensors)
-  - [Using the Ultrasonic Sensor](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/intro.html#using-the-ultrasonic-sensor)
 
 
 # Measuring Distances
@@ -1248,10 +1220,7 @@ while True:
 <a name="intro-to-prop-control"></a>
 
 # Intro To Prop Control
-
 *Source: [intro_to_prop_control.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_prop_control.html)*
-  - [What is Proportional Control?](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_prop_control.html#what-is-proportional-control)
-  - [Tuning Kp](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_prop_control.html#tuning-kp)
 
 
 # Introduction to Proportional Control
@@ -1343,10 +1312,7 @@ the desired value. More advanced control systems like PID aim to minimize these 
 <a name="intro-to-robot-control"></a>
 
 # Intro To Robot Control
-
 *Source: [intro_to_robot_control.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_robot_control.html)*
-  - [Open Loop Control](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_robot_control.html#open-loop-control)
-  - [Closed Loop Control](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/intro_to_robot_control.html#closed-loop-control)
 
 
 # Controlling Behavior: Introduction
@@ -1427,7 +1393,6 @@ In this lesson, we will be using on-off control to control our robot's behavior.
 <a name="line-follow-drop"></a>
 
 # Line Follow Drop
-
 *Source: [line_follow_drop.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/manipulation/line_follow_drop.html)*
 
 
@@ -1474,7 +1439,6 @@ We can use the functions we've already created to do this:
 <a name="locate-object"></a>
 
 # Locate Object
-
 *Source: [locate_object.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/locate_object.html)*
 
 
@@ -1691,8 +1655,8 @@ drivetrain.turn(angleToTurn)
 
 <a name="measuring-distances"></a>
 
-# Measuring Distances
 
+# Measuring Distances
 *Source: [measuring_distance index](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/index.html)*
 
 
@@ -1746,7 +1710,6 @@ In the case of Spot, the arm is equipped with a camera that help Spot better und
 <a name="obstacle-avoidance"></a>
 
 # Obstacle Avoidance
-
 *Source: [obstacle_avoidance.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/measuring_distance/obstacle_avoidance.html)*
 
 
@@ -1850,10 +1813,7 @@ And voi la! We have successfully created a program where our robot can avoid obj
 <a name="on-off-control"></a>
 
 # On Off Control
-
 *Source: [on_off_control.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/on_off_control.html)*
-  - [How do we follow a line?](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/on_off_control.html#how-do-we-follow-a-line)
-  - [On-off Control](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/on_off_control.html#on-off-control)
 
 
 # Following the Line: On/Off Control
@@ -1954,7 +1914,6 @@ of the sensor.
 <a name="parking"></a>
 
 # Parking
-
 *Source: [parking.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/parking.html)*
 
 
@@ -1991,7 +1950,6 @@ The robot should do the following:
 <a name="parking-garage"></a>
 
 # Parking Garage
-
 *Source: [parking_garage.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/parking_garage.html)*
 
 
@@ -2044,7 +2002,6 @@ By breaking this complicated problem down into a series of smaller steps, we can
 <a name="prop-distance-tracker"></a>
 
 # Prop Distance Tracker
-
 *Source: [prop_distance_tracker.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/prop_distance_tracker.html)*
 
 
@@ -2130,11 +2087,7 @@ This code should give us a working solution to maintain a set distance from the 
 <a name="proportional-control"></a>
 
 # Proportional Control
-
 *Source: [proportional_control.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/proportional_control.html)*
-  - [The perks of proportional control](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/proportional_control.html#the-perks-of-proportional-control)
-  - [Calculating error](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/proportional_control.html#calculating-error)
-  - [Implementing proportional control](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/proportional_control.html#implementing-proportional-control)
 
 
 # Following the Line: Proportional Control
@@ -2295,7 +2248,6 @@ bot.
 <a name="proportional-control-with-two-sensors"></a>
 
 # Proportional Control With Two Sensors
-
 *Source: [proportional_control_with_two_sensors.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/proportional_control_with_two_sensors.html)*
 
 
@@ -2433,7 +2385,6 @@ Here's what that looks like. Note that KP used in this video was not equal to 1:
 <a name="staying-in-the-circle"></a>
 
 # Staying In The Circle
-
 *Source: [staying_in_the_circle.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/staying_in_the_circle.html)*
 
 
@@ -2468,7 +2419,6 @@ refresher)
 <a name="stopping-at-a-line"></a>
 
 # Stopping At A Line
-
 *Source: [stopping_at_a_line.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/stopping_at_a_line.html)*
 
 
@@ -2545,7 +2495,6 @@ until it sees another line. This cycle should repeat forever.
 <a name="stopping-at-intersection"></a>
 
 # Stopping At Intersection
-
 *Source: [stopping_at_intersection.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/stopping_at_intersection.html)*
 
 
@@ -2629,7 +2578,6 @@ intersection, and then start following that line
 <a name="sumo"></a>
 
 # Sumo
-
 *Source: [sumo.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/sumo.html)*
 
 
@@ -2659,7 +2607,6 @@ sensors to keep themselves inside the ring.
 <a name="understanding-the-sensor"></a>
 
 # Understanding The Sensor
-
 *Source: [understanding_the_sensor.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/line_following/understanding_the_sensor.html)*
 
 
@@ -2773,14 +2720,7 @@ is not seeing a line.
 <a name="understanding-your-robots-drivetrain"></a>
 
 # Understanding Your Robots Drivetrain
-
 *Source: [understanding_your_robots_drivetrain.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html)*
-  - [Introduction](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#introduction)
-  - [Driving straight](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#driving-straight)
-  - [Turning in an arc](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#turning-in-an-arc)
-  - [Turning in place](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#turning-in-place)
-  - [Turning on one wheel](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#turning-on-one-wheel)
-  - [Effort](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/understanding_your_robots_drivetrain.html#effort)
 
 
 # Understanding Your Robot's Drivetrain
@@ -2969,7 +2909,6 @@ This table shows some different effort values and what the wheel would do:
 <a name="waiting-for-button-input"></a>
 
 # Waiting For Button Input
-
 *Source: [waiting_for_button_input.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/driving/waiting_for_button_input.html)*
 
 
@@ -3021,10 +2960,7 @@ it.
 <a name="wall-following"></a>
 
 # Wall Following
-
 *Source: [wall_following.rst](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/wall_following.html)*
-  - [Building a control law](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/wall_following.html#building-a-control-law)
-  - [Implementing Wall Following](https://introtoroboticsv2.readthedocs.io/en/latest/course/robot_control/wall_following.html#implementing-wall-following)
 
 
 # Introduction to Wall Following
