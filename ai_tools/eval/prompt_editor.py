@@ -40,7 +40,7 @@ class PromptEditor:
         api_key = os.getenv('GOOGLE_AI_API_KEY')
         if api_key:
             google.generativeai.configure(api_key=api_key)
-            self.model = google.generativeai.GenerativeModel(model_name="gemini-2.5-flash")
+            self.model = google.generativeai.GenerativeModel(model_name="gemini-2.5-pro")
         else:
             self.model = None
             print("Warning: No API key found, prompt editing will be limited")

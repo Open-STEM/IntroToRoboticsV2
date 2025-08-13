@@ -51,12 +51,19 @@ class StudentImpersonator:
                 last_q, _ = self.conversation_turns[-1]
                 self.conversation_turns[-1] = (last_q, last_tutor_response)
 
-            # Check for satisfaction
-            satisfaction_prompt = f"""You are a student learning XRP robotics. You just received the following response from your tutor:
+            # Check for satisfaction - be inquisitive and focused
+            satisfaction_prompt = f"""You are a curious student learning XRP robotics. You have a specific question you're trying to get answered. You just received this response from your tutor:
 
 Tutor's Response: {last_tutor_response}
 
-Based on this response and our previous conversation, are you satisfied with the explanation and ready to conclude this particular line of inquiry? Answer only with 'YES' or 'NO'.
+EVALUATION: Consider your original question and learning goal. Ask yourself:
+1. Has this response helped you understand how to solve your original problem?
+2. Do you feel like you're making progress toward your specific goal?
+3. Are you getting the information you need, even if it's through guided discovery?
+
+You're satisfied when you feel you understand the approach to solve your original problem, whether through direct answers, helpful guidance, or step-by-step learning. You're willing to engage with questions and hints if they're clearly leading you toward your goal.
+
+Answer 'YES' if you feel you're getting the help you need for your original question. Answer 'NO' if you feel the conversation has gotten off-track from your goal.
 
 Your answer:"""
             
@@ -75,15 +82,20 @@ Your answer:"""
                 if a:
                     conversation_context += f"Tutor: {a}\n"
 
-            prompt = f"""You are a student learning XRP robotics. You are currently in a conversation with an AI tutor. Based on the previous conversation, ask a natural follow-up question, or if the topic seems concluded, ask a new, related question from the provided FAQ list. If you ask a new question, make it sound like a natural progression or a new thought.
+            prompt = f"""You are an inquisitive student learning XRP robotics. You're engaged in the conversation and want to understand your original question thoroughly. Based on the previous conversation, continue exploring your topic while staying focused on your original goal.
 
 Previous Conversation:
 {conversation_context}
 
-Available FAQ Questions (choose one if a new topic is desired, otherwise ask a follow-up):
-{self._format_faq_for_prompt()}
+STAY FOCUSED AND INQUISITIVE:
+- Build on what the tutor has shared with thoughtful follow-up questions
+- If they gave you guidance, ask for clarification or next steps
+- If they asked you questions, engage with them but relate back to your goal
+- Show you're thinking about their suggestions and want to understand better
+- Stay curious about the specific problem you originally asked about
+- Ask for elaboration on points that will help you solve your original question
 
-Your next question to the tutor:"""
+Your next thoughtful question that shows you're engaged and working toward understanding your original problem:"""
 
             try:
                 response = self.chat.send_message(prompt)
@@ -98,12 +110,14 @@ Your next question to the tutor:"""
     def _format_faq_for_prompt(self):
         return "\n".join([f"- {q}" for q in self.faq_questions])
 
-# Tutor Bot Model
+# Tutor Bot Model with Documentation Context
 class TutorBot:
-    def __init__(self, prompt_file: str = "tutor_prompt.txt"):
+    def __init__(self, prompt_file: str = "tutor_prompt.txt", documentation_file: str = "combined_documentation.md"):
         self.prompt_manager = PromptManager()
         self.prompt_file = prompt_file
+        self.documentation_file = documentation_file
         self.contextual_prompt = self._load_prompt()
+        self.documentation_context = self._load_documentation()
         self.genai_instance = setup_gemini_client()
         if self.genai_instance:
             self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-flash")
@@ -123,14 +137,35 @@ class TutorBot:
             print(f"Error loading prompt: {e}. Using fallback prompt.")
             return "You are a helpful programming tutor for XRP robotics."
     
+    def _load_documentation(self) -> str:
+        """Load combined documentation for context"""
+        try:
+            doc_path = os.path.join(os.path.dirname(__file__), self.documentation_file)
+            with open(doc_path, 'r', encoding='utf-8') as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"Warning: Documentation file '{self.documentation_file}' not found.")
+            return ""
+        except Exception as e:
+            print(f"Error loading documentation: {e}")
+            return ""
+    
     def reload_prompt(self):
         """Reload prompt from file (useful after PromptEditor makes changes)"""
         self.contextual_prompt = self._load_prompt()
 
-    def get_response(self, question: str):
+    def answer_question(self, question: str):
         if self.model:
-            combined_prompt = self.contextual_prompt + "\n\nSTUDENT'S QUESTION:\n" + question
-            response = self.model.generate_content(combined_prompt)
+            # Combine prompt + documentation + question
+            full_context = f"""{self.contextual_prompt}
+
+**AVAILABLE XRP DOCUMENTATION:**
+{self.documentation_context}
+
+**STUDENT'S QUESTION:**
+{question}"""
+            
+            response = self.model.generate_content(full_context)
             time.sleep(1) # Add a small delay
             return response.text
         else:
@@ -142,7 +177,7 @@ class ExpertGrader:
         self.answers = answers_data
         self.genai_instance = setup_gemini_client()
         if self.genai_instance:
-            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-flash")
+            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-pro")
             self.chat = self.model.start_chat()
         else:
             self.model = None
@@ -161,47 +196,55 @@ class ExpertGrader:
             print(f"Error loading answers file: {e}")
             return {}
 
-    def grade_conversation(self, student_question: str, tutor_response: str):
+    def grade_conversation(self, student_question: str, tutor_response: str, link_feedback: str = None):
         if not self.model or not self.chat:
             return "Expert grader not initialized due to API error."
 
         correct_answer = self.answers.get(student_question, "No expert answer available for this question.")
 
-        grading_prompt = f"""You are an expert grader of educational tutoring conversations. Your task is to evaluate a tutor bot's performance based on specific pedagogical and interaction criteria. You will be provided with the student's question, the tutor's response, and the expert's 'correct' answer (if available).
+        grading_prompt = f"""You are an expert grader evaluating how well a tutor bot follows its educational prompt guidelines. The tutor should adapt its response style based on the type of question asked.
 
-**Grading Criteria:**
+**GRADING STANDARDS:**
 
-**Pedagogical Logic & Content Strategy:**
-- Guides, Doesn't Solve: Uses sequential hints and Socratic questioning to lead the user to the solution, rather than providing the final answer outright.
-- Adaptive Explanations: When a user indicates they're stuck, the bot offers the same concept explained in a different way (e.g., using an analogy, a code example, or a simpler definition).
-- Accurate Error Analysis: Correctly identifies common misconceptions or errors in the user's input and provides targeted, constructive feedback.
-- Scaffolds Complexity: Breaks down complex topics and problems into smaller, logical, and more manageable steps for the user to complete.
-- Contextual Action: Tutor bot knows to give the direct answer when the question is for clarification and knows when to scaffold when the student is undertaking a problem solving exercise.
-- Promotes Metacognition: Prompts the user to articulate their reasoning (e.g., "Can you explain why that line of code is necessary?").
+**EXCELLENT (A):**
+- Correctly identifies question type (quick clarification vs. complex problem-solving)
+- For QUICK questions: Provides direct, concise answers with brief explanations
+- For COMPLEX questions: Uses appropriate Socratic method and graduated response levels
+- Follows the 5-level framework (Hint → Concept → Pseudocode → Example → Solution) when appropriate
+- Encourages code generation and hands-on learning
+- References documentation appropriately with valid, working links
 
-**Interaction & Response Quality:**
-- Context-Aware Responses: Demonstrates an ability to understand and remember the context of the current conversation, rather than treating each input as a brand new query.
-- Effective Pacing: Delivers information in digestible chunks, avoiding overwhelming "walls of text" and waiting for user input before proceeding.
-- Robust Input Parsing: Accurately interprets user intent, even with typos, slang, or ambiguously phrased questions.
-- Clear Escape Hatches: Provides clear ways for a user to change the topic, ask for a menu, or restart if the conversation goes off-track.
-- Consistent and Encouraging Tone: The bot's language is consistently programmed to be supportive, non-judgmental, and free of condescending or frustrating phrasing.
+**GOOD (B):**
+- Generally matches response style to question type with minor misalignment
+- Uses most prompt guidelines effectively
+- Some progress toward learning objectives
 
-**Learning Pathway & Resource Integration:**
-- Effective Onboarding & Goal Setting: Clearly frames the topic at the beginning of a session and helps the user define what they want to accomplish.
-- Reinforces with Documentation: Provides timely and relevant links to specific sections of the official documentation to supplement explanations and encourage self-reliance.
-- Fosters Transferable Skills: The overall goal of the interaction is to teach the user a process or framework for solving similar problems in the future.
-- Offers Meaningful Summaries: Can effectively summarize key takeaways, new commands learned, or concepts covered at the end of a module or session.
+**AVERAGE (C):**
+- Mixed adherence to prompt guidelines
+- Sometimes over-complicates simple questions or over-simplifies complex ones
+- Partial use of educational framework
 
-**Conversation Details:**
+**POOR (D-F):**
+- Fails to match response style to question type
+- Ignores prompt guidelines (e.g., uses Socratic method for simple clarification questions)
+- No clear educational strategy or progression
+
+**Evaluation Context:**
 Student Question: {student_question}
-Tutor Bot Response: {tutor_response}
-Expert's Correct Answer: {correct_answer}
+Tutor Response: {tutor_response}
+Expert Answer: {correct_answer}
 
-**Your Evaluation:**
-Based on the above criteria, please provide a concise grade (e.g., A, B, C, D, F) for the Tutor Bot's response, followed by a brief explanation for your grade, focusing on how well it adhered to the pedagogical logic and content strategy, interaction quality, and resource integration. If the expert answer is 'No expert answer available for this question.', focus your grading purely on the conversational and pedagogical aspects without comparing to an external correct answer.
+**Link Checker Feedback:**
+{link_feedback if link_feedback else "No link issues found."}
+
+**Key Questions:** 
+1. Did the tutor correctly assess the question type (quick vs. complex)?
+2. Did the tutor follow its prompt guidelines appropriately for that question type?
+3. Was the response level (Hint/Concept/Pseudocode/Example/Solution) appropriate?
+4. Did the tutor handle documentation links correctly (no broken links, appropriate references)?
 
 Grade: 
-Explanation: """
+Explanation (focus on prompt adherence and link quality):"""
 
         response = self.chat.send_message(grading_prompt)
         time.sleep(1) # Add a small delay
@@ -253,13 +296,13 @@ def main():
             break
 
         # Tutor responds
-        tutor_response = tutor.get_response(current_student_question)
+        tutor_response = tutor.answer_question(current_student_question)
         print(f"Tutor: {tutor_response}\n")
 
         # Check tutor response with LinkChecker
         link_check_results = link_checker.check_tutor_response(tutor_response)
         link_feedback = link_checker.generate_feedback_report(link_check_results)
-        
+
         conversation_history.append({
             "student_question": current_student_question,
             "tutor_response": tutor_response,
@@ -279,7 +322,11 @@ def main():
         if last_turn["student_question"] == "I'm satisfied with my care" and len(conversation_history) > 1:
             last_turn = conversation_history[-2]
 
-        grade = grader.grade_conversation(last_turn["student_question"], last_turn["tutor_response"])
+        grade = grader.grade_conversation(
+            last_turn["student_question"], 
+            last_turn["tutor_response"],
+            last_turn["link_feedback"]
+        )
         print(f"Grader's Evaluation for the last graded turn:\n{grade}\n")
     else:
         print("No conversation turns to grade.")

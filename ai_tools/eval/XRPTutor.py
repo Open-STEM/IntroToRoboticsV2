@@ -8,8 +8,7 @@ with complete code solutions and documentation references.
 import os
 from typing import Optional
 import pathlib
-from google import genai
-from google.genai import types
+import google.generativeai
 from dotenv import load_dotenv
 
 class XRPTutor:

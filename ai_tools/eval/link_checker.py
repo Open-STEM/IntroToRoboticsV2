@@ -41,7 +41,7 @@ class LinkChecker:
         api_key = os.getenv('GOOGLE_AI_API_KEY')
         if api_key:
             google.generativeai.configure(api_key=api_key)
-            self.model = google.generativeai.GenerativeModel(model_name="gemini-2.5-flash")
+            self.model = google.generativeai.GenerativeModel(model_name="gemini-2.5-pro")
         else:
             self.model = None
             print("Warning: No API key found, fact-checking will be limited")
@@ -62,8 +62,11 @@ class LinkChecker:
     
     def check_link_accessibility(self, url: str, timeout: int = 10) -> LinkCheckResult:
         """Check if a link is accessible and extract content snippet"""
+        # Clean URL by removing common trailing punctuation that doesn't belong in URLs
+        cleaned_url = url.rstrip('.,;:!?)')
+        
         try:
-            response = self.session.get(url, timeout=timeout, allow_redirects=True)
+            response = self.session.get(cleaned_url, timeout=timeout, allow_redirects=True)
             
             # Get content snippet
             content_snippet = ""
@@ -75,11 +78,11 @@ class LinkChecker:
                 content_snippet = soup.get_text()[:500]  # First 500 chars
             
             return LinkCheckResult(
-                url=url,
+                url=url,  # Keep original URL for reporting
                 status_code=response.status_code,
                 is_accessible=200 <= response.status_code < 400,
                 content_snippet=content_snippet.strip(),
-                error_message=None
+                error_message=None if cleaned_url == url else f"URL cleaned from '{url}' to '{cleaned_url}'"
             )
         
         except requests.exceptions.RequestException as e:
