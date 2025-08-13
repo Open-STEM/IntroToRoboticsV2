@@ -6,6 +6,7 @@ import pickle
 import gzip
 import random
 import time # Import time for delays
+from link_checker import LinkChecker
 
 def setup_gemini_client():
     load_dotenv()
@@ -377,6 +378,8 @@ def main():
     tutor = TutorBot()
     # Pass all_answers to the grader
     grader = ExpertGrader(answers_data=all_answers)
+    # Initialize LinkChecker
+    link_checker = LinkChecker()
 
     # Simulate multi-turn conversation until student is satisfied
     conversation_history = []
@@ -400,10 +403,19 @@ def main():
         tutor_response = tutor.get_response(current_student_question)
         print(f"Tutor: {tutor_response}\n")
 
+        # Check tutor response with LinkChecker
+        link_check_results = link_checker.check_tutor_response(tutor_response)
+        link_feedback = link_checker.generate_feedback_report(link_check_results)
+        
         conversation_history.append({
             "student_question": current_student_question,
-            "tutor_response": tutor_response
+            "tutor_response": tutor_response,
+            "link_check_results": link_check_results,
+            "link_feedback": link_feedback
         })
+        
+        # Print link checker feedback
+        print(f"Link Checker Feedback:\n{link_feedback}\n")
         
         prev_tutor_response = tutor_response # Update for the next student turn
 
