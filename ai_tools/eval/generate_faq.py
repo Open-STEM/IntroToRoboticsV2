@@ -128,7 +128,7 @@ Create questions that sound like each persona would actually ask them. Keep the 
         print(f"Generating FAQ for lesson: {lesson_name}")
         
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-2.5-pro",
             config=types.GenerateContentConfig(
                 system_instruction=system_instruction
             ),

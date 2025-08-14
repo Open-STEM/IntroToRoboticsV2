@@ -219,13 +219,13 @@ For each response, provide:
             print(f"Error loading documentation: {e}")
             return None
 
-    def answer_question(self, question: str, documentation_path: Optional[str] = None, model: str = "gemini-2.5-flash") -> Optional[str]:
+    def answer_question(self, question: str, documentation_path: Optional[str] = None, model: str = "gemini-2.5-pro") -> Optional[str]:
         """
         Answer a user question using Gemini AI, with XRP documentation as context.
         Args:
             question: The user's question about XRP robotics
             documentation_path: Path to the combined documentation markdown file (optional)
-            model: Gemini model to use (default: gemini-2.5-flash)
+            model: Gemini model to use (default: gemini-2.5-pro)
         Returns:
             The expert answer as a string, or None if there was an error.
         """

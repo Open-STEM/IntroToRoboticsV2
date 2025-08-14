@@ -9,6 +9,8 @@ import time # Import time for delays
 from link_checker import LinkChecker
 from prompt_manager import PromptManager
 
+
+
 def setup_gemini_client():
     load_dotenv()
     api_key = os.getenv('GOOGLE_AI_API_KEY')
@@ -30,7 +32,7 @@ class StudentImpersonator:
         self.conversation_turns = [] # Stores (student_q, tutor_a) for internal use
         self.genai_instance = setup_gemini_client()
         if self.genai_instance:
-            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-flash")
+            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-pro")
             self.chat = self.model.start_chat()
         else:
             self.model = None
@@ -63,13 +65,14 @@ EVALUATION: Consider your original question and learning goal. Ask yourself:
 
 You're satisfied when you feel you understand the approach to solve your original problem, whether through direct answers, helpful guidance, or step-by-step learning. You're willing to engage with questions and hints if they're clearly leading you toward your goal.
 
-Answer 'YES' if you feel you're getting the help you need for your original question. Answer 'NO' if you feel the conversation has gotten off-track from your goal.
+Answer 'YES' if you feel you have fully gotten the help you need for your original question. Answer 'NO' if you feel the conversation has gotten off-track from your goal.
 
 Your answer:"""
             
             try:
+                
                 satisfaction_response = self.chat.send_message(satisfaction_prompt)
-                time.sleep(1) # Add a small delay
+
                 if "YES" in satisfaction_response.text.upper():
                     self.conversation_turns.append(("I'm satisfied with my care", None))
                     return "I'm satisfied with my care"
@@ -98,8 +101,9 @@ STAY FOCUSED AND INQUISITIVE:
 Your next thoughtful question that shows you're engaged and working toward understanding your original problem:"""
 
             try:
+                
                 response = self.chat.send_message(prompt)
-                time.sleep(1) # Add a small delay
+
                 generated_question = response.text.strip()
                 self.conversation_turns.append((generated_question, None)) # Store the new question
                 return generated_question
@@ -120,7 +124,7 @@ class TutorBot:
         self.documentation_context = self._load_documentation()
         self.genai_instance = setup_gemini_client()
         if self.genai_instance:
-            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-flash")
+            self.model = self.genai_instance.GenerativeModel(model_name="gemini-2.5-pro")
             self.chat = None # Tutor bot will not use a persistent chat history for its main prompt
         else:
             self.model = None
@@ -165,8 +169,9 @@ class TutorBot:
 **STUDENT'S QUESTION:**
 {question}"""
             
+            
             response = self.model.generate_content(full_context)
-            time.sleep(1) # Add a small delay
+
             return response.text
         else:
             return "Tutor bot not initialized due to API error."
@@ -246,8 +251,9 @@ Expert Answer: {correct_answer}
 Grade: 
 Explanation (focus on prompt adherence and link quality):"""
 
+        
         response = self.chat.send_message(grading_prompt)
-        time.sleep(1) # Add a small delay
+
         return response.text
 
 
