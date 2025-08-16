@@ -370,9 +370,11 @@ def extract_grade_from_text(grade_text: str) -> str:
             # Remove markdown formatting and extract grade
             grade_part = line.split('Grade:')[1].strip()
             if grade_part:
-                # Take first word and remove any parentheses (e.g., "A (Excellent)" -> "A")
-                grade = grade_part.split()[0].replace('(', '').replace(')', '')
-                return grade
+                # Take first word and remove any formatting (markdown, parentheses)
+                grade = grade_part.split()[0].replace('*', '').replace('(', '').replace(')', '')
+                # Only return if it looks like a valid grade (A, B, C, D, F)
+                if grade and grade[0] in 'ABCDF':
+                    return grade
     return "N/A"
 
 def extract_issues_from_grade(grade_text: str) -> list:
