@@ -10,6 +10,12 @@ from link_checker import LinkChecker
 from prompt_manager import PromptManager
 from prompt_editor import PromptEditor, FeedbackSummary
 
+# Global counter for tracking skipped responses due to filtering/errors
+SKIPPED_RESPONSE_COUNTER = {
+    'tutor_bot': 0,
+    'student_impersonator': 0,
+    'expert_grader': 0
+}
 
 
 def setup_gemini_client():
@@ -40,6 +46,7 @@ class StudentImpersonator:
             self.chat = None
 
     def ask_question(self, last_tutor_response: str = None):
+        global SKIPPED_RESPONSE_COUNTER
         if not self.model or not self.chat:
             return "Student impersonator not initialized due to API error."
 
@@ -71,14 +78,18 @@ Answer 'YES' if you feel you have fully gotten the help you need for your origin
 Your answer:"""
             
             try:
-                
                 satisfaction_response = self.chat.send_message(satisfaction_prompt)
-    
-                if "YES" in satisfaction_response.text.upper():
-                    self.conversation_turns.append(("I'm satisfied with my care", None))
-                    return "I'm satisfied with my care"
+                
+                # Check if response has valid text content
+                if not satisfaction_response.candidates or not satisfaction_response.candidates[0].content.parts:
+                    SKIPPED_RESPONSE_COUNTER['student_impersonator'] += 1
+                    # Continue to generate a new question instead of ending conversation
+                else:
+                    if "YES" in satisfaction_response.text.upper():
+                        self.conversation_turns.append(("I'm satisfied with my care", None))
+                        return "I'm satisfied with my care"
             except Exception as e:
-                print(f"Error checking for student satisfaction: {e}")
+                SKIPPED_RESPONSE_COUNTER['student_impersonator'] += 1
 
             conversation_context = ""
             for q, a in self.conversation_turns:
@@ -102,14 +113,18 @@ STAY FOCUSED AND INQUISITIVE:
 Your next thoughtful question that shows you're engaged and working toward understanding your original problem:"""
 
             try:
-                
                 response = self.chat.send_message(prompt)
-    
+                
+                # Check if response has valid text content
+                if not response.candidates or not response.candidates[0].content.parts:
+                    SKIPPED_RESPONSE_COUNTER['student_impersonator'] += 1
+                    return "Can you explain that further?" # Fallback generic question
+                
                 generated_question = response.text.strip()
                 self.conversation_turns.append((generated_question, None)) # Store the new question
                 return generated_question
             except Exception as e:
-                print(f"Error generating student question: {e}")
+                SKIPPED_RESPONSE_COUNTER['student_impersonator'] += 1
                 return "Can you explain that further?" # Fallback generic question
 
     def _format_faq_for_prompt(self):
@@ -160,6 +175,7 @@ class TutorBot:
         self.contextual_prompt = self._load_prompt()
 
     def answer_question(self, question: str):
+        global SKIPPED_RESPONSE_COUNTER
         if self.model:
             # Combine prompt + documentation + question
             full_context = f"""{self.contextual_prompt}
@@ -170,10 +186,18 @@ class TutorBot:
 **STUDENT'S QUESTION:**
 {question}"""
             
-            
-            response = self.model.generate_content(full_context)
-
-            return response.text
+            try:
+                response = self.model.generate_content(full_context)
+                
+                # Check if response has valid text content
+                if not response.candidates or not response.candidates[0].content.parts:
+                    SKIPPED_RESPONSE_COUNTER['tutor_bot'] += 1
+                    return None  # Signal to skip this Q&A pair
+                
+                return response.text
+            except Exception as e:
+                SKIPPED_RESPONSE_COUNTER['tutor_bot'] += 1
+                return None  # Signal to skip this Q&A pair
         else:
             return "Tutor bot not initialized due to API error."
 
@@ -203,6 +227,7 @@ class ExpertGrader:
             return {}
 
     def grade_conversation(self, student_question: str, tutor_response: str, link_feedback: str = None):
+        global SKIPPED_RESPONSE_COUNTER
         if not self.model or not self.chat:
             return "Expert grader not initialized due to API error."
 
@@ -252,9 +277,18 @@ Expert Answer: {correct_answer}
 Grade: 
 Explanation (focus on prompt adherence and link quality):"""
 
-        
-        response = self.chat.send_message(grading_prompt)
-        return response.text
+        try:
+            response = self.chat.send_message(grading_prompt)
+            
+            # Check if response has valid text content
+            if not response.candidates or not response.candidates[0].content.parts:
+                SKIPPED_RESPONSE_COUNTER['expert_grader'] += 1
+                return "Grade: N/A\nExplanation: Response was filtered due to content policy."
+            
+            return response.text
+        except Exception as e:
+            SKIPPED_RESPONSE_COUNTER['expert_grader'] += 1
+            return "Grade: N/A\nExplanation: Error occurred during grading."
 
 
 def load_answers_from_pkl(file_path="answers.pkl.gz"):
@@ -272,9 +306,7 @@ def load_answers_from_pkl(file_path="answers.pkl.gz"):
 
 def run_single_conversation(student, tutor, grader, link_checker, qa_index, total_questions, initial_question=None):
     """Run a single multi-turn conversation until student satisfaction"""
-    print(f"CONVERSATION {qa_index + 1}/{total_questions}")
-    if initial_question:
-        print(f"Question: {initial_question}")
+    print(f"{qa_index + 1}: {initial_question}")
     
     conversation_history = []
     total_tokens = 0
@@ -294,6 +326,10 @@ def run_single_conversation(student, tutor, grader, link_checker, qa_index, tota
         # Tutor responds
         tutor_response = tutor.answer_question(current_student_question)
 
+        # If tutor response is None, skip this Q&A pair
+        if tutor_response is None:
+            break
+        
         # Check tutor response with LinkChecker
         link_check_results = link_checker.check_tutor_response(tutor_response)
         link_feedback = link_checker.generate_feedback_report(link_check_results)
@@ -323,16 +359,20 @@ def run_single_conversation(student, tutor, grader, link_checker, qa_index, tota
         )
         link_score = last_turn["link_check_results"]["overall_score"]
     
-    print(f"   Conversation completed after {turn_count} turns")
     return conversation_history, grade_text, link_score
 
 def extract_grade_from_text(grade_text: str) -> str:
     """Extract letter grade from grader response"""
     lines = grade_text.split('\n')
     for line in lines:
-        if line.strip().startswith('Grade:'):
-            grade = line.replace('Grade:', '').strip()
-            return grade.split()[0] if grade else "N/A"  # Take first word (e.g., "A" from "A+")
+        # Handle both "Grade:" and "**Grade:**" formats
+        if 'Grade:' in line:
+            # Remove markdown formatting and extract grade
+            grade_part = line.split('Grade:')[1].strip()
+            if grade_part:
+                # Take first word and remove any parentheses (e.g., "A (Excellent)" -> "A")
+                grade = grade_part.split()[0].replace('(', '').replace(')', '')
+                return grade
     return "N/A"
 
 def extract_issues_from_grade(grade_text: str) -> list:
@@ -347,23 +387,29 @@ def extract_issues_from_grade(grade_text: str) -> list:
     return issues
 
 def main():
+    # Configuration
+    NUM_QUESTIONS = 5
+    
     all_faq_questions, all_answers = load_answers_from_pkl()
     if not all_faq_questions:
         print("No questions loaded from answers.pkl.gz. Exiting.")
         return
 
+    # Random sample of questions
+    limited_questions = random.sample(all_faq_questions, min(NUM_QUESTIONS, len(all_faq_questions)))
+    
     # Initialize all agents
     tutor = TutorBot()
     grader = ExpertGrader(answers_data=all_answers)
     link_checker = LinkChecker()
-    # prompt_editor = PromptEditor()
     
-    # Track overall results
+    # Track overall results and failed questions
     all_results = []
+    failed_questions = []
     conversation_count = 0
     
-    # Iterate through all Q/A pairs
-    for qa_index, initial_question in enumerate(all_faq_questions):
+    # Iterate through limited Q/A pairs
+    for qa_index, initial_question in enumerate(limited_questions):
         conversation_count += 1
         
         # Create a new student impersonator for each conversation
@@ -372,8 +418,12 @@ def main():
         
         # Run single conversation
         conversation_history, grade_text, link_score = run_single_conversation(
-            student, tutor, grader, link_checker, qa_index, len(all_faq_questions), initial_question
+            student, tutor, grader, link_checker, qa_index, len(limited_questions), initial_question
         )
+        
+        # Track failed questions (those with no conversation history due to skipping)
+        if not conversation_history:
+            failed_questions.append(initial_question)
         
         # Extract grader information
         letter_grade = extract_grade_from_text(grade_text)
@@ -425,7 +475,29 @@ def main():
     avg_turns = sum(r['conversation_turns'] for r in all_results) / len(all_results)
     print(f"Average Conversation Length: {avg_turns:.1f} turns")
     
-    print(f"\nEvaluation complete! Results show tutor bot performance across all FAQ questions.")
+    # Skipped response statistics
+    global SKIPPED_RESPONSE_COUNTER
+    total_skipped = sum(SKIPPED_RESPONSE_COUNTER.values())
+    print(f"\n{'='*60}")
+    print("SKIPPED RESPONSE STATISTICS")
+    print(f"{'='*60}")
+    print(f"Total Skipped Responses (due to errors/filtering): {total_skipped}")
+    print(f"  - TutorBot: {SKIPPED_RESPONSE_COUNTER['tutor_bot']}")
+    print(f"  - StudentImpersonator: {SKIPPED_RESPONSE_COUNTER['student_impersonator']}")
+    print(f"  - ExpertGrader: {SKIPPED_RESPONSE_COUNTER['expert_grader']}")
+    if total_skipped > 0:
+        print(f"Skip Rate: {(total_skipped / len(all_results)) * 100:.2f}%")
+    
+    # Save failed questions to file
+    if failed_questions:
+        with open('failed_questions.txt', 'w', encoding='utf-8') as f:
+            f.write("Failed Questions (could not be processed):\n")
+            f.write("=" * 50 + "\n\n")
+            for i, question in enumerate(failed_questions, 1):
+                f.write(f"{i}. {question}\n")
+        print(f"Saved {len(failed_questions)} failed questions to 'failed_questions.txt'")
+    
+    print(f"\nEvaluation complete! Results show tutor bot performance across {NUM_QUESTIONS} FAQ questions.")
 
 if __name__ == "__main__":
     main() 
