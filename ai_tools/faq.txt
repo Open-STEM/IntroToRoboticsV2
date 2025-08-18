@@ -1,5 +1,3 @@
-XRP Robotics Course Combined FAQ
-
 1. What's a "bail"? Is that like the handle on a bucket?
 2. Give me the 4 steps to pick up the basket.
 3. How does the robot "know" it's inside the bail when it backs up? Is there a sensor for that?
