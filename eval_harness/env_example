@@ -1,0 +1,4 @@
+# This file is used to store environment variables for the eval_harness.
+# Replace 'your_google_ai_api_key_here' with your actual Google AI API Key.
+# DO NOT COMMIT THIS FILE TO VERSION CONTROL WITH YOUR ACTUAL KEY.
+GOOGLE_AI_API_KEY='your_google_ai_api_key_here'
