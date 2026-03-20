@@ -1,5 +1,5 @@
 Driving Module Worksheet
-=======================
+========================
 
 Name: __________________________   Date: ____________
 
@@ -16,4 +16,4 @@ Practice Problems:
 2. Write a short program (pseudocode or blocks) to make the robot drive in a square.
 
 Reflection:
-What was the most challenging part of driving the robot? __________________________ 
+What was the most challenging part of driving the robot? __________________________

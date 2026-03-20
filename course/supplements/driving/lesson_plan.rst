@@ -1,5 +1,5 @@
 Driving Module: Guided Lesson Plan
-==================================
+===================================
 
 Objectives:
 - Students will understand basic robot driving and differential steering.
@@ -27,4 +27,4 @@ Lesson Outline:
 Assessment:
 - Review completed worksheets.
 - Observe robot performance on a simple course.
-- Ask students to explain how changing wheel speeds affects movement. 
+- Ask students to explain how changing wheel speeds affects movement.

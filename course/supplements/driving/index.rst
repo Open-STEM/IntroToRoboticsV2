@@ -1,5 +1,5 @@
 Driving Module Supplements
-=========================
+==========================
 
 This section contains all supplemental materials for the Driving module, including worksheets, lesson plans, and quizzes.
 
@@ -9,4 +9,4 @@ This section contains all supplemental materials for the Driving module, includi
 
    worksheet
    lesson_plan
-   quiz 
+   quiz

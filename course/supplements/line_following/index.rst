@@ -1,5 +1,5 @@
 Line Following Module Supplements
-================================
+==================================
 
 This section contains all supplemental materials for the Line Following module, including worksheets, lesson plans, and quizzes.
 
@@ -9,4 +9,4 @@ This section contains all supplemental materials for the Line Following module, 
 
    worksheet
    lesson_plan
-   quiz 
+   quiz

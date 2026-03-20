@@ -1,5 +1,5 @@
 Line Following Module Quiz
-=========================
+==========================
 
 Name: __________________________   Date: ____________
 
@@ -13,4 +13,4 @@ Instructions: Answer the following questions. Think deeply and explain your reas
 
 4. Draw a line course with a tricky intersection. How could you program your robot to detect and handle intersections?
 
-5. Reflect: Why is it important for robots to be able to follow lines accurately in real-world applications? Give an example. 
+5. Reflect: Why is it important for robots to be able to follow lines accurately in real-world applications? Give an example.

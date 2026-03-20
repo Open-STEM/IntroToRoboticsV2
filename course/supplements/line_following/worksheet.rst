@@ -1,5 +1,5 @@
 Line Following Module Worksheet
-==============================
+================================
 
 Name: __________________________   Date: ____________
 
@@ -16,4 +16,4 @@ Practice Problems:
 2. Write a short program (pseudocode or blocks) to make the robot stop at a line.
 
 Reflection:
-What strategy helped your robot stay on the line? __________________________ 
+What strategy helped your robot stay on the line? __________________________

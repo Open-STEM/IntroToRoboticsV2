@@ -1,5 +1,5 @@
 Supplemental Materials for Teachers
-=================================
+====================================
 
 This section contains worksheets, guided lesson plans, quizzes, and other resources to support teachers in delivering the Intro to Robotics curriculum. Materials are now organized by module for easier access and integration with lessons.
 
@@ -8,4 +8,4 @@ This section contains worksheets, guided lesson plans, quizzes, and other resour
    :caption: Supplements by Module
 
    driving/index
-   line_following/index 
+   line_following/index

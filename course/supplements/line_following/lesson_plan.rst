@@ -1,5 +1,5 @@
 Line Following Module: Guided Lesson Plan
-=========================================
+==========================================
 
 Objectives:
 - Students will understand how line sensors work and the basics of line following algorithms.
@@ -27,4 +27,4 @@ Lesson Outline:
 Assessment:
 - Review completed worksheets.
 - Observe robots on a line course.
-- Ask students to describe how their code works and how the robot responds to the line. 
+- Ask students to describe how their code works and how the robot responds to the line.
