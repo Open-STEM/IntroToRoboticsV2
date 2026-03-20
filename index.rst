@@ -120,7 +120,14 @@ ways that make it available to all.
    course/delivery_challenge/index
 
 
-.. toctree:: 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Supplemental Materials
+
+   course/supplements/index
+
+.. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Appendix 1: Using the XRP Web Server
