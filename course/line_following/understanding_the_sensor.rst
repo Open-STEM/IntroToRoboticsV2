@@ -101,7 +101,34 @@ is not seeing a line.
     (value above the threshold) or ``False`` if it does not. Don't delete this
     function when you're done, because you'll use it for the rest of the module!
 
-    Use the webserver to log the result of calling your function in an infinite 
-    loop. Move your robot around a surface with lines on it to make sure it 
+    Use :code:`print()` to view the result of calling your function in an infinite 
+    loop (Or use the webserver to log values). 
+    Move your robot around a surface with lines on it to make sure it 
     always returns the correct value based on what the sensor is seeing. If you 
     are getting incorrect values, adjust your threshold value.
+
+.. tab-set::
+
+.. tab-item:: Hide
+
+    Give it a try yourself before checking the solution!
+
+.. tab-item:: Solution:
+
+    .. tab-set::
+
+        .. tab-item:: Python
+
+            .. code-block:: python
+
+                def is_over_line():
+                    # This is a tuning value! Depending on your exact line, lighting, and robot, 
+                    # the value of what counts as a line may differ!
+                    line_threshold = 0.75
+                    return reflectance.get_right() > line_threshold
+
+        .. tab-item:: Blockly
+
+            TODO: Add blockly code
+            .. .. image:: media/error.png
+            ..     :width: 300
